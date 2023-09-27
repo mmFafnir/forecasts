@@ -7,7 +7,7 @@ import Search from '../UI/Search';
 import PersonIcon from '../UI/Icons/PersonIcon';
 import SettingIcon from '../UI/Icons/SettingIcon';
 import StarIcon from '../UI/Icons/StarIcon';
-import { links } from './links';
+import { links } from '../../data/links';
 import Link from 'next/link';
 
 
