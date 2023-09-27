@@ -5,7 +5,7 @@ import styles from './scss/page.module.scss'
 const FootBool:NextPage = () => {
   return (
     <div className={styles.main}>
-      FootBool
+      Футбол
     </div>
   )
 }

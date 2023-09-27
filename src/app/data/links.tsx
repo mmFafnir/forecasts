@@ -14,7 +14,7 @@ export const links:ILink[] = [
             </svg>
         ),
         name: 'Футбол',
-        href: '/football'
+        href: '/'
     },
     {
         svg: (

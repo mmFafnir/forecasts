@@ -16,9 +16,10 @@ export const generateStaticParams = async () => {
 }
 
 const SportPage:NextPage<IProps> = ({params}) => {
-    console.log(params)
+  const currentLink = links.find(link => link.href == `/${params.slug}`)
+    
   return (
-    <div>{params.slug}</div>
+    <div>{currentLink!.name}</div>
   )
 }
 
