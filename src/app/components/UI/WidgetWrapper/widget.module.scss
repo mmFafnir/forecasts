@@ -1,0 +1,23 @@
+
+
+.widget{
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.header{
+    background: #1C203A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 5px;
+
+    img{
+        margin-right: 10px;
+    }
+}
+
+.body{
+    background: #222A56;
+    padding: 20px;
+}

@@ -1,6 +1,12 @@
-import './globals.css'
+import './scss/globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Sidebar from './components/Sidebar'
+import Countries from './components/Widgets/Countries'
+import Leagues from './components/Widgets/Leagues'
+import Bookmakers from './components/Widgets/Bookmakers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +21,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ru">
+      <body className={inter.className}>
+        <div className='wrapper'>
+          <Header />
+          <main>
+            <div className="main container">
+              <Sidebar widgets={[<Leagues />, <Countries/>]}/>
+              <div>
+                {children}
+              </div>
+              <Sidebar widgets={[<Bookmakers />]}/>
+            </div>
+          </main>
+          <Footer />
+        </div>
+      </body>
     </html>
   )
 }
