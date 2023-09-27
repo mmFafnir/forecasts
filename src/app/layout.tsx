@@ -27,11 +27,11 @@ export default function RootLayout({
           <Header />
           <main>
             <div className="main container">
-              <Sidebar widgets={[<Leagues />, <Countries/>]}/>
+              <Sidebar widgets={[<Leagues key={1} />, <Countries key={2}/>]}/>
               <div>
                 {children}
               </div>
-              <Sidebar widgets={[<Bookmakers />]}/>
+              <Sidebar widgets={[<Bookmakers key={3}/>]}/>
             </div>
           </main>
           <Footer />
