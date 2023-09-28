@@ -1,0 +1,50 @@
+
+.group{
+    margin-bottom: 20px;
+    &:last-child{
+        margin-bottom: 0;
+    }
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 10px;
+    background-color: #1D2653;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    >div{
+        display: flex;
+        align-items: center;
+    }
+}
+.icon{
+    cursor: pointer;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg{
+        path{
+            transition-duration: 0.3s;
+            fill: transparent;
+            stroke: #FFD644;
+        }
+    }
+}
+
+.active{
+    svg path{
+        fill: #FFD644;
+    }
+}
+
+.country{
+    display: flex;
+    align-items: center;
+    p{
+        margin-left: 10px;
+        // margin-top: 1px;
+        font-size: 12px;
+    }
+}

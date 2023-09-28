@@ -12,7 +12,7 @@ const WidgetWrapper:FC<IProps> = ({children, title, img}) => {
   return (
     <div className={styles.widget}>
         <div className={styles.header}>
-            {/* <Image /> */}\
+            {/* <Image /> */}
             <Image 
               src={img} 
               alt={title} 

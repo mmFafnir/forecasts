@@ -1,0 +1,20 @@
+@import '@/app/scss/variables';
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    button{
+        padding: 0px 5px;
+        margin: 0 auto;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 7px;
+        transition-duration: 0.3s;
+        @media(min-width: 901px) {
+            &:hover{
+                color: $iconHoverColor;
+                border-color: $iconHoverColor;
+            }
+        }
+    }
+}

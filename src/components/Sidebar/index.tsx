@@ -12,13 +12,13 @@ const Sidebar:FC<IProps> = ({widgets}) => {
   return (
     <div className={styles.sidebar}>
         <div className={styles.wrapper}>
-          {
-            widgets.map(widget => (
-              widget
-            ))
-          }
-          {/* <Leagues />
-          <Countries /> */}
+          <div className={styles.sticky}>
+            {
+              widgets.map(widget => (
+                widget
+              ))
+            }
+          </div>
         </div>      
     </div>
   )

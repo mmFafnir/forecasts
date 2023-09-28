@@ -1,0 +1,46 @@
+
+.btn{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: #303D7E;
+    height: 40px;
+    transition-duration: 0.3s;
+    position: relative;
+    &.p-20{
+      padding: 10px 20px;
+    }
+    svg{
+      margin-right: 10px;
+    }
+  
+    &.active{
+      background: #68428D;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);
+      pointer-events: none;
+    }
+  
+    &__action{
+      position: absolute;
+      display: block;
+      border-radius: 4px;
+      padding: 4px;
+      height: 18px;
+      max-width: 50px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #000;
+      background: #FFD644;
+      transform: translateY(-50%);
+      top: calc(0%);
+      right: -7px;
+      font-size: 16px;
+    }
+    @media(min-width: 901px) {
+      &:hover{
+        background: #68428D;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);  
+      }
+    }
+  }

@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from 'next/navigation'
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
 import styles from './header.module.scss';
 import Logo from '../UI/Logo';
 import Search from '../UI/Search';
@@ -9,26 +9,28 @@ import SettingIcon from '../UI/Icons/SettingIcon';
 import StarIcon from '../UI/Icons/StarIcon';
 import { links } from '../../data/links';
 import Link from 'next/link';
+import Settings from '../Settings';
 
 
 const Header:FC = () => {
-    const pathname = usePathname()
+    const pathname = usePathname();
+
+    const [isOpenSettings, setIsOpenSettings] = useState<boolean>(false);
     return (
         <div className={styles.header}>
-
             <div className={`${styles.wrapper} container`}>
                 <div className={styles.top}>
                     <div className={styles.logo}>
                         <Logo />
                     </div>
                     <div className={styles.search}>
-                        <Search />
+                        <Search/>
                     </div>
                     <div className={styles.icons}>
                         <button>
                             <PersonIcon />
                         </button>
-                        <button>
+                        <button onClick={() => setIsOpenSettings(prev => !prev)}>
                             <SettingIcon />
                         </button>
                     </div>
@@ -49,6 +51,8 @@ const Header:FC = () => {
                     }
                     <button>Еще</button>
                 </div>
+                
+                <Settings setOpen={setIsOpenSettings} open={isOpenSettings}/>
             </div>
         </div>
     )

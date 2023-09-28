@@ -1,12 +1,13 @@
 import './scss/globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import Header from './components/Header'
-import Footer from './components/Footer'
-import Sidebar from './components/Sidebar'
-import Countries from './components/Widgets/Countries'
-import Leagues from './components/Widgets/Leagues'
-import Bookmakers from './components/Widgets/Bookmakers'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import Sidebar from '@/components/Sidebar'
+import Countries from '@/components/Widgets/Countries'
+import Leagues from '@/components/Widgets/Leagues'
+import Bookmakers from '@/components/Widgets/Bookmakers'
+import Statistics from '@/components/Widgets/Statistics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,10 +29,10 @@ export default function RootLayout({
           <main>
             <div className="main container">
               <Sidebar widgets={[<Leagues key={1} />, <Countries key={2}/>]}/>
-              <div>
+              <div className="page-content">
                 {children}
               </div>
-              <Sidebar widgets={[<Bookmakers key={3}/>]}/>
+              <Sidebar widgets={[<Statistics key={4} />, <Bookmakers key={3}/>]}/>
             </div>
           </main>
           <Footer />

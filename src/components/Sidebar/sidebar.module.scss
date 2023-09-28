@@ -1,0 +1,21 @@
+
+
+.sidebar{
+    width: 223px;
+    flex: 0 0 223px;
+    padding-top: 103px;
+
+}
+.wrapper{
+    height: 100%;
+    position: relative;
+}
+.sticky{
+    top: 20px;
+    position: sticky;
+    >div{
+    
+        margin-bottom: 20px;
+    }
+
+}

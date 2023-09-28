@@ -3,8 +3,18 @@
 .search{
     display: flex;
     align-items: center;
+    
 }
+.open{
+    .input{
+        transform: scale(1, 1);
+    }
+}
+
 .input{
+    transition-duration:0.3s ;
+    transform: scale(0, 1);
+    transform-origin: right;
     flex: 1 1 auto;
     border-bottom: 1px solid $white;
     margin: 0px 14px;

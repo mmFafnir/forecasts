@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import React from 'react'
-import { links } from '../data/links'
+import { links } from '../../data/links'
 
 interface IProps {
     params: {

@@ -21,6 +21,7 @@
 }
 
 .wrapper{
+    position: relative;
     >div{
         display: flex;
         justify-content: space-between;
@@ -60,11 +61,16 @@
 }
 .top{
     margin-bottom: 32px;
+    position: relative;
 }
 .bottom{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+
+    a{
+        transition-duration: 0.1s;
+    }
 }
 .favoritesBtn{
     border-radius: 10px;

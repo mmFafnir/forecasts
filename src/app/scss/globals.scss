@@ -1,10 +1,16 @@
 
 @import './null';
+@import './tamplate';
+@import './UI/btn';
 
 body{
   background-color: #1B2141;
   color: #fff;
   font-size: 14px;
+
+  &.lock{
+    overflow: hidden;
+  }
 }
 .container{
   margin: 0 auto;
@@ -16,60 +22,25 @@ body{
   min-height: calc(100vh - 1px);
   flex-direction: column;
   position: relative;
-
-
 }
+
 main{
   padding: 25px 0px;
   flex: 1 1 auto;
-  // background: radial-gradient(136.42% 136.42% at 49.95% 3.83%, #2E42A5 0%, rgba(45, 45, 45, 0) 61.41%);
 }
 
 .main{
   display: flex;
   justify-content: space-between;
 }
+.page-content{
+  flex: 1 1 auto;
+  padding: 0px 20px;
+}
 
-.btn{
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  background: #303D7E;
-  height: 40px;
-  transition-duration: 0.3s;
-  position: relative;
-  
-  svg{
-    margin-right: 10px;
-  }
-
-  &.active{
-    background: #68428D;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);
-    pointer-events: none;
-  }
-
-  &__action{
-    position: absolute;
-    display: block;
-    border-radius: 4px;
-    padding: 4px;
-    height: 18px;
-    max-width: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #000;
-    background: #FFD644;
-    transform: translateY(-50%);
-    top: calc(0%);
-    right: -7px;
-    font-size: 16px;
-  }
-  @media(min-width: 901px) {
-    &:hover{
-      background: #68428D;
-      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);  
-    }
-  }
+.ScrollbarsCustom-Track{
+  width: 2px !important;
+}
+.ScrollbarsCustom-Wrapper{
+  inset: 0px 0px 0px 0px !important;
 }

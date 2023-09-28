@@ -1,0 +1,113 @@
+
+.match{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 40px;
+    border-radius: 20px;
+    background: #222A56;
+    margin-bottom: 8px;
+    position: relative;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    >a{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+.left, .right {
+    display: flex;
+    align-items: center;
+    >div{
+        display: flex;
+    }
+}
+.right{
+    flex: 0 1 387px;
+    justify-content: space-between;
+}
+
+
+.icon{
+    position: relative;
+    margin-right: 20px;
+    flex: 0 0 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    svg {
+        width: 100%;
+        height: 96%;
+        path{
+            stroke: #FFD644;
+            fill: transparent;
+            transition-duration: 0.3s;
+        }
+    } 
+}
+.active{
+    svg path{
+        fill: #FFD644;
+    }
+}
+.date, .team{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p, a, button{
+        margin-bottom: 10px;
+
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+.date{
+    text-align: center;
+    margin-right: 10px;
+}
+.team{
+    p{
+        display: flex;
+        align-items: center;
+
+        span{
+            margin-left: 10px;
+        }
+    }
+}
+
+.bestBet{
+    font-weight: 600;
+    font-size: 12px;    
+}
+
+.bet{
+    p, button, a {
+        display: block;
+        padding: 5px 20px;
+        border-radius: 10px;
+        font-size: 12px;
+        margin-right: 12px;
+        font-weight: 600;
+        background: #2B2E3E;
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+}
+.winTeam{
+    border: 1px solid #5E5CB0;
+}
+.rate{
+    border: 1px solid #D9AE40;
+}
+

@@ -1,0 +1,68 @@
+@import '@/app/scss/variables';
+
+.select{
+    align-items: center;
+    position: relative;
+    background-color: #303D7E;
+    border-radius: 10px;
+    overflow: hidden;
+    // transition-delay: 0.3s;
+}
+
+.show{
+    
+    .title{
+        border-color:  #1C203A;
+        svg{
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.title{
+    height: 40px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    transition-duration: 0.3s;
+    border-bottom: 1px solid transparent;
+
+    svg{
+        transition-duration: 0.3s;
+        margin-left: 10px;
+    }
+    span{
+        white-space: nowrap;
+    }
+}
+.body{
+    width: 100%;
+    background-color: #303D7E;
+    z-index: 1;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    max-height: 0px;
+    overflow: hidden;
+    transition-duration: 0.3s;
+    
+    
+    button{
+        display: block;
+        font-size: 12px;
+        width: 100%;
+        text-align: left;
+        transition-duration: 0.3s;
+        padding: 5px 20px;
+        @media(min-width: 901px) {
+            &:hover{
+                background-color: $iconHoverColor;
+            }
+        }
+    }
+}
+.buttonActive{
+    background-color: $iconHoverColor;
+    pointer-events: none;
+}
