@@ -21,7 +21,7 @@ const Bookmakers:FC = () => {
 
                             <p>
                                 <Image 
-                                    src={'img/present.svg'}
+                                    src={'/img/present.svg'}
                                     alt='иконка подарка'
                                     width={14}
                                     height={14}
@@ -30,7 +30,7 @@ const Bookmakers:FC = () => {
                             </p>
 
                         </div>
-                        <a className='btn' target='_blank' href={'/'}>
+                        <a className='btn btn--pur' target='_blank' href={'/'}>
                             <span>
                                 На сайт
                             </span>

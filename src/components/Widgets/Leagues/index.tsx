@@ -13,7 +13,7 @@ const Leagues = () => {
                     array.map(num => (
                         <Link key={num} className={styles.item} href={'/'}>
                             <Image 
-                                src={'img/flag.svg'}
+                                src={'/img/flag.svg'}
                                 alt='Флаг британия'
                                 width={20}
                                 height={15}

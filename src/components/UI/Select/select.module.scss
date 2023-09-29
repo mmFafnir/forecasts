@@ -29,6 +29,9 @@
     transition-duration: 0.3s;
     border-bottom: 1px solid transparent;
 
+    img{
+        margin-right: 10px;
+    }
     svg{
         transition-duration: 0.3s;
         margin-left: 10px;
@@ -50,11 +53,11 @@
     
     button{
         display: block;
-        font-size: 12px;
+        font-size: 14px;
         width: 100%;
         text-align: left;
         transition-duration: 0.3s;
-        padding: 5px 20px;
+        padding: 9px 20px;
         @media(min-width: 901px) {
             &:hover{
                 background-color: $iconHoverColor;
@@ -65,4 +68,37 @@
 .buttonActive{
     background-color: $iconHoverColor;
     pointer-events: none;
+}
+
+
+.absolute{
+    overflow: visible;
+    .body{
+        position: absolute;
+        z-index: 20 ;
+    }
+    transition-delay: 0.3s;
+    &.show{
+        transition-delay: 0s;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;   
+    }
+}
+
+.purple{
+    background-color: $iconHoverColor;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);
+    .body{
+        background-color: $iconHoverColor;
+        button{
+            @media(min-width: 901px) {
+                &:hover{
+                    background-color: #303D7E;
+                }
+            }
+        }
+    }
+    .buttonActive{
+        background-color: #303D7E;
+    }
 }

@@ -14,7 +14,7 @@ const WidgetWrapper:FC<IProps> = ({children, title, img}) => {
         <div className={styles.header}>
             {/* <Image /> */}
             <Image 
-              src={img} 
+              src={'/' + img} 
               alt={title} 
               width={20}
               height={20}

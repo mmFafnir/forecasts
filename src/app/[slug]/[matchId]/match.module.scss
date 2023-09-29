@@ -1,0 +1,78 @@
+.match{
+    h1{
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        line-height: 1.4;
+        position: relative;
+    }
+}
+.body{
+    margin-top: 55px;
+}
+.content{
+    max-width: 752px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+    > button, > a{
+        width: 100%;
+        justify-content: center;
+    }
+}
+.flex{
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.team{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+        object-fit: contain;
+        width: 100%;
+        margin-bottom: 27px;
+    }
+    h2{
+        font-size: 20px;
+        line-height: 1.5;
+        max-width: 236px;
+    }
+}
+
+.date{
+    p{
+        font-size: 16px;
+        text-align: center;
+        margin-bottom: 9px;
+        span{
+            margin-right: 16px;
+            &:last-child{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.left{
+    margin-top: 12px;
+    display: flex;
+    align-items: center;
+
+    color: #FFD644;
+    svg{
+        margin-right: 10px;
+    }
+    span{
+        margin-top: 1px;
+        margin-right: 0;
+    }
+}
+
+.text{
+    margin-bottom: 60px;
+}

@@ -5,14 +5,18 @@ import styles from './match.module.scss';
 import StarIcon from '../UI/Icons/StarIcon';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 
 const Match = () => {
+    const id = 'match'
+    const pathname = usePathname();
+        
     const [isFavorite, setIsFavorite] = useState<boolean>(false);
     
     return (
         <div className={styles.match}>
-            <Link href={`/Basketball`}></Link>
+            <Link href={pathname == '/' ? `/football/${id}`: `${pathname}/${id}` }></Link>
             <div className={styles.left}>
                 <button 
                     className={`${styles.icon} ${isFavorite ? styles.active : ''}`}

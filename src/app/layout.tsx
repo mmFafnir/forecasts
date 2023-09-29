@@ -8,6 +8,7 @@ import Countries from '@/components/Widgets/Countries'
 import Leagues from '@/components/Widgets/Leagues'
 import Bookmakers from '@/components/Widgets/Bookmakers'
 import Statistics from '@/components/Widgets/Statistics'
+import Modal from '@/components/Modals'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,6 +25,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className={inter.className}>
+        <div className="wrapper-bg"></div>
         <div className='wrapper'>
           <Header />
           <main>
@@ -37,6 +39,7 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <Modal />
       </body>
     </html>
   )

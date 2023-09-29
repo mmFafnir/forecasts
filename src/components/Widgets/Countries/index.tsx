@@ -19,7 +19,7 @@ const Countries = () => {
                         array.map(num => (
                             <Link key={num} href={'/'} className={styles.item}>
                                 <Image 
-                                    src={'img/flag.svg'}
+                                    src={'/img/flag.svg'}
                                     alt='Флаг британия'
                                     width={20}
                                     height={15}
