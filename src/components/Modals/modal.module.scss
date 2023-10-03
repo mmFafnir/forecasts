@@ -4,10 +4,21 @@
     min-height: 100vh;
     position: fixed;
     top: 0;
-    display: none;
+    z-index: 300;
     left: 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0px 20px;
+    visibility: hidden;
+    &.active {
+        visibility: visible;
+        .bg, .wrapper{
+            opacity: 1;
+        }
+    }
 }
-
 .bg{
     transition-duration: 0.3s;
     position: absolute;
@@ -18,4 +29,15 @@
     backdrop-filter: blur(2px);
     left: 0;
     top: 0;
+    opacity: 0;
+
 }
+.wrapper{
+    margin-top: 10%;
+    position: relative;
+    z-index: 30;
+    opacity: 0;
+    transition-duration: 0.3s;
+}
+
+

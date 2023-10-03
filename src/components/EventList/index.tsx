@@ -5,6 +5,9 @@ import React from 'react';
 import styles from './eventList.module.scss';
 import Select, { SelectClassEnum } from '../UI/Select';
 import EventCard from '../EventCard';
+import Modal from '../Modals';
+import EventModal from '../Modals/EventModule';
+import { ModalEnum } from '@/GlobalRedux/Slices/modalSlice';
 
 const sort = [
     {
@@ -22,6 +25,8 @@ const sort = [
     
 ]
 const EventList = () => {
+
+
     return (
         <div className={styles.eventList}>
             <div className={styles.header}>
@@ -40,10 +45,10 @@ const EventList = () => {
                 <EventCard />
                 <EventCard />
                 <EventCard />
-
-
-
             </div>
+            <Modal name={ModalEnum.EVENT}>
+                <EventModal />
+            </Modal>
         </div>
     );
 };

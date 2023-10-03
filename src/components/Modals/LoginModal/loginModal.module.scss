@@ -1,0 +1,58 @@
+
+@import '@/assets/scss/variables';
+
+.form{
+    border-radius: 10px;
+    background-color: #1C203A;
+    padding: 30px;
+    max-width: 523px;
+
+    >p{
+        font-size: 12px;
+        line-height: 1.5;
+        text-align: center;
+        margin-bottom: 34px;
+    }
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #303D7E;
+    margin-bottom: 40px;
+    h5{
+        font-size: 24px;
+    }
+}
+
+.body{
+    margin-bottom: 24px;
+}
+
+.item{
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid var(--grey, #D0D2D7);
+    padding: 10px 20px;
+    margin-bottom: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition-duration: 0.3s;
+    &:last-child{
+        margin-bottom: 0;
+    }
+    span{
+        flex: 1 1 auto;
+        text-align: center;
+        font-size: 20px;
+    }
+
+    @media(min-width: 901px) {
+        &:hover{
+            background-color: $iconHoverColor;
+        }
+    }
+}

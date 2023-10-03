@@ -2,7 +2,7 @@
 import { FC, useEffect } from 'react';
 import styles from './settings.module.scss';
 import Select from '../UI/Select';
-import { timezone } from '@/data/timezone';
+import { timezone } from '@/assets/data/timezone';
 import InputRadio from '../UI/InputRadio';
 import { getScrollBarWidth } from '@/utils/getScrollBarWidth';
 

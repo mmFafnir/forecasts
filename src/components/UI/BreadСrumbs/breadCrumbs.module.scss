@@ -1,29 +1,36 @@
-@import '@/app/scss/variables';
+@import '@/assets/scss/variables';
 
 .body{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0px 20px;
 
     p{
         display: flex;
         align-items: center;
         margin-bottom: 5px;
+        flex: 0 1 auto;
         &:last-child::after{
             display: none;
         }
         &::after{
             content: '';
             display: block;
-            width: 6px;
+            flex: 0 0 6px;
             height: 6px;
             background-color: #fff;
             border-radius: 50%;
             margin: 0 21px;
         }
-
+            overflow: hidden;
+        
         a{
+            // overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            // width: 100%;
             transition-duration: 0.3s;
             border-bottom: 1px solid transparent;
             padding-bottom: 2px;

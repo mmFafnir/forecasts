@@ -1,14 +1,11 @@
-import './scss/globals.scss'
+import '@/assets/scss/globals.scss'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Providers } from '@/GlobalRedux/provider'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import Sidebar from '@/components/Sidebar'
-import Countries from '@/components/Widgets/Countries'
-import Leagues from '@/components/Widgets/Leagues'
-import Bookmakers from '@/components/Widgets/Bookmakers'
-import Statistics from '@/components/Widgets/Statistics'
-import Modal from '@/components/Modals'
+import EventModule from '@/modules/EventModule'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,19 +24,17 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className="wrapper-bg"></div>
         <div className='wrapper'>
-          <Header />
-          <main>
-            <div className="main container">
-              <Sidebar widgets={[<Leagues key={1} />, <Countries key={2}/>]}/>
-              <div className="page-content">
-                {children}
+          <Providers >
+            <Header />
+            <main>
+              <div className="main">
+                  {children}
               </div>
-              <Sidebar widgets={[<Statistics key={4} />, <Bookmakers key={3}/>]}/>
-            </div>
-          </main>
-          <Footer />
+            </main>
+            <Footer />
+            <EventModule />
+          </Providers>
         </div>
-        <Modal />
       </body>
     </html>
   )

@@ -1,5 +1,5 @@
 
-@import '@/app/scss/variables';
+@import '@/assets/scss/variables';
 .body{
     background: #212642;
     padding: 72px 0px 50px 0px;
@@ -49,5 +49,23 @@
                 color: $iconHoverColor
             }
         }
+    }
+}
+
+@media (max-width: 400px) {
+    
+    
+    .logo{
+        a{
+            width: 177px;
+        }
+    }
+    .nav{
+        font-size: 12px;
+        margin-bottom: 30px !important;
+    }
+    .footer p{
+        font-size: 12px;
+        text-align: center;
     }
 }

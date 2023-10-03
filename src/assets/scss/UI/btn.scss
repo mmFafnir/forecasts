@@ -8,8 +8,25 @@
   height: 40px;
   transition-duration: 0.1s;
   position: relative;
+  span{
+    line-height: 0;
+  }
+  
   &.p-20{
     padding: 10px 20px;
+  }
+  &.live {
+    display: flex;
+    align-items: center;
+    &::before{
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #F50100;
+      margin-right: 10px;
+    }
   }
   svg{
     margin-right: 10px;

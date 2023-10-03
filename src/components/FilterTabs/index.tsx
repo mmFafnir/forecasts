@@ -1,43 +1,35 @@
-import React from 'react';
+import React, { FC } from 'react';
 import styles from './filterTabs.module.scss';
 
 type TTab = {
     title: string,
-    classes: string
+    name: string
 }
 
-const tabs:TTab[] = [
-        {
-            title: 'Все',
-            classes: 'btn p-20 active'
-        },
-        {
-            title: 'Топ матчи',
-            classes: 'btn'
-        },
-        {
-            title: 'Сегодня',
-            classes: 'btn'
-        },
-        {
-            title: 'Завтра',
-            classes: 'btn'
-        },
-        {
-            title: 'Завершенные',
-            classes: 'btn'
-        },
-]
+interface IProps {
+    tabs: TTab[];
+}
 
-const FilterTabs = () => {
+const FilterTabs:FC<IProps>= ({tabs}) => {
     return (
         <div className={styles.tabs}>
             <div className={styles.wrapper}>
                 {
-                    tabs.map(tab => (
-                        <button key={tab.title} className={tab.classes}>{tab.title}</button>
+                    tabs.map((tab, index) => (
+                        <button 
+                            key={tab.title} 
+                            className={`btn
+                                ${index === 0 ? 'active' : ''} 
+                                ${tab.name === 'all' || tab.name === 'timeline' ? 'p-20' : ''}
+                                ${tab.name === 'live' ? 'live p-20' : ''}
+                            `}
+                        >
+                            <span>
+                                {tab.title}
+                            </span>
+                        </button>
                     ))
-                }
+                }   
             </div>
         </div>
     );

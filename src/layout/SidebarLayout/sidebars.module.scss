@@ -1,0 +1,31 @@
+.sidebars{
+    display: flex;
+    justify-content: space-between;
+}
+.aside{
+    >div{
+        height: 100%;
+    }
+}
+.tableAside{
+    display: none;
+    >div{
+        height: 100%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .aside{
+        display: none;
+    }
+
+    .tableAside{
+        display: block;
+    }
+}
+
+@media (max-width: 800px) {
+    .tableAside{
+        display: none;
+    }
+}

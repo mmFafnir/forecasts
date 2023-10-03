@@ -1,9 +1,16 @@
+"use client";
+
 import React from 'react';
 import styles from './eventCard.module.scss';
+import { useTypeDispatch } from '@/hooks/useTypeDispatch';
+import { ModalEnum, openModal } from '@/GlobalRedux/Slices/modalSlice';
 
 const EventCard = () => {
+    const dispatch = useTypeDispatch();
+    const onOpenModal = () => dispatch(openModal(ModalEnum.EVENT));
+
     return (
-        <div className={styles.card}>
+        <div className={styles.card} onClick={onOpenModal}>
             <h3>Название события</h3>
             <div className={styles.item}>
                 <p>Ставка</p>

@@ -11,7 +11,7 @@ import { usePathname } from 'next/navigation';
 const Match = () => {
     const id = 'match'
     const pathname = usePathname();
-        
+
     const [isFavorite, setIsFavorite] = useState<boolean>(false);
     
     return (
@@ -24,7 +24,7 @@ const Match = () => {
                 >
                     <StarIcon />
                 </button>
-                <div>
+                <div className={styles.desc}>
                     <div className={styles.date}>
                         <p>21.12.23</p>
                         <p>12:00</p>

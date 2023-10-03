@@ -8,8 +8,6 @@ body{
   color: #fff;
   font-size: 14px;
 
- 
-
   &.lock{
     overflow: hidden;
   }
@@ -53,14 +51,6 @@ main{
   flex: 1 1 auto;
 }
 
-.main{
-  display: flex;
-  justify-content: space-between;
-}
-.page-content{
-  flex: 1 1 auto;
-  padding: 0px 20px;
-}
 
 .ScrollbarsCustom-Track{
   width: 2px !important;
