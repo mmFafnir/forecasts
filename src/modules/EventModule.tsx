@@ -10,7 +10,6 @@ const EventModule:FC = () => {
     useEffect(() => {
         console.log('event')
         document.addEventListener('keydown', (e) => {
-            console.log(e.key);
             if(e.key === "Escape") dispatch(closeModal());
         })
     }, [])

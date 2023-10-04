@@ -3,7 +3,8 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 
 export enum ModalEnum {
     EVENT = 'event',
-    LOGIN = 'login'
+    LOGIN = 'login',
+    SUBMENU = 'submenu'
 }
 
 interface IState {
