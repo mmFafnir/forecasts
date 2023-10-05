@@ -2,6 +2,8 @@
 @import './null';
 @import './tamplate';
 @import './UI/btn';
+@import './UI/blur-bg';
+@import './UI/sidebar-swiper';
 
 body{
   background-color: #1B2141;
@@ -30,7 +32,7 @@ body{
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: -1;
   &::before{
     content: '';
@@ -42,8 +44,7 @@ body{
     transform: translateX(-50%);
     z-index: -1;
     border-radius: 3669px;
-    background: radial-gradient(136.42% 136.42% at 49.95% 3.83%, #2E42A5 0%, rgba(45, 45, 45, 0.00) 61.41%);
-    // backdrop-filter: blur(10px);
+    background: radial-gradient(136.42% 136.42% at 49.95% 3.83%, #2E42A5 0%, rgba(45, 45, 45, 0.00) 58.41%);
   }
 }
 main{
@@ -57,4 +58,24 @@ main{
 }
 .ScrollbarsCustom-Wrapper{
   inset: 0px 0px 0px 0px !important;
+}
+
+
+@media (max-width: 1024px) {
+  .wrapper-bg{
+    &::before{
+      width: 1956.8px;
+      height: 2476.08px;
+      
+      background: radial-gradient(136.42% 136.42% at 49.95% 3.83%, #2E42A5 0%, rgba(45, 45, 45, 0.00) 59.41%); 
+      backdrop-filter: blur(10px);
+
+      top: -1300px;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .wrapper-bg{
+    display: none;
+  }
 }

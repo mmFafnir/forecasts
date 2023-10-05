@@ -65,7 +65,7 @@ const Select:FC<IProps> = ({items, icon, classes}) => {
                 </svg>
             </button>
             <div className={styles.body} style={{maxHeight: `${height}px`}}>
-                <Scrollbar style={{width: '100%', height: 105}}>
+                <Scrollbar momentum={true} noScroll={true} style={{width: '100%', height: 105}}>
                     {items.map((item, index) => (
                         <button 
                             key={index} 

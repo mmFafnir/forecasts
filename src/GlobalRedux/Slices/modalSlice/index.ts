@@ -4,7 +4,9 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit"
 export enum ModalEnum {
     EVENT = 'event',
     LOGIN = 'login',
-    SUBMENU = 'submenu'
+    SUBMENU = 'submenu',
+    BURGER_MENU = 'burger-menu',
+    SETTINGS = 'settings'
 }
 
 interface IState {

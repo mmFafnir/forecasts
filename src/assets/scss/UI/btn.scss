@@ -64,11 +64,7 @@
 
 .btn--pur{
   background-color: #68428D;
-  @media(min-width: 901px) {
-    &:hover{
-      // background-color: #303D7E; 
-    }
-  }
+
 }
 
 .btn--shadow{
@@ -78,4 +74,19 @@
       box-shadow: none;
     }
   }
+}
+
+
+@media (max-width: 1024px) {
+    .btn{
+      font-size: 12px;
+      svg{
+        flex: 0 0 20px;
+        height: 20px;
+      }
+    }
+    .btn--pur, .btn--shadow{
+      font-size: 14px;
+    }
+    
 }

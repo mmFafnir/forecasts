@@ -20,8 +20,10 @@ const Modal:FC<IProps> = ({children, name}) => {
     return (
         <div className={`${styles.modal} ${name === activeModal ? styles.active : ''}`}>
             <div onClick={onCloseModal} className={styles.bg}></div>
-            <div className={styles.wrapper}>
-                {children}
+            <div className={styles.overflow}>
+                <div className={styles.wrapper}>
+                    {children}
+                </div>
             </div>
         </div>
     );

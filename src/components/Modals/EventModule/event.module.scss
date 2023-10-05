@@ -6,7 +6,7 @@
     border: 1px solid #FFD644;
     background: #222A56;
     padding: 30px;
-
+    margin: 0px 20px;
     > button{
         width: 100%;
         text-align: center; 
@@ -81,5 +81,42 @@
     p:last-child{
         font-size: 16px;
         line-height: 1.4;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal{
+        padding: 14px 15px;
+    }
+    .header{
+        h3{
+            font-size: 16px;
+        }
+    }
+    .item{
+        p{
+            font-size: 16px;
+        }
+    }
+    .desc{
+        .item{
+            justify-content: space-between;
+        }
+        p{
+            font-size: 14px;
+            &:last-child{
+                text-align: right;
+            }
+        }
+    }
+    .itemDesc{
+        flex-wrap: wrap;
+        p{
+            font-size: 14px !important;
+            &:first-child{
+                margin-bottom: 10px;
+            }
+            text-align: left !important;
+        }
     }
 }

@@ -5,29 +5,33 @@ import Select from '../UI/Select';
 import { timezone } from '@/assets/data/timezone';
 import InputRadio from '../UI/InputRadio';
 import { getScrollBarWidth } from '@/utils/getScrollBarWidth';
+import { useTypeDispatch } from '@/hooks/useTypeDispatch';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
+import { ModalEnum, closeModal, openModal } from '@/GlobalRedux/Slices/modalSlice';
 
-interface IProps{
-    open: boolean;
-    setOpen: (bool: boolean) => void;
-}
-const Settings:FC<IProps> = ({open, setOpen}) => {
+const Settings:FC = () => {
     
-    const closeModal = () => setOpen(false);
+    const {activeModal} = useTypeSelector(state => state.modal);
+    const dispatch = useTypeDispatch();
+
+    const onClose = () => dispatch(closeModal());
+    const onCloseMenu = () => dispatch(openModal(ModalEnum.BURGER_MENU));
+
     const kayDownHandler = (e: KeyboardEvent) => {
         if(e.key == "Escape") {
-            closeModal()
+            onClose()
         }
     }
 
     useEffect(() => {
-        if(open) {
+        if(activeModal === ModalEnum.SETTINGS) {
             document.body.classList.add('lock');
             document.body.style.paddingRight = getScrollBarWidth() + 'px'
         } else {
             document.body.classList.remove('lock');
             document.body.style.paddingRight = '0px'
         }
-    }, [open])
+    }, [activeModal])
     useEffect(() => {
         document.addEventListener('keydown', kayDownHandler)
         return () => {
@@ -36,12 +40,18 @@ const Settings:FC<IProps> = ({open, setOpen}) => {
     }, [])
     
     return (
-        <div className={`${styles.settings} ${open ? styles.open : ''}`}>
-            <div onClick={closeModal} className={styles.bg}></div>
+        <div className={`${styles.settings} ${activeModal === ModalEnum.SETTINGS ? styles.open : ''}`}>
+            <div onClick={onClose} className={styles.bg}></div>
             <div className={styles.wrapper}>
                 <div className={styles.header}>
+                    <button className={styles.back} onClick={onCloseMenu}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 12H5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            <path d="M12 19L5 12L12 5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                    </button>
                     <p>Настройки</p>
-                    <button onClick={closeModal}>
+                    <button onClick={onClose}>
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18 6L6 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                             <path d="M6 6L18 18" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

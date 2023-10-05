@@ -15,7 +15,6 @@ export class Animate {
 
     addCopies() {
         const children = this.element.children;
-        console.log(this.element.parentElement)
         Array.from(children).forEach(elem => {
             const copy = elem.cloneNode(true) as HTMLDivElement;
             copy.classList.add('copy');

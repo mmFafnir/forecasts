@@ -12,6 +12,8 @@
         align-items: center;
         margin-bottom: 5px;
         flex: 0 1 auto;
+        overflow: hidden;
+
         &:last-child::after{
             display: none;
         }
@@ -24,13 +26,9 @@
             border-radius: 50%;
             margin: 0 21px;
         }
-            overflow: hidden;
         
         a{
-            // overflow: hidden;
             white-space: nowrap;
-            text-overflow: ellipsis;
-            // width: 100%;
             transition-duration: 0.3s;
             border-bottom: 1px solid transparent;
             padding-bottom: 2px;
@@ -50,5 +48,24 @@
             }
         }
 
+    }
+}
+@media (max-width: 600px) {
+    .body{
+        display: block;
+        P{
+            display: inline-flex;
+            line-height: 1.5;
+            margin-bottom: 0;
+            a{
+                white-space:initial;
+            }
+            &:last-child{
+                a{
+                    border-bottom: none;
+                    color: #68428D;
+                }
+            }
+        }
     }
 }

@@ -23,7 +23,7 @@ const SidebarLayout:FC<IProps> = ({children}) => {
                 <Sidebar widgets={[<Statistics key={4} />, <Bookmakers key={3}/>]}/>
             </div>
             <div className={styles.tableAside}>
-                <Sidebar widgets={[<Leagues key={1} />, <Countries key={2}/>, <Statistics key={4} />, <Bookmakers key={3}/>]}/>
+                <Sidebar slider={true} widgets={[<Leagues key={1} />, <Countries key={2}/>, <Statistics key={4} />, <Bookmakers key={3}/>]}/>
             </div>
         </div>
     );

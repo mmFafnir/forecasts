@@ -6,11 +6,7 @@
     top: 0;
     z-index: 300;
     left: 0;
-    overflow: auto;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 0px 20px;
+    
     visibility: hidden;
     &.active {
         visibility: visible;
@@ -18,6 +14,16 @@
             opacity: 1;
         }
     }
+}
+.overflow{
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    padding: 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 10px;
 }
 .bg{
     transition-duration: 0.3s;

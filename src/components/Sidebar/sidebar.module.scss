@@ -19,3 +19,11 @@
     }
 
 }
+
+
+@media (max-width: 800px) {
+    .slider{
+        width: 100%;
+        flex: 1 1 100%;   
+    }
+}
