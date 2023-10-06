@@ -26,7 +26,7 @@ export const modalSlice = createSlice({
             state.activeModal = action.payload;
         },
         closeModal: (state) => {
-            state.activeModal = null
+            state.activeModal = null;
         }
     }
 })

@@ -1,10 +1,12 @@
 
 "use client";
-import { FC, ReactNode } from 'react';
+
+import { FC, ReactNode, useEffect } from 'react';
 import styles from './modal.module.scss';
 import { ModalEnum, closeModal } from '@/GlobalRedux/Slices/modalSlice';
 import { useTypeSelector } from '@/hooks/useTypeSelector';
 import { useTypeDispatch } from '@/hooks/useTypeDispatch';
+import { getScrollBarWidth } from '@/utils/getScrollBarWidth';
 
 
 interface IProps {
@@ -16,6 +18,17 @@ const Modal:FC<IProps> = ({children, name}) => {
     const { activeModal } = useTypeSelector(state => state.modal)
     const dispatch = useTypeDispatch();
     const onCloseModal = () => dispatch(closeModal())
+
+
+    useEffect(() => {
+        if(activeModal !== null) {
+            document.body.classList.add('lock');
+            document.body.style.paddingRight = getScrollBarWidth() + 'px';
+        } else {
+            document.body.classList.remove('lock');
+            document.body.style.paddingRight = 0 + 'px';
+        }
+    }, [activeModal])
 
     return (
         <div className={`${styles.modal} ${name === activeModal ? styles.active : ''}`}>

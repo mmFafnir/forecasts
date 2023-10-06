@@ -8,6 +8,7 @@ import { getScrollBarWidth } from '@/utils/getScrollBarWidth';
 import { useTypeDispatch } from '@/hooks/useTypeDispatch';
 import { useTypeSelector } from '@/hooks/useTypeSelector';
 import { ModalEnum, closeModal, openModal } from '@/GlobalRedux/Slices/modalSlice';
+import ThemeBtn from '../UI/ThemeBtn';
 
 const Settings:FC = () => {
     
@@ -72,7 +73,10 @@ const Settings:FC = () => {
                         <p>Сортировать по:</p>
                         <InputRadio title='Названию соревнования' checked={true} name="sort" />
                         <InputRadio title='Началу матча' name="sort" />
-
+                    </div>
+                    <div className={styles.item}>
+                        <h3>Выбор темы</h3>
+                        <ThemeBtn />
                     </div>
                 </div>
             </div>

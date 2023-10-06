@@ -2,12 +2,14 @@
 
 import { configureStore } from "@reduxjs/toolkit";
 import modalSlice from "./Slices/modalSlice";
+import themeSlice from "./Slices/themeSlice";
 
 
 
 export const store = configureStore({
     reducer: {
-        modal: modalSlice
+        modal: modalSlice,
+        themeLight: themeSlice 
     }
 }) 
 

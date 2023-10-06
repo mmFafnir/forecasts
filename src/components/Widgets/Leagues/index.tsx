@@ -7,7 +7,7 @@ const array = [1, 2, 3, 4, 5]
 
 const Leagues = () => {
     return (
-        <WidgetWrapper title='Популярные лиги' img='img/fire.svg'>
+        <WidgetWrapper open={true} title='Популярные лиги' img='img/fire.svg'>
             <div className={styles.body}>
                 {
                     array.map(num => (

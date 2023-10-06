@@ -19,14 +19,46 @@
 
 .body{
     background: #222A56;
-    padding: 20px;
+    transition-duration: 0.3s;
+    >div{
+        padding: 20px;
+
+    }
 }
 
 @media (max-width: 800px) {
     .widget{
+        border-radius: 0px;
         height: 100%;
+        margin-bottom: 0 !important; 
+
+        &:first-child{
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+        } &:last-child{
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
     }
     .body{
-        height: 100%;
+        height: 0px;
+    }
+    .header{
+        padding: 10px 20px;
+        justify-content: space-between;
+
+        button{
+            transform: rotate(180deg);
+            margin-left: auto;
+            transition-duration: 0.3s;
+        }
+    }
+    .active{
+        .header {
+            button{
+                transform: rotate(0);
+            }
+        }
     }
 }
+

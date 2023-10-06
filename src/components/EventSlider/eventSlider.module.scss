@@ -85,6 +85,12 @@
     color: #FFD644;
 }
 
+@media (max-width: 1300px) {
+    .body{
+        display: none;
+    }
+}
+
 @media (max-width: 500px) {
     .slide{
         flex-wrap: wrap;

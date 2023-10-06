@@ -41,17 +41,8 @@
     }
 }
 
-@media (max-width: 500px) {
-    // .search{
-    //     justify-content: flex-end;
-    // }
-    // .input{
-    //     width: 100%;
-    //     left: 0;
-    //     height: 40px;
-    //     bottom: -30px;
-    //     background-color: #1B2141;
-    //     margin: 0;
-    //     position: absolute;
-    // }
+@media (max-width: 400px) {
+    .input{
+        margin-left: 0;
+    }
 }

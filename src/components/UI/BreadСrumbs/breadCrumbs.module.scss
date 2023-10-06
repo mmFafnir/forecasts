@@ -1,38 +1,44 @@
 @import '@/assets/scss/variables';
 
 .body{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: center;
     margin: 0px 20px;
-
+    
     p{
         display: flex;
         align-items: center;
-        margin-bottom: 5px;
-        flex: 0 1 auto;
-        overflow: hidden;
-
-        &:last-child::after{
-            display: none;
-        }
-        &::after{
-            content: '';
-            display: block;
-            flex: 0 0 6px;
-            height: 6px;
-            background-color: #fff;
-            border-radius: 50%;
-            margin: 0 21px;
-        }
+        flex-wrap: wrap;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        // overflow: hidden;
         
         a{
-            white-space: nowrap;
+            flex: 0 1 auto;
+            margin-bottom: 5px;
+            display: inline-flex;
+            align-items: center;
             transition-duration: 0.3s;
             border-bottom: 1px solid transparent;
             padding-bottom: 2px;
-
+            white-space : nowrap;
+            
+            &::after{
+                content: '';
+                display: block;
+                flex: 0 0 6px;
+                height: 6px;
+                background-color: #fff;
+                border-radius: 50%;
+                margin: 0 21px;
+                
+            }
+            &:last-child{
+                pointer-events: none;
+                border-color:  #fff;
+                &::after{
+                    display: none;
+                }
+            }
             @media(min-width: 901px) {
                 &:hover{
                     border-color: #fff;
@@ -41,29 +47,33 @@
             }        
         }
 
-        &:last-child{
-            a{
-                pointer-events: none;
-                border-color:  #fff;
-            }
-        }
 
     }
 }
 @media (max-width: 600px) {
     .body{
         display: block;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            display: none
+        }
+
         P{
-            display: inline-flex;
-            line-height: 1.5;
+            display: block;
+            line-height: 1.8;
             margin-bottom: 0;
             a{
+                display: inline;
                 white-space:initial;
-            }
-            &:last-child{
-                a{
+                
+                &::after{
+                    width: 6px;
+                    display: inline-block;
+                }
+                &:last-child{
                     border-bottom: none;
-                    color: #68428D;
+                    color: $gold;
                 }
             }
         }

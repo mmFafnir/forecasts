@@ -33,7 +33,7 @@ const EventSlider:FC = () => {
                     autoplay={{
                         delay: 0,
                     }}
-                    loop={true}
+                    loop={false}
                 >
                     {
                         array.map((slider, index) => (

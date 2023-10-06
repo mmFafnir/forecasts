@@ -78,11 +78,7 @@
 }
 
 @media (max-width: 700px) {
-    .team{
-        h2{
-            // fz12
-        }
-    }
+ 
     .flex{
         flex-wrap: wrap;
     }
@@ -121,5 +117,10 @@
     .text{
         margin-bottom: 90px;
         
+    }
+}
+@media (max-width: 400px) {
+    .team{
+        flex: 0 0 50%;
     }
 }
