@@ -1,0 +1,28 @@
+
+.event-slider{
+    .swiper-slide{
+        flex: 0 0 467px !important;
+    }
+}
+@media (max-width: 1300px) {
+    .event-slider{
+        max-width: 467px;
+        overflow: visible !important;
+
+        .swiper-slide{
+            flex: 0 0 467px !important;
+        }
+    }
+
+    
+    
+}
+@media (max-width: 500px) {
+    .event-slider{
+        max-width: 100%;
+        padding: 0px 10px !important;
+        .swiper-slide{
+            flex: 0 0 100% !important;
+        }
+    }
+}

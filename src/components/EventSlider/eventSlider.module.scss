@@ -4,8 +4,9 @@
     margin-bottom: 60px;
     overflow: hidden;
     padding-bottom: 40px;
-
+    margin-top: 30px;
     width: 100%;
+    overflow: hidden;
     h4{
         font-size: 24px;
         text-align: center;
@@ -16,7 +17,7 @@
     display: flex;
     align-items: center;
     // justify-content: center;
-    width: max-content;
+    width: 100%;
 
 
     
@@ -29,8 +30,7 @@
     padding: 28px 20px;
     display: flex;
     align-items: center;
-    flex: 0 0 467px;
-    margin-right: 20px;
+    // max-width:  467px;
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);
     border: solid 1px transparent;
     transition-duration: 0.3s;
@@ -83,4 +83,22 @@
 }
 .time{
     color: #FFD644;
+}
+
+@media (max-width: 500px) {
+    .slide{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .date{
+        margin-top: 30px;
+        flex: 1 1 100%;
+        order: 3;
+    }
+    .team{
+        flex: 0 0 calc(50% - 10px);
+        &:first-child{
+            margin-right: 10px;
+        }
+    }
 }
