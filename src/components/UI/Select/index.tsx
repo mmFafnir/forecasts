@@ -4,6 +4,7 @@ import React, { FC, useRef, useState } from 'react';
 import styles from './select.module.scss';
 import { Scrollbar } from 'react-scrollbars-custom';
 import Image from 'next/image';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 
 export enum SelectClassEnum  {
     ABSOLUTE = 'absolute',
@@ -17,7 +18,9 @@ interface IProps {
 }
 
 const Select:FC<IProps> = ({items, icon, classes}) => {
-    
+
+    const { light } = useTypeSelector(state => state.themeLight);
+
     const [value, setValue] = useState<string>(items[0]);
     const [height, setHeight] = useState<number>(0);
     
@@ -40,9 +43,7 @@ const Select:FC<IProps> = ({items, icon, classes}) => {
     return (
         <div 
             ref={bodyRef} 
-            className={`${styles.select} ${classes ? classes.map(item => styles[item]).join(' ') : ''} ${height > 0 ? styles.show : ''}`}
-        >
-            
+            className={`${styles.select} ${classes ? classes.map(item => styles[item]).join(' ') : ''} ${height > 0 ? styles.show : ''} ${light ? styles.themeLight : ''}`}>
             <button 
                 className={styles.title}
                 onClick={() => {

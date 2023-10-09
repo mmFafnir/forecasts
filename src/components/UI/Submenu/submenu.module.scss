@@ -80,9 +80,26 @@
         margin: 0;
         display: flex;
         flex-direction: column;
+        padding: 25px 10px;
     }
     .list{
         height: 100%;
         overflow: auto;
+        padding: 0px 10px;
+    }
+    .header{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+.themeLight{
+    .wrapper{
+        background-color: #fff;
+    }
+    .header{
+        svg path{
+            stroke: #303D7E;
+        }
     }
 }

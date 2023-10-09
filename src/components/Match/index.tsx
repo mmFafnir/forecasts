@@ -6,16 +6,20 @@ import StarIcon from '../UI/Icons/StarIcon';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 
 
 const Match = () => {
     const id = 'match'
     const pathname = usePathname();
+    
+    const { light } = useTypeSelector(state => state.themeLight);
 
     const [isFavorite, setIsFavorite] = useState<boolean>(false);
     
+
     return (
-        <div className={styles.match}>
+        <div className={`${styles.match} ${light ? styles.themeLight : ''}`}>
             <Link href={pathname == '/' ? `/football/${id}`: `${pathname}/${id}` }></Link>
             <div className={styles.left}>
                 <button 

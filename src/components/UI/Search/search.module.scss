@@ -46,3 +46,23 @@
         margin-left: 0;
     }
 }
+
+
+
+.themeLight{
+    .input{
+        border-color: #2E42A5;
+        input{
+            color: #2E42A5;
+        }
+    }
+    .icon{
+        @media(min-width: 901px) {
+            &:hover{
+                svg path{
+                    fill: #65A3FF;
+                }
+            }
+        }
+    }
+}

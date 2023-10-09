@@ -1,59 +1,76 @@
+"use client";
+
 import { FC } from 'react';
 import WidgetWrapper from '../../UI/WidgetWrapper';
 import styles from './statistics.module.scss';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 
 type TStatistic = {
+    all: string,
     color: string,
     title: string,
     value: string,
     subTitle: string,
-    subValue: string,
+    coefficient?: string
 } 
+
 const statistics:TStatistic[] = [
     {
+        coefficient: '1.5',
+        all: '170',
         color: "#FFD644",
-        title: 'Всего',
-        value: '150/170',
+        title: 'Общее',
+        value: '150',
         subTitle: 'Лучшие:',
-        subValue: '55/75',
     },
     {
+        coefficient: '1.45',
+        all: '50',
         color: "#66DA64",
         title: 'С низким риском:',
-        value: '50/50',
         subTitle: 'Средний коэф:',
-        subValue: '1.45',
+        value: '50',
     },
     {
+        coefficient: '1.85',
+        all: '50',
         color: "#E88224",
         title: 'Средний риск:',
-        value: '45/50',
+        value: '45',
         subTitle: 'Средний коэф:',
-        subValue: '1.85',
     },
     {
-        color: "#FFD644",
+        coefficient: '2.30',
+        all: '50',
+        color: "#F50100",
         title: 'Высокий риск:',
-        value: '35/50',
+        value: '35',
         subTitle: 'Средний коэф::',
-        subValue: '2.30',
     },
 ]
 
 const Statistics:FC = () => {
+    const { light } = useTypeSelector(state => state.themeLight);
     return (
-        <WidgetWrapper title='Статистика' img='img/statistics.svg' >
-            <div className={styles.body}>
+        <WidgetWrapper title='Статистика' imgs={['img/widget/statistics.svg', 'img/widget/statistics-dark.svg']}>
+            <div className={`${styles.body} ${light ? styles.themeLight : ''}`}>
                 {
                     statistics.map((stat, index) => (
                         <div key={index} className={styles.item}>
-                            <p style={index > 0 ? {color: stat.color} : {}}>
+                            <p style={{color: stat.color}}>
                                 <span>{stat.title}</span>
+                            </p>
+                            <p>
+                                <span>Всего</span>
+                                <span>{stat.all}</span>
+                            </p>
+                            <p>
+                                <span>Лучшие</span>
                                 <span>{stat.value}</span>
                             </p>
-                            <p style={index ==0 ? {color: stat.color} : {}}>
-                                <span>{stat.subTitle}</span>
-                                <span>{stat.subValue}</span>
+                            <p>
+                                <span>Средний коэф:</span>
+                                <span>{stat.coefficient}</span>
                             </p>
                         </div>    
 

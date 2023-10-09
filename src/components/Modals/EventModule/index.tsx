@@ -4,6 +4,7 @@ import React, { FC } from 'react';
 import styles from './event.module.scss';
 import { closeModal } from '@/GlobalRedux/Slices/modalSlice';
 import { useTypeDispatch } from '@/hooks/useTypeDispatch';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 
 const text = `
 "Галатасарай" в настоящее время демонстрирует грозную форму, одержав ряд побед подряд. Недавняя победа над "Самсунспором" со счетом 4:2, а также победа над "Газиантепом" со счетом 3:0 доказывают их мощный атакующий потенциал. Игра дома также является преимуществом "Галатасарая". С другой стороны, "Копенгаген" демонстрирует непостоянную игру. Таким образом, учитывая форму обеих команд, победа "Галатасарая" представляется беспроигрышным вариантом.
@@ -12,12 +13,13 @@ const text = `
 
 const EventModal:FC = () => {
     
+    const {light} = useTypeSelector(state => state.themeLight);
     const dispatch = useTypeDispatch();
     const onCloseModal = () => dispatch(closeModal())
 
 
     return (
-        <div className={styles.modal}>
+        <div className={`${styles.modal} ${light ? styles.themeLight : ''}`}>
             <div className={styles.header}>
                 <h3>Лучшая ставка: Победа Галатасарая</h3>
                 <button onClick={onCloseModal}>

@@ -37,7 +37,7 @@ const TextAnalysis:FC = () => {
             </div>
             {
                 !isFull && (
-                    <button onClick={() => height <= defaultHeight ? onOpenText() : setHeight(defaultHeight)}>
+                    <button className='show-more' onClick={() => height <= defaultHeight ? onOpenText() : setHeight(defaultHeight)}>
                         {height > defaultHeight ? 'Скрыть.' : 'Читать полность.'}                
                     </button>
                 ) 

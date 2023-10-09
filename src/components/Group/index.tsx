@@ -5,12 +5,14 @@ import styles from './group.module.scss';
 import StarIcon from '../UI/Icons/StarIcon';
 import Image from 'next/image';
 import Match from '../Match';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 
 const Group = () => {
     const [isChecked, setIsChecked] = useState<boolean>(false)
-
+    const { light } = useTypeSelector(state => state.themeLight);
+    
     return (
-        <div className={styles.group}>
+        <div className={`${styles.group} ${light ? styles.themeLight : ''}`}>
             <div className={styles.header}>
                 <div>
                     <button 

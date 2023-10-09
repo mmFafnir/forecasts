@@ -81,3 +81,24 @@
         }
     }
 }
+
+
+.themeLight{
+    background-color: #fff;
+
+
+    .header{
+        svg path{
+            stroke: #303D7E;
+        }
+    }
+
+    .item{
+        border-color: #D0D2D7;
+        @media(min-width: 901px) {
+            &:hover{
+                background-color: #65A3FF;
+            }
+        }
+    }
+}

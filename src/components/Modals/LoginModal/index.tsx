@@ -5,16 +5,18 @@ import styles from './loginModal.module.scss';
 import Image from 'next/image';
 import { useTypeDispatch } from '@/hooks/useTypeDispatch';
 import { closeModal } from '@/GlobalRedux/Slices/modalSlice';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 
 const LoginModal:FC = () => {
 
+    const { light } = useTypeSelector(state => state.themeLight);
     const dispatch = useTypeDispatch();
 
     const onClose = () => dispatch(closeModal());
 
 
     return (
-        <div className={styles.form}>
+        <div className={`${styles.form} ${light ? styles.themeLight : ''}`}>
             <div className={styles.header}>
                 <h5>Регистрация</h5>
                 <button onClick={onClose}>

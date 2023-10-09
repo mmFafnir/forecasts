@@ -4,13 +4,15 @@ import React from 'react';
 import styles from './eventCard.module.scss';
 import { useTypeDispatch } from '@/hooks/useTypeDispatch';
 import { ModalEnum, openModal } from '@/GlobalRedux/Slices/modalSlice';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 
 const EventCard = () => {
     const dispatch = useTypeDispatch();
+    const { light } = useTypeSelector(state => state.themeLight);
     const onOpenModal = () => dispatch(openModal(ModalEnum.EVENT));
 
     return (
-        <div className={styles.card} onClick={onOpenModal}>
+        <div className={`${styles.card} ${light ? styles.themeLight : ''}`} onClick={onOpenModal}>
             <h3>Название события</h3>
             <div className={styles.item}>
                 <p>Ставка</p>

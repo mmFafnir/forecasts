@@ -20,7 +20,7 @@ const ThemeBtn:FC = () => {
         }
     }, [isChecked])
     return (
-        <div className={styles.btn}>
+        <div className={`${styles.btn} ${isChecked ? styles.themeLight : ''}`}>
             <MoonIcon />
             <label className={styles.input}>
                 <input type="checkbox" onChange={() => setIsChecked(prev => !prev)} checked={isChecked}/>

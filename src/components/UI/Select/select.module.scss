@@ -102,3 +102,28 @@
         background-color: #303D7E;
     }
 }
+
+
+.themeLight{
+    background-color: #65A3FF;
+    color: #fff;
+
+    svg path{
+        fill: #65A3FF
+    }
+    .body{
+        background-color: #65A3FF;
+
+        button{
+            @media(min-width: 901px) {
+                &:hover{
+                    background-color: #303D7E;
+                }
+            }
+        }
+    }
+    .buttonActive{
+        background-color: #303D7E;
+        
+    }
+}

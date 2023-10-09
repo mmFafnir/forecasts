@@ -1,14 +1,19 @@
+'use client';
+
 import React from 'react';
 import styles from './leagues.module.scss';
 import WidgetWrapper from '../../UI/WidgetWrapper';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 const array = [1, 2, 3, 4, 5]
 
 const Leagues = () => {
+    const { light } = useTypeSelector(state => state.themeLight);
+
     return (
-        <WidgetWrapper open={true} title='Популярные лиги' img='img/fire.svg'>
-            <div className={styles.body}>
+        <WidgetWrapper open={true} title='Популярные лиги' imgs={['img/widget/fire.svg', 'img/widget/fire-dark.svg']}>
+            <div className={`${styles.body} ${light ? styles.themeLight : ''}`}>
                 {
                     array.map(num => (
                         <Link key={num} className={styles.item} href={'/'}>

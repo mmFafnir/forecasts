@@ -10,16 +10,17 @@ import { ModalEnum, closeModal, openModal } from '@/GlobalRedux/Slices/modalSlic
 import { useTypeDispatch } from '@/hooks/useTypeDispatch';
 
 const BurgerMenu:FC = () => {
-
+    const { light } = useTypeSelector(state => state.themeLight);
     const {activeModal} = useTypeSelector(state => state.modal);
     const dispatch = useTypeDispatch();
-
+    
+    
     const onClose = () => dispatch(closeModal());
     const openSettings = () => dispatch(openModal(ModalEnum.SETTINGS));
     const openLogin = () => dispatch(openModal(ModalEnum.LOGIN));
 
     return (
-        <div className={`${styles.body} ${activeModal == ModalEnum.BURGER_MENU ? styles.active : ''}`}>
+        <div className={`${styles.body} ${light ? styles.themeLight : ''} ${activeModal == ModalEnum.BURGER_MENU ? styles.active : ''}`}>
             <div onClick={onClose} className={`blur-bg ${activeModal === ModalEnum.BURGER_MENU ? "active" : ''}`}></div>
             <div className={styles.wrapper}>
                 <div className={styles.header}>

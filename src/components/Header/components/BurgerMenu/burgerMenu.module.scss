@@ -76,3 +76,18 @@
     }
     
 }
+
+
+.themeLight{
+    .wrapper{
+        background-color: #fff;
+    }
+    .header{
+        button{
+
+            svg path{
+                stroke: #2E42A5;
+            }
+        }
+    }
+}

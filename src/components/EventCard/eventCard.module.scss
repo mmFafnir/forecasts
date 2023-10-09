@@ -93,3 +93,35 @@
         }
     }
 }
+
+.themeLight{
+    background-color: transparent;
+    border: 1px solid #D0D2D7;
+    @media(min-width: 901px) {
+        &:hover{
+            border-color: #2E42A5;
+        
+        }
+    }
+
+    .item{
+        p{
+            &:last-child{
+                color: #80277C;
+            }
+            
+        }
+        
+        &:last-child{
+            margin-bottom: 0;
+            p:last-child{
+                color:#66DA64
+            }
+        }
+        
+        &::before{
+            background: #EAEAEA;
+        }
+    }
+
+}

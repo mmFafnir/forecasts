@@ -5,6 +5,7 @@
 @import './UI/blur-bg';
 @import './UI/sidebar-swiper';
 @import './UI/event-slider';
+@import './UI/show-more';
 
 body{
   background-color: #1B2141;
@@ -80,3 +81,8 @@ main{
     display: none;
   }
 }
+
+
+
+
+@import './UI/theme';

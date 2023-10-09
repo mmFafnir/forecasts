@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const Modal:FC<IProps> = ({children, name}) => {    
-    const { activeModal } = useTypeSelector(state => state.modal)
+    const { activeModal } = useTypeSelector(state => state.modal);
     const dispatch = useTypeDispatch();
     const onCloseModal = () => dispatch(closeModal())
 
@@ -31,7 +31,10 @@ const Modal:FC<IProps> = ({children, name}) => {
     }, [activeModal])
 
     return (
-        <div className={`${styles.modal} ${name === activeModal ? styles.active : ''}`}>
+        <div 
+            className={`${styles.modal} ${name === activeModal ? styles.active : ''}`}
+            style={{paddingRight: `${activeModal !== null ? getScrollBarWidth() : 0}px`}}
+        >
             <div onClick={onCloseModal} className={styles.bg}></div>
             <div className={styles.overflow}>
                 <div className={styles.wrapper}>

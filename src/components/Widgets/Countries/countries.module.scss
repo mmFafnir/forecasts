@@ -43,3 +43,24 @@
         }
     }
 }
+
+
+.themeLight{
+    .search{
+        border-color: #EAEAEA;
+        input{
+            color: #303D7E;
+            
+        &::placeholder{
+            color: #303D7E;
+        }
+        }
+    }
+    .item{
+        @media(min-width: 901px) {
+            &:hover{
+                color: #65A3FF;
+            }
+        }
+    }
+}

@@ -20,3 +20,20 @@
         }
     }
 }
+
+
+.themeLight{
+    a{
+        svg path{
+            stroke: #303D7E;
+        }
+
+        @media(min-width: 901px) {
+            &:hover{
+                svg path{
+                    stroke: #65A3FF;
+                }
+            }
+        }
+    }
+}

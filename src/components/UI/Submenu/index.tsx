@@ -7,13 +7,14 @@ import { ModalEnum, closeModal } from '@/GlobalRedux/Slices/modalSlice';
 import { useTypeDispatch } from '@/hooks/useTypeDispatch';
 
 const Submenu:FC = () => {
-    const {activeModal} = useTypeSelector(state => state.modal)
+    const { activeModal } = useTypeSelector(state => state.modal);
+    const { light } = useTypeSelector(state => state.themeLight);
     const dispatch = useTypeDispatch();
 
     const onClose = () => dispatch(closeModal());
 
     return (
-        <div className={`${styles.body} sub-menu ${activeModal === ModalEnum.SUBMENU ? styles.active : ''}`}>
+        <div className={`${styles.body} ${light ? styles.themeLight : ''} sub-menu ${activeModal === ModalEnum.SUBMENU ? styles.active : ''}`}>
             <div onClick={onClose} className={styles.bg}></div>
             <div className={styles.wrapper}>
                 <div className={styles.header}>

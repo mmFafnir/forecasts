@@ -10,7 +10,6 @@ const EventModule:FC = () => {
     const { light } = useTypeSelector(state => state.themeLight);
 
     useEffect(() => {
-        console.log('event')
         document.addEventListener('keydown', (e) => {
             if(e.key === "Escape") dispatch(closeModal());
         })

@@ -33,3 +33,13 @@
         transform: translate(-50%, -50%);
     }
 }
+
+.themeLight{
+    .icon{
+        border-color: #303D7E;
+
+        &:before{
+            background-color: #303D7E;
+        }
+    }
+}

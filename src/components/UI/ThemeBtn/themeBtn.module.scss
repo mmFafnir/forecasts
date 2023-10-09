@@ -33,3 +33,19 @@
         }
     }
 }
+
+.themeLight{
+    .input{
+        border-color: #303D7E;
+        span{
+            background-color: #303D7E;
+        }
+    }
+
+    svg{
+        path{
+            fill: transparent;
+            stroke: #303D7E;
+        }
+    }
+}

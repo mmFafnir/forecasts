@@ -26,3 +26,13 @@
         }
     }
 }
+
+.themeLight{
+    .item{
+        @media(min-width: 901px) {
+            &:hover{
+                color: #65A3FF
+            }
+        }
+    }
+}

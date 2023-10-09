@@ -12,7 +12,10 @@ import ThemeBtn from '../UI/ThemeBtn';
 
 const Settings:FC = () => {
     
+
+    const { light } = useTypeSelector(state => state.themeLight);
     const {activeModal} = useTypeSelector(state => state.modal);
+    
     const dispatch = useTypeDispatch();
 
     const onClose = () => dispatch(closeModal());
@@ -41,7 +44,7 @@ const Settings:FC = () => {
     }, [])
     
     return (
-        <div className={`${styles.settings} ${activeModal === ModalEnum.SETTINGS ? styles.open : ''}`}>
+        <div className={`${styles.settings} ${light ? styles.themeLight : ''} ${activeModal === ModalEnum.SETTINGS ? styles.open : ''}`}>
             <div onClick={onClose} className={styles.bg}></div>
             <div className={styles.wrapper}>
                 <div className={styles.header}>

@@ -5,12 +5,9 @@
     top: 60px;
     right: 0px;
     z-index: 22;
-    // opacity: 0;
     visibility: hidden;
-    // transition-duration: 0.3s;
 }
 .open{
-    // opacity: 1;
     visibility: visible;
     .bg, .wrapper{
         opacity: 1;
@@ -115,6 +112,20 @@
             &.back{
                 display: block;
             }
+        }
+    }
+}
+
+
+.themeLight{
+    .wrapper{
+        background-color: #fff;
+        border: 1px solid #303D7E;
+    }
+    .header{
+        button svg path{
+            stroke: #303D7E;
+            fill: transparent;
         }
     }
 }

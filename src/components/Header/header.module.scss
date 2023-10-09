@@ -2,6 +2,7 @@
 
 .header{
     padding: 30px 0px;
+    padding-bottom: 15px;
     position: relative;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     background: radial-gradient(25504.62% 106.43% at -3.15% 50%, rgba(16, 16, 16, 0.60) 5.06%, rgba(16, 16, 16, 0.19) 51.1%, rgba(16, 16, 16, 0.56) 95.12%);
@@ -58,7 +59,7 @@
     }
 }
 .top{
-    margin-bottom: 32px;
+    margin-bottom: 17px;
     position: relative;
 }
 .bottom{
@@ -84,6 +85,7 @@
     justify-content: flex-end;
     margin: 0px 10px;
     margin-right: 0;
+    padding: 15px 0px;
 
     
 }
@@ -208,4 +210,48 @@
         flex: 1 1 100%;
     }
 
+}
+
+
+
+.lightTheme{
+    svg path{
+        fill: #303D7E;
+    }
+
+    .icons button{
+        @media(min-width: 901px) {
+            &:hover{
+                svg path{
+                    fill: #65A3FF;
+                }
+            }
+        }
+    }
+    .favoritesBtn{
+        border-color:  #303D7E;
+        color:#303D7E;
+
+        @media(min-width: 901px) {
+            &:hover{
+                background-color: #65A3FF;
+                border-color: #65A3FF;
+                color: #fff;
+
+                svg path{
+                    fill: #fff
+                }
+            }
+        }
+    }
+    .bottom{
+        >button{
+           background-color: #65A3FF;
+           color: #fff; 
+           
+           svg path{
+               fill: #65A3FF ;
+           }
+        }
+    }
 }

@@ -3,29 +3,30 @@
 import { FC, ReactNode, useEffect, useRef, useState } from 'react'
 import styles from './widget.module.scss';
 import Image from 'next/image';
+import { useTypeSelector } from '@/hooks/useTypeSelector';
 
 interface IProps {
     children: ReactNode,
     title: string,
-    img: string,
+    imgs: string[],
     open?: boolean
 }
 
+const WidgetWrapper:FC<IProps> = ({children, title, imgs, open=false}) => {
 
-
-const WidgetWrapper:FC<IProps> = ({children, title, img, open=false}) => {
-
+  const { light } = useTypeSelector(state => state.themeLight);
+  
   const bodyRef = useRef<HTMLDivElement|null>(null);
   const [size, setSize] = useState<number>(1000);
   const [accMob, setAccMob] = useState<boolean>(false);
   const [height, setHeight] = useState<number>(0);
-
+  const [src, setSrc] = useState<string>(imgs[0])
   
   const onOpenAcc = () => {
     if(!bodyRef.current) return;
-    console.log(bodyRef.current)
     setHeight(bodyRef.current.offsetHeight);
   } 
+
   const onCloseAcc = () => {
     setHeight(0)
   }
@@ -53,12 +54,15 @@ const WidgetWrapper:FC<IProps> = ({children, title, img, open=false}) => {
       setAccMob(false)
     }
   }, [size])
- 
+  
+  useEffect(() => {
+    setSrc(light ? imgs[1] : imgs[0]) 
+  }, [light])
   return (
-    <div className={`${styles.widget} ${height > 0 ? styles.active : ''}`}>
+    <div className={`${styles.widget} ${height > 0 ? styles.active : ''} ${light ? styles.themeLight : ''}`}>
         <div className={styles.header} onClick={() => height > 0 ? onCloseAcc() : onOpenAcc()}>
             <Image 
-              src={'/' + img} 
+              src={'/' + src} 
               alt={title} 
               width={20}
               height={20}
