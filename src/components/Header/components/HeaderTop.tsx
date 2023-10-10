@@ -25,6 +25,10 @@ const HeaderTop:FC = () => {
                 <div className={styles.logo}>
                     <Logo />
                 </div>
+                <div className={styles.tabs}>
+                    <button className={styles.tabActive}>ПРОГНОЗЫ</button>
+                    <button>СТАВИМ С ИИ</button>
+                </div>
                 <div className={styles.search}>
                     <Search/>
                 </div>
