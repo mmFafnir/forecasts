@@ -34,6 +34,14 @@ h1{
     text-align: center;
 }
 
+.flex-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+
+}
+
 
 
 @media (max-width: 1300px) {
@@ -42,6 +50,9 @@ h1{
     }
     .desc-text{
         text-align: center;
+    }
+    .flex-header{
+        flex-wrap: wrap;
     }
 }
 

@@ -1,12 +1,14 @@
-import Loader from '@/components/UI/Loader'
-import React from 'react'
+"use client";
 
-const Loading = () => {
+import Loader from "@/components/UI/Loader";
+import { FC } from "react";
+
+const Loading: FC = () => {
   return (
-    <div >
-        <Loader />
+    <div>
+      <Loader />
     </div>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;

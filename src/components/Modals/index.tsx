@@ -17,8 +17,7 @@ interface IProps {
 const Modal:FC<IProps> = ({children, name}) => {    
     const { activeModal } = useTypeSelector(state => state.modal);
     const dispatch = useTypeDispatch();
-    const onCloseModal = () => dispatch(closeModal())
-
+    const onCloseModal = () => dispatch(closeModal());
 
     useEffect(() => {
         if(activeModal !== null) {

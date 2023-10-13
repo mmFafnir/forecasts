@@ -1,0 +1,19 @@
+.like,
+.dislike {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin-left: 12px;
+  }
+}
+.like {
+  span {
+    color: #66da64;
+  }
+}
+.dislike {
+  span {
+    color: #f50100;
+  }
+}

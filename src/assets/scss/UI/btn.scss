@@ -1,44 +1,46 @@
-
-.btn{
+.btn {
   padding: 10px;
   display: flex;
   align-items: center;
   border-radius: 10px;
-  background: #303D7E;
+  background: #303d7e;
   height: 40px;
   transition-duration: 0.1s;
   position: relative;
-  span{
+  span {
     line-height: 0;
   }
-  
-  &.p-20{
+
+  &.p-20 {
     padding: 10px 20px;
   }
   &.live {
     display: flex;
     align-items: center;
-    &::before{
-      content: '';
+    &::before {
+      content: "";
       display: block;
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background-color: #F50100;
+      background-color: #f50100;
       margin-right: 10px;
     }
   }
-  svg{
+  svg {
     margin-right: 10px;
   }
 
-  &.active{
-    background: #68428D;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);
+  .plus-icon {
+    margin-left: 10px;
+  }
+  &.active {
+    background: #68428d;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3);
     pointer-events: none;
   }
 
-  &__action{
+  &__action {
     position: absolute;
     display: block;
     border-radius: 4px;
@@ -48,47 +50,43 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: #000;
-    background: #FFD644;
+    background: #ffd644;
     transform: translateY(-50%);
     top: calc(0%);
     right: -7px;
     font-size: 16px;
   }
-  @media(min-width: 901px) {
-    &:hover{
-      background: #68428D;
-      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);  
+  @media (min-width: 901px) {
+    &:hover {
+      background: #68428d;
+      box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3);
     }
   }
 }
 
-.btn--pur{
-  background-color: #68428D;
-
+.btn--pur {
+  background-color: #68428d;
 }
 
-.btn--shadow{
-  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);  
-  @media(min-width: 901px) {
-    &:hover{
+.btn--shadow {
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3);
+  @media (min-width: 901px) {
+    &:hover {
       box-shadow: none;
     }
   }
 }
 
-
 @media (max-width: 1024px) {
-    .btn{
-      font-size: 12px;
-      svg{
-        flex: 0 0 20px;
-        height: 20px;
-      }
+  .btn {
+    font-size: 12px;
+    svg {
+      flex: 0 0 20px;
+      height: 20px;
     }
-    .btn--pur, .btn--shadow{
-      font-size: 14px;
-    }
-    
+  }
+  .btn--pur,
+  .btn--shadow {
+    font-size: 14px;
+  }
 }
-
-

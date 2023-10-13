@@ -6,7 +6,7 @@ export enum ModalEnum {
     LOGIN = 'login',
     SUBMENU = 'submenu',
     BURGER_MENU = 'burger-menu',
-    SETTINGS = 'settings'
+    SETTINGS = 'settings',
 }
 
 interface IState {

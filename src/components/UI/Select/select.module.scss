@@ -1,129 +1,141 @@
-@import '@/assets/scss/variables';
+@import "@/assets/scss/variables";
 
-.select{
-    align-items: center;
-    position: relative;
-    background-color: #303D7E;
-    border-radius: 10px;
-    overflow: hidden;
-    // transition-delay: 0.3s;
+.select {
+  align-items: center;
+  position: relative;
+  background-color: #303d7e;
+  border-radius: 10px;
+  overflow: hidden;
+  // transition-delay: 0.3s;
 }
 
-.show{
-    
-    .title{
-        border-color:  #1C203A;
-        svg{
-            transform: rotate(180deg);
-        }
+.show {
+  .title {
+    border-color: #1c203a;
+    svg {
+      transform: rotate(180deg);
     }
+  }
 }
 
-.title{
-    height: 40px;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
+.title {
+  height: 40px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  transition-duration: 0.3s;
+  border-bottom: 1px solid transparent;
+
+  img {
+    margin-right: 10px;
+  }
+  svg {
     transition-duration: 0.3s;
-    border-bottom: 1px solid transparent;
-
-    img{
-        margin-right: 10px;
-    }
-    svg{
-        transition-duration: 0.3s;
-        margin-left: 10px;
-    }
-    span{
-        white-space: nowrap;
-    }
+    margin-left: 10px;
+  }
+  span {
+    white-space: nowrap;
+  }
 }
-.body{
+.body {
+  width: 100%;
+  background-color: #303d7e;
+  z-index: 1;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  max-height: 0px;
+  overflow: hidden;
+  transition-duration: 0.3s;
+
+  button {
+    display: block;
+    font-size: 14px;
     width: 100%;
-    background-color: #303D7E;
-    z-index: 1;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    max-height: 0px;
-    overflow: hidden;
+    text-align: left;
     transition-duration: 0.3s;
-    
-    
-    button{
-        display: block;
-        font-size: 14px;
-        width: 100%;
-        text-align: left;
-        transition-duration: 0.3s;
-        padding: 9px 20px;
-        @media(min-width: 901px) {
-            &:hover{
-                background-color: $iconHoverColor;
-            }
-        }
-    }
-}
-.buttonActive{
-    background-color: $iconHoverColor;
-    pointer-events: none;
-}
-
-
-.absolute{
-    overflow: visible;
-    .body{
-        position: absolute;
-        z-index: 20 ;
-    }
-    transition-delay: 0.3s;
-    &.show{
-        transition-delay: 0s;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 0px;   
-    }
-}
-
-.purple{
-    background-color: $iconHoverColor;
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.30);
-    .body{
+    padding: 9px 20px;
+    @media (min-width: 901px) {
+      &:hover {
         background-color: $iconHoverColor;
-        button{
-            @media(min-width: 901px) {
-                &:hover{
-                    background-color: #303D7E;
-                }
-            }
-        }
+      }
     }
-    .buttonActive{
-        background-color: #303D7E;
-    }
+  }
+}
+.buttonActive {
+  background-color: $iconHoverColor;
+  pointer-events: none;
 }
 
+.absolute {
+  overflow: visible;
+  .body {
+    position: absolute;
+    z-index: 20;
+  }
+  transition-delay: 0.3s;
+  &.show {
+    transition-delay: 0s;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+}
 
-.themeLight{
-    background-color: #65A3FF;
-    color: #fff;
-
-    svg path{
-        fill: #65A3FF
-    }
-    .body{
-        background-color: #65A3FF;
-
-        button{
-            @media(min-width: 901px) {
-                &:hover{
-                    background-color: #303D7E;
-                }
-            }
+.purple {
+  background-color: $iconHoverColor;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3);
+  .body {
+    background-color: $iconHoverColor;
+    button {
+      @media (min-width: 901px) {
+        &:hover {
+          background-color: #303d7e;
         }
+      }
     }
-    .buttonActive{
-        background-color: #303D7E;
-        
+  }
+  .buttonActive {
+    background-color: #303d7e;
+  }
+}
+
+.transparent {
+  border: 1px solid #fff;
+  background-color: transparent;
+  transition-duration: 0.3s;
+
+  .body {
+    border-top: none;
+    border-bottom: none;
+    width: calc(100% + 2px);
+    left: -1px;
+  }
+  &.show {
+    background-color: #303d7e;
+    border-color: transparent;
+  }
+}
+
+.themeLight {
+  background-color: #65a3ff;
+  color: #fff;
+
+  svg path {
+    fill: #65a3ff;
+  }
+  .body {
+    background-color: #65a3ff;
+
+    button {
+      @media (min-width: 901px) {
+        &:hover {
+          background-color: #303d7e;
+        }
+      }
     }
+  }
+  .buttonActive {
+    background-color: #303d7e;
+  }
 }

@@ -6,6 +6,7 @@ import List from '@/components/List'
 import styles from '@/assets/scss/page.module.scss'
 import SidebarLayout from '@/layout/SidebarLayout'
 import { tabs } from '@/assets/data/tabs'
+import Search from '@/components/UI/Search'
 
 
 interface IProps {
@@ -26,7 +27,10 @@ const SportPage:NextPage<IProps> = ({params}) => {
     <div className={styles.main}>
         <h1>{currentLink?.name} АВСТРАЛИЯ И ОКЕАНИЯ OFC Championship U16 Women</h1>
         <SidebarLayout>
-          <FilterTabs tabs={tabs}/>
+          <div className="flex-header">
+            <FilterTabs tabs={tabs}/>
+            <Search />
+          </div>
           <List />
 
           <p className='desc-text'>

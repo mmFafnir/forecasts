@@ -3,6 +3,9 @@
 .search{
     display: flex;
     align-items: center;
+    flex: 1 1 auto;
+    margin-left: 10px;
+    margin-top: 6px;
     
 }
 .open{
@@ -14,12 +17,12 @@
 .input{
     transition-duration:0.3s ;
     transform: scale(0, 1);
-    transform-origin: right;
+    transform-origin: left;
     flex: 1 1 auto;
     border-bottom: 1px solid $white;
     margin: 0px 14px;
     input{
-    text-align: center;
+    text-align: left;
 
         padding-bottom: 4px;
         color: $white;
@@ -41,9 +44,17 @@
     }
 }
 
+@media (max-width: 1000px) {
+    .search {
+        flex: 1 1 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+}
+
 @media (max-width: 400px) {
     .input{
-        margin-left: 0;
+        // margin-left: 0;
     }
 }
 

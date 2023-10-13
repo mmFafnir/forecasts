@@ -35,7 +35,7 @@ export const links:ILink[] = [
             </svg>
         ),
         name: 'Гольф',
-        href: '/Golf'
+        href: '/golf'
     },
     {
         svg: (
@@ -44,7 +44,7 @@ export const links:ILink[] = [
             </svg>
         ),
         name: 'Баскетбол',
-        href: '/Basketball'
+        href: '/basketball'
     },
     {
         svg: (
@@ -55,7 +55,7 @@ export const links:ILink[] = [
             </svg>
         ),
         name: 'Плавание',
-        href: '/Swimming'
+        href: '/swimming'
     },
     {
         svg: (
@@ -65,7 +65,7 @@ export const links:ILink[] = [
             </svg>
         ),
         name: 'Бокс',
-        href: '/Boxing'
+        href: '/boxing'
     },
     {
         svg: (
@@ -74,7 +74,7 @@ export const links:ILink[] = [
             </svg>
         ),
         name: 'Воллейбол',
-        href: '/Volleyball'
+        href: '/volleyball'
     },
     
 ]

@@ -27,12 +27,13 @@ const Search:FC<IProps> = () => {
 
   return (
     <div className={`${styles.search} ${isOpen ? styles.open : ''} ${light ? styles.themeLight : ''}`}>
-        <div className={styles.input}>
-            <input ref={inputRef} type="text" />
-        </div>
         <button onClick={() => setIsOpen(prev => !prev)} className={styles.icon}>
             <SearchIcon />
         </button>
+        <div className={styles.input}>
+            <input ref={inputRef} type="text" />
+        </div>
+        
     </div>
   )
 }

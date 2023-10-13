@@ -1,0 +1,28 @@
+.plus-icon {
+  display: block;
+  position: relative;
+  width: 24px;
+  flex: 0 0 24px;
+  height: 24px;
+  overflow: hidden;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 60%;
+    border-radius: 4px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%);
+  }
+
+  &::before {
+    width: 60%;
+    height: 2px;
+  }
+}

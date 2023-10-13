@@ -10,14 +10,16 @@ import styles from '../header.module.scss';
 import Settings from '@/components/Settings';
 import BurgerIcon from '@/components/UI/Icons/BurgerIcon';
 import BurgerMenu from './BurgerMenu/BurgetMenu';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 const HeaderTop:FC = () => {
+    const pathname = usePathname();
     const dispatch = useTypeDispatch();
 
     const onOpenModalLogin = () => dispatch(openModal(ModalEnum.LOGIN));
     const onOpenBurgerMenu = () => dispatch(openModal(ModalEnum.BURGER_MENU));
     const onOpenSettings = () => dispatch(openModal(ModalEnum.SETTINGS));
-
 
     return (
         <>
@@ -26,11 +28,11 @@ const HeaderTop:FC = () => {
                     <Logo />
                 </div>
                 <div className={styles.tabs}>
-                    <button className={styles.tabActive}>ПРОГНОЗЫ</button>
-                    <button>СТАВИМ С ИИ</button>
+                    <Link href={'/'} className={!pathname.includes('AI') ? styles.tabActive : ''}>ПРОГНОЗЫ</Link>
+                    <Link href={'/AI'} className={pathname.includes('AI') ? styles.tabActive : ''}>СТАВИМ С ИИ</Link>
                 </div>
                 <div className={styles.search}>
-                    <Search/>
+                    {/* <Search/> */}
                 </div>
                 <div className={styles.icons}>
                     <button onClick={onOpenModalLogin}>

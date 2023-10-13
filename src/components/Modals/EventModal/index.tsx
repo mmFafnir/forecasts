@@ -1,7 +1,7 @@
 "use client";
 
 import React, { FC } from 'react';
-import styles from './event.module.scss';
+import styles from './eventModal.module.scss';
 import { closeModal } from '@/GlobalRedux/Slices/modalSlice';
 import { useTypeDispatch } from '@/hooks/useTypeDispatch';
 import { useTypeSelector } from '@/hooks/useTypeSelector';

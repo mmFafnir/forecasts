@@ -5,6 +5,7 @@ import List from '@/components/List'
 import SidebarLayout from '@/layout/SidebarLayout'
 import { favoritesTabs } from '@/assets/data/tabs'
 import styles from './favorites.module.scss'
+import Search from '@/components/UI/Search'
 
 const FavoritePage:NextPage = () => {
   return (
