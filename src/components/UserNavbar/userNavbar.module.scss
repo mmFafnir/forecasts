@@ -1,0 +1,74 @@
+.nav {
+  position: relative;
+  padding: 30px;
+}
+.menu {
+  margin-bottom: 24px;
+  a {
+    margin-bottom: 12px;
+    transition-duration: 0.3s;
+    &.active {
+      color: #65a3ff;
+    }
+
+    @media (min-width: 901px) {
+      &:hover {
+        color: #65a3ff;
+      }
+    }
+  }
+}
+
+.menuBody {
+  transition-duration: 0.3s;
+  margin-top: 16px;
+  overflow: hidden;
+  > div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-bottom: 16px;
+  }
+}
+
+.link,
+.menuTitle {
+  display: flex;
+  align-items: center;
+  color: #b3b3b3;
+  transition-duration: 0.3s;
+  svg {
+    margin-right: 12px;
+    path {
+      fill: #b3b3b3;
+      transition-duration: 0.3s;
+    }
+  }
+
+  &.active {
+    color: #fff;
+    svg path {
+      fill: #fff;
+    }
+  }
+
+  @media (min-width: 901px) {
+    &:hover {
+      color: #fff;
+      svg path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.line {
+  width: 1px;
+  height: 154px;
+  background-color: #65a3ff;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  transition-duration: 0.3s;
+}

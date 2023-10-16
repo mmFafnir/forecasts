@@ -118,12 +118,13 @@
 }
 
 .themeLight {
-  background-color: #65a3ff;
+  background-color: #65a3ff !important;
   color: #fff;
 
   svg path {
     fill: #65a3ff;
   }
+
   .body {
     background-color: #65a3ff;
 

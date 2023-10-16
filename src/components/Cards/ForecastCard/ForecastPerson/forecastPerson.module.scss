@@ -2,19 +2,36 @@
   display: flex;
   align-items: center;
   font-size: 12px;
-
-  > img {
+}
+.img {
+  margin-right: 12px;
+  position: relative;
+  img {
     flex: 0 0 44px;
     height: 44px;
     border-radius: 50%;
-    margin-right: 12px;
+  }
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+    border: solid 1px #3be9f4;
+    border-radius: 50%;
+    right: 0;
+    bottom: 3px;
+    position: absolute;
+    background-color: #fff;
+    color: #232b57;
+    line-height: 0;
   }
 }
 .content {
   > div {
     display: flex;
     align-items: center;
-    margin-bottom: 7px;
+    margin-bottom: 8px;
     &:last-child {
       margin-bottom: 0;
     }
@@ -33,6 +50,27 @@
     width: 12px;
     height: 12px;
     margin-right: 4px;
+    path {
+      stroke: transparent !important;
+    }
+  }
+  span {
+    line-height: 1;
+  }
+}
+
+.subscribers {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  svg {
+    margin-right: 10px;
+  }
+  span {
+    color: #3be9f4;
+    b {
+      font-weight: 500;
+    }
   }
 }
 

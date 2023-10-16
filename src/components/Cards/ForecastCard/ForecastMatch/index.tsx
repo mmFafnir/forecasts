@@ -5,6 +5,7 @@ import styles from "./forecastMatch.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import MoreText from "@/components/UI/MoreText";
+import { useTypeSelector } from "@/hooks/useTypeSelector";
 
 const text = `
   "Галатасарай" в настоящее время демонстрирует грозную форму, одержав
@@ -21,9 +22,10 @@ const text = `
 
 const ForecastMatch: FC = () => {
   const [isOpenText, setIsOpenText] = useState<boolean>(false);
+  const { light } = useTypeSelector((state) => state.themeLight);
 
   return (
-    <div className={styles.body}>
+    <div className={`${styles.body} ${light ? styles.themeLight : ""}`}>
       <div className={styles.match}>
         <div className={styles.team}>
           <Image

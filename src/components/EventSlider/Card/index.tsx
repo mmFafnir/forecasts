@@ -13,13 +13,25 @@ const Card: FC = () => {
       href={"/football/match"}
       className={`${styles.item} ${light ? styles.themeLight : ""}`}
     >
-      <div className={styles.flex}>
+      <h3>Европа: Лига чемпионов - групповой этап</h3>
+      <div className={styles.date}>
+        <p>20 сентября 2023</p>
+        <p>
+          <span>19:45</span>
+          <span>UTC+3</span>
+        </p>
+        <p className={styles.time}>
+          <TimeIcon />
+          <span>Осталось: 5 часов</span>
+        </p>
+      </div>
+      <div className={styles.teams}>
         <div className={styles.team}>
           <Image
             src={"/img/teams/1.png"}
-            alt="Манчестер Юнайтед"
-            width={23}
-            height={28}
+            alt="Манчестер Юнайтед (Manchester United)"
+            width={104}
+            height={75}
           />
           <p>
             <span>Манчестер Юнайтед</span>
@@ -29,22 +41,15 @@ const Card: FC = () => {
         <div className={styles.team}>
           <Image
             src={"/img/teams/2.png"}
-            alt="Манчестер Юнайтед"
-            width={23}
-            height={28}
+            alt="Копенгаген (København)"
+            width={104}
+            height={75}
           />
           <p>
             <span>Манчестер Юнайтед</span>
             <span>(Manchester United)</span>
           </p>
         </div>
-      </div>
-      <div className={styles.date}>
-        <p>20 сентября 2023 19:45 UTC+3</p>
-      </div>
-      <div className={styles.time}>
-        <TimeIcon />
-        <span>Осталось: 5 часов</span>
       </div>
     </Link>
   );

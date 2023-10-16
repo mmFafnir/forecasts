@@ -1,31 +1,33 @@
-.sidebars{
-    display: flex;
-    justify-content: space-between;
+.sidebars {
+  display: flex;
+  justify-content: space-between;
 }
-.aside{
-    >div{
-        height: 100%;
-    }
+.aside {
+  padding-top: 58px;
+
+  > div {
+    height: 100%;
+  }
 }
-.tableAside{
-    display: none;
-    >div{
-        height: 100%;
-    }
+.tableAside {
+  display: none;
+  > div {
+    height: 100%;
+  }
 }
 
 @media (max-width: 1300px) {
-    .aside{
-        display: none;
-    }
+  .aside {
+    display: none;
+  }
 
-    .tableAside{
-        display: block;
-    }
+  .tableAside {
+    display: block;
+  }
 }
 
 @media (max-width: 800px) {
-    .sidebars{
-        flex-direction: column;
-    }
+  .sidebars {
+    flex-direction: column;
+  }
 }

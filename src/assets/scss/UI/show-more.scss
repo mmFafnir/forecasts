@@ -24,11 +24,11 @@
   }
   @media (min-width: 901px) {
     &:hover {
-      color: $iconHoverColor;
-      border-color: $iconHoverColor;
+      color: #3be9f4;
+      border-color: #3be9f4;
 
       svg path {
-        stroke: $iconHoverColor;
+        stroke: #3be9f4;
       }
     }
   }

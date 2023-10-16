@@ -1,0 +1,24 @@
+.body {
+  > p {
+    color: #c0c0c0;
+    margin-bottom: 12px;
+  }
+}
+
+.label {
+  border-radius: 8px;
+  border: 1px solid #939393;
+  display: flex;
+  align-items: center;
+  height: 32px;
+  padding: 5px 15px;
+  input {
+    color: #fff;
+    flex: 1 1 auto;
+    height: 100%;
+  }
+
+  svg {
+    margin-left: 10px;
+  }
+}

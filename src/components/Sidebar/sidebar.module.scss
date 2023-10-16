@@ -1,29 +1,22 @@
-
-
-.sidebar{
-    width: 223px;
-    flex: 0 0 223px;
-    padding-top: 58px;
-
+.sidebar {
+  width: 223px;
+  flex: 0 0 223px;
 }
-.wrapper{
-    height: 100%;
-    position: relative;
+.wrapper {
+  height: 100%;
+  position: relative;
 }
-.sticky{
-    top: 20px;
-    position: sticky;
-    >div{
-    
-        margin-bottom: 20px;
-    }
-
+.sticky {
+  top: 20px;
+  position: sticky;
+  > div {
+    margin-bottom: 20px;
+  }
 }
-
 
 @media (max-width: 800px) {
-    .slider{
-        width: 100%;
-        flex: 1 1 100%;   
-    }
+  .slider {
+    width: 100%;
+    flex: 1 1 100%;
+  }
 }

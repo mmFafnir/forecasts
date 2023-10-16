@@ -1,0 +1,15 @@
+.body {
+  border-radius: 16px;
+  background: #232b57;
+  overflow: hidden;
+  min-height: 100%;
+  display: flex;
+}
+.aside {
+  background: #1f264d;
+  flex: 0 1 224px;
+}
+
+.content {
+  padding: 30px 60px 30px 30px;
+}

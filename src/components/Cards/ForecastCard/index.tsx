@@ -1,25 +1,37 @@
-import { FC } from "react";
+"use client";
+
+import { FC, ReactElement } from "react";
 import styles from "./forecast.module.scss";
 import ForecastPerson from "./ForecastPerson";
 import ForecastMatch from "./ForecastMatch";
 import LikeIcon from "@/components/UI/Icons/LikeIcon";
 import DislikeIcon from "@/components/UI/Icons/DislikeIcon";
+import PointMenu from "@/components/UI/PointsMenu";
+import { forecastMenuItems } from "@/assets/data/forecastMenu";
+import { useTypeSelector } from "@/hooks/useTypeSelector";
 
 const ForecastCard: FC = () => {
+  const { light } = useTypeSelector((state) => state.themeLight);
+
   return (
-    <div className={styles.body}>
+    <div className={`${styles.body} ${light ? styles.themeLight : ""}`}>
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <ForecastPerson />
-          <div className={styles.time}>
-            <p>
-              Сегодня, <span>13:55</span>
-            </p>
+          <div className="flex">
+            <div className={styles.time}>
+              <p>
+                Сегодня, <span>13:55</span>
+              </p>
+            </div>
+            <PointMenu items={forecastMenuItems} />
           </div>
         </div>
+
         <div className={styles.content}>
           <ForecastMatch />
         </div>
+
         <div className={styles.text}>
           Всем доброго времени суток!Мадагаскар принимает Малави.Мадагаскар -
           крайне слабая сборная и шансов зацепиться хотя бы за что-то нет.
