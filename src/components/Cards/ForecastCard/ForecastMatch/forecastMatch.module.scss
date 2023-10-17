@@ -8,7 +8,6 @@
 .match {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 25px;
 }
 
 .team {
@@ -87,6 +86,7 @@
   align-items: center;
   max-width: 752px;
   margin: 0 auto;
+  margin-top: 25px;
 
   p {
     span {

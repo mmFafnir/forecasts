@@ -7,8 +7,9 @@ import InputDate from "@/components/UI/Form/InputDate";
 import InputSelect from "@/components/UI/Form/InputSelect";
 import InputText from "@/components/UI/Form/InputText";
 import styles from "./form.module.scss";
+import InputPassword from "@/components/UI/Form/InputPassword";
 
-const UserDataFrom: FC = () => {
+const SecurityUserFrom: FC = () => {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
@@ -17,37 +18,38 @@ const UserDataFrom: FC = () => {
     <form className={styles.body} onSubmit={onSubmit}>
       <div className={styles.wrapper}>
         <div className={styles.list}>
-          <div className={styles.file}>
-            <ImageFile />
-          </div>
+          <h2>Сменить пароль</h2>
           <div className={styles.item}>
-            <p>Имя</p>
-            <InputText defaultValue="Алексей" name="name" />
+            <p>Введите старый пароль</p>
+            <InputPassword name="password" defaultValue="12312y3712y37" />
           </div>
 
           <div className={styles.item}>
-            <p>Фамилия</p>
-            <InputText defaultValue="Спортов" name="name" />
-          </div>
-          <div className={styles.item}>
-            <p>Никнейм</p>
-            <InputText defaultValue="Alex45" name="name" />
+            <p>Введите новый пароль</p>
+            <InputPassword name="password" defaultValue="12312y3712y37" />
           </div>
 
           <div className={styles.item}>
-            <p>Пол</p>
-            <InputSelect
-              items={["Мужской", "Женсикий", "Оно", "5K MMR Чудовище"]}
-            />
+            <p>Повторите пароль</p>
+            <InputPassword name="password" defaultValue="12312y3712y37" />
           </div>
+        </div>
+
+        <div className={styles.list}>
+          <h2>Сменить адрес электронной почты</h2>
           <div className={styles.item}>
-            <p>Дата рождения</p>
-            <InputDate />
+            <p>Введите старый пароль</p>
+            <InputText name="email" defaultValue="example@gmail.com" />
           </div>
 
           <div className={styles.item}>
-            <p>Страна </p>
-            <InputSelect items={countries} />
+            <p>Повторите новый адрес эл.почты</p>
+            <InputText name="email" defaultValue="example@gmail.com" />
+          </div>
+
+          <div className={styles.item}>
+            <p>Введите код</p>
+            <InputPassword name="password" defaultValue="1234" />
           </div>
         </div>
         <button type="submit" className="btn p-20 btn--pur">
@@ -58,4 +60,4 @@ const UserDataFrom: FC = () => {
   );
 };
 
-export default UserDataFrom;
+export default SecurityUserFrom;

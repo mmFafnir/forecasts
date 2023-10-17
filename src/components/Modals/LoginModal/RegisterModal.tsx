@@ -4,19 +4,16 @@ import { FC } from "react";
 import styles from "./loginModal.module.scss";
 import Image from "next/image";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
-import {
-  ModalEnum,
-  closeModal,
-  openModal,
-} from "@/GlobalRedux/Slices/modalSlice";
+import { closeModal } from "@/GlobalRedux/Slices/modalSlice";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
+import InputText from "@/components/UI/Form/InputText";
+import InputPassword from "@/components/UI/Form/InputPassword";
 
-const LoginModal: FC = () => {
+const Register: FC = () => {
   const { light } = useTypeSelector((state) => state.themeLight);
   const dispatch = useTypeDispatch();
 
   const onClose = () => dispatch(closeModal());
-  const onOpenRegister = () => dispatch(openModal(ModalEnum.REGISTER));
 
   return (
     <div className={`${styles.form} ${light ? styles.themeLight : ""}`}>
@@ -48,49 +45,38 @@ const LoginModal: FC = () => {
         </button>
       </div>
       <div className={styles.body}>
-        <div className={styles.item}>
-          <Image
-            src={"/img/login/google.svg"}
-            width={40}
-            height={40}
-            alt="google"
-          />
-          <span>Продолжить с Google </span>
+        <h3>Создать новый аккаунт</h3>
+
+        <div className={styles.input}>
+          <p>E-mail</p>
+          <InputText size="big" name="email" placeholder="example@gmail.com" />
         </div>
-        <div className={styles.item}>
-          <Image
-            src={"/img/login/google.svg"}
-            width={40}
-            height={40}
-            alt="google"
-          />
-          <span>Продолжить с Google </span>
+        <div className={styles.input}>
+          <p>Пароль</p>
+          <InputPassword size="big" name="password" />
         </div>
-        <div className={styles.item}>
-          <Image
-            src={"/img/login/google.svg"}
-            width={40}
-            height={40}
-            alt="google"
-          />
-          <span>Продолжить с Google </span>
+        <div className={styles.input}>
+          <p>Повторите пароль</p>
+          <InputPassword size="big" name="password" />
         </div>
-        <button onClick={onOpenRegister} className={styles.item}>
-          <Image
-            src={"/img/login/google.svg"}
-            width={40}
-            height={40}
-            alt="google"
-          />
-          <span>Продолжить с Google </span>
-        </button>
       </div>
-      <p>
+      <button className="btn btn--pur">Зарегистрироваться</button>
+      <p className={styles.politicText}>
         Нажимая на любую кнопку “продолжить”, вы соглашаетесь с условиями и
         признаете нашу политику конфиданциальности на нашем сайте
       </p>
+      <div className={styles.footer}>
+        <p>
+          <button className="show-more">Забыли пароль?</button>
+        </p>
+        <span>или</span>
+        <p>
+          <span>У вас есть аккаунт?</span>
+          <button className="show-more">Войти</button>
+        </p>
+      </div>
     </div>
   );
 };
 
-export default LoginModal;
+export default Register;

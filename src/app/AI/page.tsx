@@ -4,12 +4,13 @@ import Select from "@/components/UI/Select";
 import { sort } from "@/assets/data/sort";
 import styles from "@/assets/scss/page.module.scss";
 import ForecastCard from "@/components/Cards/ForecastCard";
+import { widgets } from "./widgets";
 
 const AIFootBool: NextPage = async () => {
   return (
     <div className={styles.main}>
       <h1>АВСТРАЛИЯ И ОКЕАНИЯ OFC Championship U16 Women</h1>
-      <SidebarLayout>
+      <SidebarLayout widgets={widgets}>
         <div className="flex-header">
           <button className="btn p-20 btn--pur btn--shadow">
             <span>Добавить прогноз</span>

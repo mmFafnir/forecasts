@@ -16,10 +16,10 @@ const ForecastPerson: FC = () => {
       <div className={styles.content}>
         <div>
           <h5 className={styles.name}>Alex45</h5>
-          <p className={styles.rating}>
+          {/* <p className={styles.rating}>
             <StarIcon />
             <span>4.67</span>
-          </p>
+          </p> */}
           <p className={styles.subscribers}>
             <PeopleIcon />
             <span>

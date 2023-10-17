@@ -1,21 +1,30 @@
 import { FC } from "react";
-import styles from "./styles.module.scss";
+import styles from "./inputText.module.scss";
 import PenIcon from "../../Icons/Form/PenIcon";
 
 interface IProps {
-  title: string;
   name: string;
-  type: "text" | "password";
-  defaultValue: string;
+  defaultValue?: string;
+  placeholder?: string;
+  size?: "big" | "middle" | "small";
 }
 
-const InputText: FC<IProps> = ({ title, name, type, defaultValue }) => {
+const InputText: FC<IProps> = ({
+  name,
+  defaultValue = "",
+  placeholder = "",
+  size = "middle",
+}) => {
   return (
-    <div className={styles.body}>
-      <p>{title}</p>
+    <div className={`${styles.body} ${styles[size]}`}>
       <label className={styles.label}>
-        <input type={type} name={name} defaultValue={defaultValue} />
-        <button>
+        <input
+          type="text"
+          placeholder={placeholder}
+          name={name}
+          defaultValue={defaultValue}
+        />
+        <button type="button">
           <PenIcon />
         </button>
       </label>

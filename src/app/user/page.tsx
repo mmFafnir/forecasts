@@ -4,13 +4,7 @@ import SidebarLayout from "@/layout/SidebarLayout";
 import UserDataFrom from "@/modules/Forms/UserDataFrom";
 
 const UserPage: NextPage = async () => {
-  return (
-    <div className={styles.main}>
-      <div>
-        <UserDataFrom />
-      </div>
-    </div>
-  );
+  return <UserDataFrom />;
 };
 
 export default UserPage;

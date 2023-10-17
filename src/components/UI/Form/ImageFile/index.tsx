@@ -11,7 +11,7 @@ const ImageFile: FC = () => {
       <div className={styles.img}>
         <Image src={"/img/person.png"} alt="asdasd" width={80} height={80} />
       </div>
-      <button>
+      <button type="button">
         <Image
           src={"/img/icons/camera.svg"}
           alt="camera"

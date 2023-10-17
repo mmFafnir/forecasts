@@ -20,7 +20,11 @@ const text = `
   вероятным исходом.
 `;
 
-const ForecastMatch: FC = () => {
+interface IProps {
+  version?: "forecast" | "user-forecast";
+}
+
+const ForecastMatch: FC<IProps> = ({ version = "forecast" }) => {
   const [isOpenText, setIsOpenText] = useState<boolean>(false);
   const { light } = useTypeSelector((state) => state.themeLight);
 

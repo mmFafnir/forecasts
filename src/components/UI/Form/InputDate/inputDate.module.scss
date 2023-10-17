@@ -1,0 +1,21 @@
+.body {
+  border-radius: 8px;
+  border: 1px solid #939393;
+  padding: 5px 15px;
+  padding-right: 12px;
+}
+
+.date {
+  input {
+    color: #fff;
+    width: 100%;
+
+    &::-webkit-calendar-picker-indicator {
+      color: transparent;
+      opacity: 1;
+      background: url("/img/icons/calendar.svg") no-repeat center;
+      background-size: contain;
+      cursor: pointer;
+    }
+  }
+}

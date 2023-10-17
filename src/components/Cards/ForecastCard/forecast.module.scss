@@ -9,6 +9,7 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   margin-bottom: 24px;
 }
 
@@ -44,6 +45,18 @@
 
     button:first-child {
       margin-right: 28px;
+    }
+  }
+}
+.forecast {
+}
+.user-forecast {
+  padding: 0;
+  background-color: transparent;
+
+  .header {
+    > div:last-child {
+      display: none;
     }
   }
 }

@@ -43,6 +43,7 @@ const Select: FC<IProps> = ({ items, icon, classes }) => {
       } ${height > 0 ? styles.show : ""} ${light ? styles.themeLight : ""}`}
     >
       <button
+        type="button"
         className={styles.title}
         onClick={() => {
           height > 0 ? onCloseSelect() : onOpenSelect();
@@ -73,6 +74,7 @@ const Select: FC<IProps> = ({ items, icon, classes }) => {
         >
           {items.map((item, index) => (
             <button
+              type="button"
               key={index}
               className={item == value ? styles.buttonActive : ""}
               onClick={() => onClickButton(item)}

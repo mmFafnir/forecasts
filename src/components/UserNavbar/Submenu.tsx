@@ -16,7 +16,7 @@ const Submenu: FC<IProps> = ({ links }) => {
   const pathname = usePathname();
 
   const refBody = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState<number>(0);
+  const [height, setHeight] = useState<number | "auto">("auto");
 
   const onCloseMenu = () => setHeight(0);
   const onOpenMenu = () => {
@@ -31,13 +31,18 @@ const Submenu: FC<IProps> = ({ links }) => {
   return (
     <div className={styles.menu}>
       <button
-        onClick={height > 0 ? onCloseMenu : onOpenMenu}
-        className={`${styles.menuTitle} ${height > 0 ? styles.active : ""}`}
+        onClick={height !== "auto" && height > 0 ? onCloseMenu : onOpenMenu}
+        className={`${styles.menuTitle} ${
+          height !== "auto" && height > 0 ? styles.active : ""
+        }`}
       >
         <HomeIcon />
         <span>Главная</span>
       </button>
-      <div className={styles.menuBody} style={{ height: `${height}px` }}>
+      <div
+        className={styles.menuBody}
+        style={{ height: height !== "auto" ? `${height}px` : "auto" }}
+      >
         <div ref={refBody}>
           {links.map((link) => (
             <Link

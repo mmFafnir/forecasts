@@ -10,11 +10,19 @@ import PointMenu from "@/components/UI/PointsMenu";
 import { forecastMenuItems } from "@/assets/data/forecastMenu";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
 
-const ForecastCard: FC = () => {
+interface IProps {
+  version?: "forecast" | "user-forecast";
+}
+
+const ForecastCard: FC<IProps> = ({ version = "forecast" }) => {
   const { light } = useTypeSelector((state) => state.themeLight);
 
   return (
-    <div className={`${styles.body} ${light ? styles.themeLight : ""}`}>
+    <div
+      className={`${styles.body} ${styles[version]} ${
+        light ? styles.themeLight : ""
+      }`}
+    >
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <ForecastPerson />
@@ -29,7 +37,7 @@ const ForecastCard: FC = () => {
         </div>
 
         <div className={styles.content}>
-          <ForecastMatch />
+          <ForecastMatch version={version} />
         </div>
 
         <div className={styles.text}>

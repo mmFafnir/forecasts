@@ -1,0 +1,30 @@
+.body {
+  max-width: 320px;
+  button[type="submit"] {
+    width: 100%;
+    margin-top: 32px;
+    justify-content: center;
+  }
+}
+
+.list {
+  margin-bottom: 32px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-bottom: 12px;
+  }
+}
+.file {
+  margin-bottom: 24px;
+}
+
+.item {
+  margin-bottom: 20px;
+
+  > p {
+    color: #c0c0c0;
+    margin-bottom: 12px;
+  }
+}
