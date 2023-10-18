@@ -9,7 +9,8 @@ import Modal from "../Modals";
 
 import styles from "./header.module.scss";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
-import Register from "../Modals/LoginModal/RegisterModal";
+import RegisterModal from "../Modals/LoginModal/RegisterModal";
+import RestoreModal from "../Modals/LoginModal/RestoreModal";
 
 const Header: FC = () => {
   const { light } = useTypeSelector((state) => state.themeLight);
@@ -26,7 +27,10 @@ const Header: FC = () => {
         <LoginModal />
       </Modal>
       <Modal name={ModalEnum.REGISTER}>
-        <Register />
+        <RegisterModal />
+      </Modal>
+      <Modal name={ModalEnum.RESTORE}>
+        <RestoreModal />
       </Modal>
     </>
   );

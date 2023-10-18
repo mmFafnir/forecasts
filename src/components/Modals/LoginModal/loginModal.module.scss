@@ -38,7 +38,7 @@
 
   h3 {
     font-size: 24px;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
   }
 }
 
@@ -81,21 +81,46 @@
   }
 }
 
+.captcha {
+  margin-bottom: 20px;
+}
+
 .politicText {
   margin-top: 10px;
   font-size: 10px;
 }
 
 .footer {
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button,
+    a {
+      margin: 0;
+      margin-left: 10px;
+      margin-bottom: 2px;
+      padding: 0 2px;
+    }
+  }
   > span {
     display: flex;
     align-items: center;
+    margin: 24px 0px;
     &::before,
     &::after {
       content: "";
       flex: 1 1 auto;
       height: 1px;
       background-color: #1d2653;
+    }
+
+    &::before {
+      margin-right: 11px;
+    }
+    &::after {
+      margin-left: 11px;
     }
   }
 }

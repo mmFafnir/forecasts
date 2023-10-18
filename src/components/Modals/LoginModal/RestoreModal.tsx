@@ -9,22 +9,43 @@ import {
   closeModal,
   openModal,
 } from "@/GlobalRedux/Slices/modalSlice";
-
 import { useTypeSelector } from "@/hooks/useTypeSelector";
 import InputText from "@/components/UI/Form/InputText";
 import InputPassword from "@/components/UI/Form/InputPassword";
+import CaptchaModule from "@/modules/CaptchaModule";
 
-const RegisterModal: FC = () => {
+const RestoreModal: FC = () => {
   const { light } = useTypeSelector((state) => state.themeLight);
   const dispatch = useTypeDispatch();
 
   const onClose = () => dispatch(closeModal());
-  const onOpenRestoreModal = () => dispatch(openModal(ModalEnum.RESTORE));
+  const onClickBack = () => dispatch(openModal(ModalEnum.REGISTER));
 
   return (
     <div className={`${styles.form} ${light ? styles.themeLight : ""}`}>
       <div className={styles.header}>
-        <h3>Регистрация</h3>
+        <button onClick={onClickBack}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+          >
+            <path
+              d="M19 12H5"
+              stroke="white"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M12 19L5 12L12 5"
+              stroke="white"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
         <button onClick={onClose}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -51,32 +72,28 @@ const RegisterModal: FC = () => {
         </button>
       </div>
       <div className={styles.body}>
-        <h3>Создать новый аккаунт</h3>
+        <h3>Восстановить пароль</h3>
 
         <div className={styles.input}>
           <p>E-mail</p>
           <InputText size="big" name="email" placeholder="example@gmail.com" />
         </div>
-        <div className={styles.input}>
-          <p>Пароль</p>
-          <InputPassword size="big" name="password" />
+
+        <div className={styles.captcha}>
+          <CaptchaModule />
         </div>
+
         <div className={styles.input}>
-          <p>Повторите пароль</p>
-          <InputPassword size="big" name="password" />
+          <p>Введите код с картинки</p>
+          <InputText size="big" name="code" placeholder="R6CApyya" />
         </div>
       </div>
-      <button className="btn btn--pur">Зарегистрироваться</button>
+      <button className="btn btn--pur">Восстановить пароль</button>
       <p className={styles.politicText}>
         Нажимая на любую кнопку “продолжить”, вы соглашаетесь с условиями и
         признаете нашу политику конфиданциальности на нашем сайте
       </p>
       <div className={styles.footer}>
-        <p>
-          <button onClick={onOpenRestoreModal} className="show-more">
-            Забыли пароль?
-          </button>
-        </p>
         <span>или</span>
         <p>
           <span>У вас есть аккаунт?</span>
@@ -87,4 +104,4 @@ const RegisterModal: FC = () => {
   );
 };
 
-export default RegisterModal;
+export default RestoreModal;
