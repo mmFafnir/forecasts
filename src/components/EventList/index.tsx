@@ -8,6 +8,7 @@ import Modal from "../Modals";
 import EventModal from "../Modals/EventModal";
 import { ModalEnum } from "@/GlobalRedux/Slices/modalSlice";
 import { sort } from "@/assets/data/sort";
+import NewEventCard from "../Cards/EventCard/NewEventCard";
 
 const EventList: FC = () => {
   return (
@@ -23,6 +24,7 @@ const EventList: FC = () => {
         </div>
       </div>
       <div className={styles.body}>
+        {/* <EventCard />
         <EventCard />
         <EventCard />
         <EventCard />
@@ -30,8 +32,14 @@ const EventList: FC = () => {
         <EventCard />
         <EventCard />
         <EventCard />
-        <EventCard />
-        <EventCard />
+        <EventCard /> */}
+        <NewEventCard />
+        <NewEventCard />
+        <NewEventCard />
+        <NewEventCard />
+        <NewEventCard />
+        <NewEventCard />
+        <NewEventCard />
       </div>
       <Modal name={ModalEnum.EVENT}>
         <EventModal />

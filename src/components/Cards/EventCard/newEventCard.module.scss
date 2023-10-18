@@ -1,0 +1,154 @@
+.card {
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background: #222a56;
+  padding-bottom: 38px;
+  margin-bottom: 12px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 18px 30px;
+  border-bottom: 1px solid #fff;
+  h3 {
+    font-weight: 600;
+    font-size: 20px;
+    color: #ffd644;
+  }
+}
+
+.title {
+  padding: 0px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  h4 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+
+.body {
+  padding: 0px 30px;
+  margin-bottom: 30px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  justify-content: space-between;
+  padding-bottom: 17px;
+  margin-bottom: 20px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
+    height: 1px;
+    background: radial-gradient(
+      50.06% 30938.27% at 49.94% 100%,
+      #2e42a5 0%,
+      rgba(46, 66, 165, 0) 100%
+    );
+  }
+}
+
+.desc {
+  padding: 0px 30px;
+  margin-bottom: 30px;
+
+  .item {
+    justify-content: flex-start;
+    padding-bottom: 0;
+    margin-bottom: 14px;
+    &::before {
+      display: none;
+    }
+
+    p:first-child {
+      flex: 0 0 77px;
+      margin-right: 15px;
+    }
+  }
+}
+
+.itemDesc {
+  display: flex;
+  align-items: flex-start;
+
+  p:last-child {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+}
+
+.btn {
+  padding: 0px 30px;
+  button {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal {
+    padding: 14px 15px;
+  }
+  .header {
+    h3 {
+      font-size: 16px;
+    }
+  }
+  .item {
+    p {
+      font-size: 16px;
+    }
+  }
+  .desc {
+    .item {
+      justify-content: space-between;
+    }
+    p {
+      font-size: 14px;
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+  .itemDesc {
+    flex-wrap: wrap;
+    p {
+      font-size: 14px !important;
+      &:first-child {
+        margin-bottom: 10px;
+      }
+      text-align: left !important;
+    }
+  }
+}
+
+.themeLight {
+  background-color: #fff;
+
+  .item {
+    &::before {
+      background: radial-gradient(
+        50.06% 30938.27% at 49.94% 100%,
+        #eaeaea 0%,
+        rgba(46, 66, 165, 0) 100%
+      );
+    }
+  }
+}
