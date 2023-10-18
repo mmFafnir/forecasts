@@ -11,9 +11,14 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 24px;
+
+  > div:last-child {
+    margin-left: auto;
+  }
 }
 
 .time {
+  white-space: nowrap;
   margin-right: 20px;
   span,
   time {
@@ -53,12 +58,6 @@
 .user-forecast {
   padding: 0;
   background-color: transparent;
-
-  .header {
-    > div:last-child {
-      display: none;
-    }
-  }
 }
 
 .themeLight {

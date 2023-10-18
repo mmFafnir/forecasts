@@ -9,6 +9,7 @@
     transition-duration: 0.3s;
     &.active {
       color: #65a3ff;
+      font-size: 16px;
     }
 
     @media (min-width: 901px) {

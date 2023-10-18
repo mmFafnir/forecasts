@@ -86,9 +86,16 @@
   align-items: center;
   max-width: 752px;
   margin: 0 auto;
-  margin-top: 25px;
-
+  margin-top: 20px;
+  flex-wrap: wrap;
   p {
+    white-space: nowrap;
+    margin-right: auto;
+    padding-right: 10px;
+    margin-bottom: 5px;
+    &:last-child {
+      padding-right: 10px;
+    }
     span {
       &:first-child {
         color: #ffd644;

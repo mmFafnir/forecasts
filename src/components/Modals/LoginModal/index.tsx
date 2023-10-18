@@ -59,28 +59,28 @@ const LoginModal: FC = () => {
         </div>
         <div className={styles.item}>
           <Image
-            src={"/img/login/google.svg"}
+            src={"/img/login/facebook.svg"}
             width={40}
             height={40}
-            alt="google"
+            alt="facebook"
           />
           <span>Продолжить с Google </span>
         </div>
         <div className={styles.item}>
           <Image
-            src={"/img/login/google.svg"}
+            src={"/img/login/apple.svg"}
             width={40}
             height={40}
-            alt="google"
+            alt="apple"
           />
           <span>Продолжить с Google </span>
         </div>
         <button onClick={onOpenRegister} className={styles.item}>
           <Image
-            src={"/img/login/google.svg"}
+            src={"/img/login/mail.svg"}
             width={40}
             height={40}
-            alt="google"
+            alt="mail"
           />
           <span>Продолжить с Google </span>
         </button>

@@ -27,7 +27,7 @@
   justify-content: space-between;
   padding-bottom: 12px;
   border-bottom: 1px solid #303d7e;
-  margin-bottom: 40px;
+  margin-bottom: 35px;
   h3 {
     font-size: 24px;
   }
@@ -83,6 +83,8 @@
 
 .captcha {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .politicText {

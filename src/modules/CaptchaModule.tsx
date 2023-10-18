@@ -11,7 +11,6 @@ const CaptchaModule = () => {
   const reCaptchaRef = useRef<ReCAPTCHA>(null);
   const [isVerified, setIsVerified] = useState<boolean>(false);
 
-  console.log(SITE_KEY);
   async function handleCaptchaSubmission(token: string | null) {
     console.log(verifyCaptcha(token));
   }

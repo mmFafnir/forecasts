@@ -25,6 +25,11 @@ const AIFootBool: NextPage = async () => {
 
         <div className={styles.content}>
           <ForecastCard />
+          <ForecastCard />
+          <ForecastCard />
+          <ForecastCard />
+          <ForecastCard />
+          <ForecastCard />
         </div>
 
         <p className="desc-text">
