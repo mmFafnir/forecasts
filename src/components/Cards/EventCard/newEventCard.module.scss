@@ -141,7 +141,10 @@
 
 .themeLight {
   background-color: #fff;
-
+  border-color: #65a3ff;
+  .header {
+    border-color: #65a3ff;
+  }
   .item {
     &::before {
       background: radial-gradient(

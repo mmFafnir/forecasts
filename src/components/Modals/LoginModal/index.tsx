@@ -68,7 +68,7 @@ const LoginModal: FC = () => {
         </div>
         <div className={styles.item}>
           <Image
-            src={"/img/login/apple.svg"}
+            src={light ? "/img/login/apple-dark.svg" : "/img/login/apple.svg"}
             width={40}
             height={40}
             alt="apple"
@@ -77,7 +77,7 @@ const LoginModal: FC = () => {
         </div>
         <button onClick={onOpenRegister} className={styles.item}>
           <Image
-            src={"/img/login/mail.svg"}
+            src={light ? "/img/login/mail-dark.svg" : "/img/login/mail.svg"}
             width={40}
             height={40}
             alt="mail"

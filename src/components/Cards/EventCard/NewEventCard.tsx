@@ -2,11 +2,8 @@
 
 import React, { FC } from "react";
 import styles from "./newEventCard.module.scss";
-import { closeModal } from "@/GlobalRedux/Slices/modalSlice";
-import { useTypeDispatch } from "@/hooks/useTypeDispatch";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
 import PlusIcon from "@/components/UI/Icons/PlusIcon";
-import PlusButton from "@/components/UI/Buttons/PlusButton";
 
 const text = `
 "Галатасарай" в настоящее время демонстрирует грозную форму, одержав ряд побед подряд. Недавняя победа над "Самсунспором" со счетом 4:2, а также победа над "Газиантепом" со счетом 3:0 доказывают их мощный атакующий потенциал. Игра дома также является преимуществом "Галатасарая". С другой стороны, "Копенгаген" демонстрирует непостоянную игру. Таким образом, учитывая форму обеих команд, победа "Галатасарая" представляется беспроигрышным вариантом.
@@ -23,7 +20,12 @@ const NewEventCard: FC = () => {
       </div>
       <div className={styles.title}>
         <h4>Событие: Исход матча</h4>
-        <PlusButton />
+        <button className="btn-plus">
+          <span>Добавить прогноз</span>
+          <span>
+            <PlusIcon />
+          </span>
+        </button>
       </div>
       <div className={styles.body}>
         <div className={styles.item}>
