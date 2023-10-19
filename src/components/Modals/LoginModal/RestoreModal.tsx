@@ -2,7 +2,6 @@
 
 import { FC } from "react";
 import styles from "./loginModal.module.scss";
-import Image from "next/image";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
 import {
   ModalEnum,
@@ -11,12 +10,22 @@ import {
 } from "@/GlobalRedux/Slices/modalSlice";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
 import InputText from "@/components/UI/Form/InputText";
-import InputPassword from "@/components/UI/Form/InputPassword";
 import CaptchaModule from "@/modules/CaptchaModule";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 const RestoreModal: FC = () => {
   const { light } = useTypeSelector((state) => state.themeLight);
   const dispatch = useTypeDispatch();
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit: SubmitHandler<any> = (data) => {
+    console.log(data);
+  };
 
   const onClose = () => dispatch(closeModal());
   const onClickBack = () => dispatch(openModal(ModalEnum.REGISTER));
@@ -71,12 +80,24 @@ const RestoreModal: FC = () => {
           </svg>
         </button>
       </div>
-      <div className={styles.body}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.body}>
         <h3>Восстановить пароль</h3>
 
         <div className={styles.input}>
           <p>E-mail</p>
-          <InputText size="big" name="email" placeholder="example@gmail.com" />
+          <Controller
+            control={control}
+            name="email"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <InputText
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+                size="big"
+                placeholder="example@gmail.com"
+              />
+            )}
+          />
         </div>
 
         <div className={styles.captcha}>
@@ -85,10 +106,22 @@ const RestoreModal: FC = () => {
 
         <div className={styles.input}>
           <p>Введите код с картинки</p>
-          <InputText size="big" name="code" placeholder="R6CApyya" />
+          <Controller
+            control={control}
+            name="code"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <InputText
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+                size="big"
+                defaultValue="R6CApyya"
+              />
+            )}
+          />
         </div>
-      </div>
-      <button className="btn btn--pur">Восстановить пароль</button>
+        <button className="btn btn--pur">Восстановить пароль</button>
+      </form>
       <p className={styles.politicText}>
         Нажимая на любую кнопку “продолжить”, вы соглашаетесь с условиями и
         признаете нашу политику конфиданциальности на нашем сайте

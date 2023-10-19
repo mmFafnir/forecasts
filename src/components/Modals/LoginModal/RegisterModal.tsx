@@ -1,8 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import styles from "./loginModal.module.scss";
-import Image from "next/image";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
 import {
   ModalEnum,
@@ -11,12 +10,24 @@ import {
 } from "@/GlobalRedux/Slices/modalSlice";
 
 import { useTypeSelector } from "@/hooks/useTypeSelector";
+
 import InputText from "@/components/UI/Form/InputText";
 import InputPassword from "@/components/UI/Form/InputPassword";
+import styles from "./loginModal.module.scss";
 
 const RegisterModal: FC = () => {
   const { light } = useTypeSelector((state) => state.themeLight);
   const dispatch = useTypeDispatch();
+
+  const {
+    handleSubmit,
+    control,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit: SubmitHandler<any> = (data) => {
+    console.log(data);
+  };
 
   const onClose = () => dispatch(closeModal());
   const onOpenRestoreModal = () => dispatch(openModal(ModalEnum.RESTORE));
@@ -50,23 +61,39 @@ const RegisterModal: FC = () => {
           </svg>
         </button>
       </div>
-      <div className={styles.body}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.body}>
         <h3>Создать новый аккаунт</h3>
-
         <div className={styles.input}>
           <p>E-mail</p>
-          <InputText size="big" name="email" placeholder="example@gmail.com" />
+          <Controller
+            control={control}
+            name="email"
+            render={({ field: { onChange, onBlur, value } }) => (
+              <InputText
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+                size="big"
+                placeholder="example@gmail.com"
+              />
+            )}
+          />
         </div>
+
         <div className={styles.input}>
           <p>Пароль</p>
           <InputPassword size="big" name="password" />
         </div>
+
         <div className={styles.input}>
           <p>Повторите пароль</p>
           <InputPassword size="big" name="password" />
         </div>
-      </div>
-      <button className="btn btn--pur">Зарегистрироваться</button>
+
+        <button type="submit" className="btn btn--pur">
+          Зарегистрироваться
+        </button>
+      </form>
       <p className={styles.politicText}>
         Нажимая на любую кнопку “продолжить”, вы соглашаетесь с условиями и
         признаете нашу политику конфиданциальности на нашем сайте

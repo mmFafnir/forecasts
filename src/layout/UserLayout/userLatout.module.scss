@@ -1,15 +1,30 @@
 .body {
   border-radius: 16px;
-  background: #232b57;
+  background: var(--color-dark-light);
   overflow: hidden;
   min-height: 100%;
   display: flex;
 }
 .aside {
-  background: #1f264d;
+  background: var(--color-dark);
   flex: 0 1 224px;
 }
 
 .content {
   flex: 1 1 auto;
+}
+
+@media (max-width: 1100px) {
+  .body {
+    flex-direction: column;
+  }
+  .aside {
+    flex: 0 1 auto;
+    height: auto;
+  }
+  .content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
 }

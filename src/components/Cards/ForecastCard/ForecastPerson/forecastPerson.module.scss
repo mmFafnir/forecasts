@@ -87,3 +87,43 @@
     }
   }
 }
+
+.statisticMob {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .person {
+    flex-wrap: wrap;
+  }
+
+  .content {
+    > div {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  .name {
+    margin-bottom: 6px;
+  }
+
+  .statistic {
+    display: none !important;
+  }
+
+  .statisticMob {
+    margin-top: 14px;
+    display: flex !important;
+
+    p {
+      flex: 1 1 100%;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

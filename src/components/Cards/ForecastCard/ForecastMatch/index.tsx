@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import styles from "./forecastMatch.module.scss";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,17 +20,30 @@ const text = `
   вероятным исходом.
 `;
 
-interface IProps {
-  version?: "forecast" | "user-forecast";
-}
-
-const ForecastMatch: FC<IProps> = ({ version = "forecast" }) => {
+const ForecastMatch: FC = () => {
   const [isOpenText, setIsOpenText] = useState<boolean>(false);
   const { light } = useTypeSelector((state) => state.themeLight);
+
+  const [isMob, setMob] = useState<boolean>(false);
+
+  useEffect(() => {
+    const resize = () => {
+      setMob(window.innerWidth > 600 ? false : true);
+    };
+    resize();
+    window.addEventListener("resize", resize);
+    return () => window.removeEventListener("resize", resize);
+  }, []);
 
   return (
     <div className={`${styles.body} ${light ? styles.themeLight : ""}`}>
       <div className={styles.match}>
+        {isMob && (
+          <p className={styles.breadcrumbs}>
+            <span>Футбол</span>
+            <span>Лига Европы 2039</span>
+          </p>
+        )}
         <div className={styles.team}>
           <Image
             src={"/img/teams/1.png"}
@@ -44,10 +57,12 @@ const ForecastMatch: FC<IProps> = ({ version = "forecast" }) => {
           </p>
         </div>
         <div className={styles.center}>
-          <p className={styles.breadcrumbs}>
-            <span>Футбол</span>
-            <span>Лига Европы 2039</span>
-          </p>
+          {!isMob && (
+            <p className={styles.breadcrumbs}>
+              <span>Футбол</span>
+              <span>Лига Европы 2039</span>
+            </p>
+          )}
           <div className={styles.date}>
             <p>20 сентября 2023</p>
             <p className={styles.time}>
@@ -76,11 +91,13 @@ const ForecastMatch: FC<IProps> = ({ version = "forecast" }) => {
         </p>
         <p>
           <span>Ставка:</span>
-          <Link href={"/football/match"}>Победа Копенгагена</Link>
+          <Link className={styles.border} href={"/football/match"}>
+            Победа Копенгагена
+          </Link>
         </p>
         <p>
           <span>КФ:</span>
-          <span>1.58</span>
+          <span className={styles.border}>1.58</span>
         </p>
         <p>
           <span>Риск:</span>
@@ -102,7 +119,7 @@ const ForecastMatch: FC<IProps> = ({ version = "forecast" }) => {
             fill="none"
           >
             <path
-              d="M18 15L12 9L6 15"
+              d="M6 9L12 15L18 9"
               stroke="white"
               strokeLinecap="round"
               strokeLinejoin="round"

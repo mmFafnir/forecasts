@@ -73,3 +73,12 @@
 
   transition-duration: 0.3s;
 }
+
+@media (max-width: 1100px) {
+  .menu {
+    margin-bottom: 0;
+  }
+  .line {
+    display: none;
+  }
+}

@@ -7,7 +7,7 @@ const Card = () => {
   return (
     <div className={styles.card}>
       <ForecastPerson />
-      <ForecastMatch version="user-forecast" />
+      <ForecastMatch />
     </div>
   );
 };

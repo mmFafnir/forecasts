@@ -1,7 +1,7 @@
 "use client";
 import { FC, useEffect, useRef, useState } from "react";
-import styles from "./userNavbar.module.scss";
-import HomeIcon from "../UI/Icons/HomeIcon";
+import styles from "./desktopNavbar.module.scss";
+import HomeIcon from "../../UI/Icons/HomeIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

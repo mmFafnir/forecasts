@@ -1,0 +1,15 @@
+.main {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 500px) {
+  .tabs {
+    > button,
+    > div {
+      margin-bottom: 10px;
+    }
+    > button {
+      margin-right: 10px;
+    }
+  }
+}

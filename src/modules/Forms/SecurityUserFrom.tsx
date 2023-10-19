@@ -1,17 +1,23 @@
 "use client";
 
-import { FC, FormEvent } from "react";
-import { countries } from "@/assets/data/countries";
-import ImageFile from "@/components/UI/Form/ImageFile";
-import InputDate from "@/components/UI/Form/InputDate";
-import InputSelect from "@/components/UI/Form/InputSelect";
+import { FC } from "react";
 import InputText from "@/components/UI/Form/InputText";
 import styles from "./form.module.scss";
 import InputPassword from "@/components/UI/Form/InputPassword";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 const SecurityUserFrom: FC = () => {
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    watch,
+    control,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit: SubmitHandler<any> = (data) => {
+    console.log("sad");
+    console.log(data);
   };
 
   return (
@@ -39,12 +45,36 @@ const SecurityUserFrom: FC = () => {
           <h2>Сменить адрес электронной почты</h2>
           <div className={styles.item}>
             <p>Введите старый пароль</p>
-            <InputText name="email" defaultValue="example@gmail.com" />
+            <Controller
+              control={control}
+              name="email"
+              render={({ field: { onChange, onBlur, value } }) => (
+                <InputText
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  size="big"
+                  defaultValue="example@gmail.com"
+                />
+              )}
+            />
           </div>
 
           <div className={styles.item}>
             <p>Повторите новый адрес эл.почты</p>
-            <InputText name="email" defaultValue="example@gmail.com" />
+            <Controller
+              control={control}
+              name="email-new"
+              render={({ field: { onChange, onBlur, value } }) => (
+                <InputText
+                  onChange={onChange}
+                  onBlur={onBlur}
+                  value={value}
+                  size="big"
+                  defaultValue="example@gmail.com"
+                />
+              )}
+            />
           </div>
 
           <div className={styles.item}>

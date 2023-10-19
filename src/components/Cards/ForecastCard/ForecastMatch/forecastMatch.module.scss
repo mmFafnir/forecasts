@@ -101,9 +101,10 @@
         color: #ffd644;
         font-weight: 700;
         margin-right: 12px;
+        line-height: 1;
       }
     }
-    a {
+    .border {
       display: inline-block;
       padding: 3px 6px;
       border: solid 1px #3be9f4;
@@ -111,6 +112,8 @@
       border-radius: 6px;
       text-align: center;
       transition-duration: 0.3s;
+    }
+    a.border {
       @media (min-width: 901px) {
         &:hover {
           background-color: #3be9f4;
@@ -137,6 +140,45 @@
 }
 .descShow {
   margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+  .match {
+    flex-wrap: wrap;
+  }
+  .team {
+    flex: 1 1 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      height: 60px;
+    }
+  }
+
+  .breadcrumbs {
+    margin-bottom: 20px;
+  }
+  .center {
+    margin: 20px 0px;
+  }
+
+  .statistic {
+    overflow: hidden;
+    p {
+      flex: 1 1 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-right: 0;
+      margin-bottom: 7px;
+      flex-wrap: wrap;
+      span,
+      a {
+        margin-bottom: 5px;
+      }
+    }
+  }
 }
 
 .themeLight {

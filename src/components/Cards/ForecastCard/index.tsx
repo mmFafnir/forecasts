@@ -37,7 +37,7 @@ const ForecastCard: FC<IProps> = ({ version = "forecast" }) => {
         </div>
 
         <div className={styles.content}>
-          <ForecastMatch version={version} />
+          <ForecastMatch />
         </div>
 
         <div className={styles.text}>

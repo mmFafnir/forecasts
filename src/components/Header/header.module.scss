@@ -1,281 +1,293 @@
-@import '@/assets/scss/variables';
+@import "@/assets/scss/variables";
 
-.header{
-    padding: 30px 0px;
-    padding-bottom: 15px;
-    position: relative;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    background: radial-gradient(25504.62% 106.43% at -3.15% 50%, rgba(16, 16, 16, 0.60) 5.06%, rgba(16, 16, 16, 0.19) 51.1%, rgba(16, 16, 16, 0.56) 95.12%);
-   
-    &::before{
-        // content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 0;
+.header {
+  padding: 30px 0px;
+  padding-bottom: 15px;
+  position: relative;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  background: radial-gradient(
+    25504.62% 106.43% at -3.15% 50%,
+    rgba(16, 16, 16, 0.6) 5.06%,
+    rgba(16, 16, 16, 0.19) 51.1%,
+    rgba(16, 16, 16, 0.56) 95.12%
+  );
 
-    }
+  &::before {
+    // content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+  }
 }
 
-.wrapper{
-    position: relative;
-    >div{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-}
-
-.logo{
-    margin-right: 40px;
-
-}
-.search{
-    flex: 1 1 auto;
-    // display: flex;
-}
-
-.icons{
-    margin-left: 20px;
+.wrapper {
+  position: relative;
+  > div {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    button{
-        margin-right: 20px;
-        &:last-child{
-            margin-right: 0;
-        }
-        svg path{
-            transition-duration: 0.3s;
-        }
-        @media(min-width: 901px) {
-            &:hover{
-                svg path {
-                    fill :$iconHoverColor ;
-                }
-            }
-        }
-    }
-}
-.top{
-    margin-bottom: 17px;
-    position: relative;
-}
-.bottom{
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    a{
-        margin-right: 15px;
-        transition-duration: 0.1s;
-    }
-    >button{
-        margin-left: 10px;
-        opacity: 0;
-        .mobBtn{
-            display: none;
-        }
-    }
-}
-.menu{
-    flex: 1 1 auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin: 0px 10px;
-    margin-right: 0;
-    padding: 15px 0px;
-
-    
-}
-.favoritesBtn{
-    border-radius: 10px;
-    border: 1px solid #FFD644;
-    color: #FFD644;
-    display: flex;
-    flex: 0 1 223px;
-    height: 40px;
-    padding: 10px 30px;
-    justify-content: center;
-    align-items: center;    
-    transition-duration: 0.3s;
-    
-    span{
-        margin-top: 1px;
-    }
-    svg{
-        margin-right: 10px;
-    }
-
-    @media(min-width: 901px) {
-        &:hover{
-            background-color: #FFD644;
-            color: #1B2141;
-            svg path{
-                fill: #1B2141;
-            }
-        }
-    }
+  }
 }
 
+.logo {
+  margin-right: 40px;
+}
+.search {
+  flex: 1 1 auto;
+  // display: flex;
+}
 
-.mobMenuBtn{
-    display: none;
+.icons {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  button {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
+    }
+    svg path {
+      transition-duration: 0.3s;
+    }
+    @media (min-width: 901px) {
+      &:hover {
+        svg path {
+          fill: $iconHoverColor;
+        }
+      }
+    }
+  }
+}
+.top {
+  margin-bottom: 17px;
+  position: relative;
+}
+.bottom {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  a {
+    margin-right: 15px;
+    transition-duration: 0.1s;
+  }
+  > button {
     margin-left: 10px;
-}
-
-.tabs{
-    display: flex;
-    align-items: center;
-
-    a,button{
-        margin-right: 20px;
-        font-size: 18px;
-        font-weight: 700;
-        transition-duration: 0.3s;
-        &:last-child{
-            margin-right: 0;
-        }
-
-        @media(min-width: 901px) {
-            &:hover{
-                color: #FFD644;
-            }
-        }
+    opacity: 0;
+    .mobBtn {
+      display: none;
     }
+  }
 }
-.tabActive{
-    color: #FFD644;
+.menu {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0px 10px;
+  margin-right: 0;
+  padding: 15px 0px;
+}
+.favoritesBtn {
+  border-radius: 10px;
+  border: 1px solid #ffd644;
+  color: #ffd644;
+  display: flex;
+  flex: 0 1 223px;
+  height: 40px;
+  padding: 10px 30px;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.3s;
+
+  span {
+    margin-top: 1px;
+  }
+  svg {
+    margin-right: 10px;
+  }
+
+  @media (min-width: 901px) {
+    &:hover {
+      background-color: #ffd644;
+      color: #1b2141;
+      svg path {
+        fill: #1b2141;
+      }
+    }
+  }
+}
+
+.mobMenuBtn {
+  display: none;
+  margin-left: 10px;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+
+  a,
+  button {
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: 700;
+    transition-duration: 0.3s;
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media (min-width: 901px) {
+      &:hover {
+        color: #ffd644;
+      }
+    }
+  }
+}
+.tabActive {
+  color: #ffd644;
 }
 
 @media (max-width: 1024px) {
-        .favoritesBtn{
-            font-size: 12px;
-            padding: 10px 15px;
-            margin-right: 0 !important;
-            svg{
-                flex: 0 0 20px;
-                height: 20px;
-            }
-        }
+  .favoritesBtn {
+    font-size: 12px;
+    padding: 10px 15px;
+    margin-right: 0 !important;
+    svg {
+      flex: 0 0 20px;
+      height: 20px;
+    }
+  }
 }
 
 @media (max-width: 900px) {
-    .logo{
-        margin-right: 0px;
+  .logo {
+    margin-right: 0px;
+  }
+  .tabs {
+    button,
+    a {
+      font-size: 16px;
     }
+  }
 }
 
 @media (max-width: 600px) {
-    .header{
-        padding: 16px 0;
+  .header {
+    padding: 16px 0;
+  }
+  .top {
+    margin-bottom: 14px;
+  }
+  .logo {
+    flex: 0 0 86px;
+    svg {
+      width: 100%;
     }
-    .top{
-        margin-bottom: 14px;
-    }
-    .logo{
-        flex: 0 0 86px;
-        svg{
-            width: 100%;
-        }
-    }
+  }
 }
 
 @media (max-width: 540px) {
-    
-    .mobMenuBtn{
-        display: block;
-    }
-    .icons{
+  .mobMenuBtn {
+    display: block;
+  }
+  .icons {
+    display: none;
+  }
+  .bottom {
+    > button {
+      border-radius: 10px;
+      background: #303d7e;
+      flex: 1 1 135px;
+      padding: 10px 13px;
+      white-space: nowrap;
+      margin-left: 0;
+      span {
         display: none;
-    }
-    .bottom{
-        > button{
-            border-radius: 10px;
-            background: #303D7E;
-            flex: 1 1 135px;
-            padding: 10px 13px;
-            white-space: nowrap;
-            margin-left: 0;
-            span{
-                display: none;
-            }
-            .mobBtn{
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                font-size: 12px;
-                svg{
-                    margin-top: 1px;
-                    margin-left: 5px;
-
-                }
-            }
+      }
+      .mobBtn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        svg {
+          margin-top: 1px;
+          margin-left: 5px;
         }
+      }
     }
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    button,
+    a {
+      font-size: 14px;
+      margin-right: 10px;
+    }
+  }
 }
 
 @media (max-width: 400px) {
-    .logo{
-        display: none;
-    }
+  .logo {
+    display: none;
+  }
 }
 
 @media (max-width: 300px) {
-    .bottom{
-        flex-wrap: wrap;
-        > button{
-            flex: 1 1 100%;
-            margin-top: 10px;
-        }
+  .bottom {
+    flex-wrap: wrap;
+    > button {
+      flex: 1 1 100%;
+      margin-top: 10px;
     }
-    .favoritesBtn{
-        flex: 1 1 100%;
-    }
-
+  }
+  .favoritesBtn {
+    flex: 1 1 100%;
+  }
 }
 
+.lightTheme {
+  svg path {
+    fill: #303d7e;
+  }
 
-
-.lightTheme{
-    svg path{
-        fill: #303D7E;
-    }
-
-    .icons button{
-        @media(min-width: 901px) {
-            &:hover{
-                svg path{
-                    fill: #65A3FF;
-                }
-            }
+  .icons button {
+    @media (min-width: 901px) {
+      &:hover {
+        svg path {
+          fill: #65a3ff;
         }
+      }
     }
-    .favoritesBtn{
-        border-color:  #303D7E;
-        color:#303D7E;
+  }
+  .favoritesBtn {
+    border-color: #303d7e;
+    color: #303d7e;
 
-        @media(min-width: 901px) {
-            &:hover{
-                background-color: #65A3FF;
-                border-color: #65A3FF;
-                color: #fff;
+    @media (min-width: 901px) {
+      &:hover {
+        background-color: #65a3ff;
+        border-color: #65a3ff;
+        color: #fff;
 
-                svg path{
-                    fill: #fff
-                }
-            }
+        svg path {
+          fill: #fff;
         }
+      }
     }
-    .bottom{
-        >button{
-           background-color: #65A3FF;
-           color: #fff; 
-           
-           svg path{
-               fill: #65A3FF ;
-           }
-        }
+  }
+  .bottom {
+    > button {
+      background-color: #65a3ff;
+      color: #fff;
+
+      svg path {
+        fill: #65a3ff;
+      }
     }
+  }
 }

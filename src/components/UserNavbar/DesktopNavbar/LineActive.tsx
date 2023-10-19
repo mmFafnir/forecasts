@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useEffect, useRef, useState } from "react";
-import styles from "./userNavbar.module.scss";
+import styles from "./desktopNavbar.module.scss";
 import { usePathname } from "next/navigation";
 import { getPosFromParent } from "@/assets/scripts/getPosFromParent";
 

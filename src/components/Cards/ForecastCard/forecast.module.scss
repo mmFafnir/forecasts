@@ -53,11 +53,49 @@
     }
   }
 }
-.forecast {
-}
+
 .user-forecast {
   padding: 0;
   background-color: transparent;
+}
+@media (max-width: 900px) {
+  .body {
+    padding: 20px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+    > div:last-child {
+      flex: 1 1 100%;
+      justify-content: space-between;
+      order: -1;
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .body {
+    padding: 15px;
+  }
+  .footer {
+    flex-wrap: wrap;
+    > div,
+    > p {
+      margin-bottom: 5px;
+    }
+    > p {
+      span {
+        font-size: 12px;
+      }
+    }
+
+    > div:last-child {
+      button:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
 }
 
 .themeLight {

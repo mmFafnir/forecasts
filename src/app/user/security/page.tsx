@@ -1,9 +1,10 @@
 import SecurityUserFrom from "@/modules/Forms/SecurityUserFrom";
 import { NextPage } from "next";
+import styles from "../user.module.scss";
 
 const SecurityPage: NextPage = async () => {
   return (
-    <div style={{ padding: "30px 30px 30px 60px" }}>
+    <div className={styles.main}>
       <SecurityUserFrom />
     </div>
   );

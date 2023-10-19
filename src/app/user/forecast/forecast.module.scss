@@ -3,6 +3,10 @@
   height: 100%;
 }
 
+.content {
+  min-height: 700px;
+}
+
 .main {
   padding: 30px 0px 30px 27px;
   h2 {
@@ -18,5 +22,38 @@
     margin-bottom: 21px;
     border-bottom: 1px solid #303d7e;
     border-radius: 0px;
+    padding-right: 27px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
+  .content {
+    flex: 1 1 auto;
+    display: flex;
+    > div {
+      flex: 1 1 100%;
+      height: auto !important;
+    }
+  }
+  .list {
+    margin-right: 0px;
+
+    > div {
+      padding-left: 0;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .main {
+    padding: 20px 0px 20px 16px;
+  }
+  .list > div {
+    padding-right: 16px;
   }
 }

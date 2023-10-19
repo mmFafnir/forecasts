@@ -1,3 +1,5 @@
+"use client";
+
 import { FC } from "react";
 import styles from "./forecastPerson.module.scss";
 import Image from "next/image";
@@ -38,6 +40,18 @@ const ForecastPerson: FC = () => {
             Текущий банк <span style={{ color: "#66DA64" }}>1234.5</span>
           </p>
         </div>
+      </div>
+
+      <div className={`${styles.statistic} ${styles.statisticMob}`}>
+        <p>
+          Стартовый банк <span style={{ color: "#ADADAD" }}>1234.5</span>
+        </p>
+        <p>
+          Прибыль <span style={{ color: "#66DA64" }}>+5.87%</span>
+        </p>
+        <p>
+          Текущий банк <span style={{ color: "#66DA64" }}>1234.5</span>
+        </p>
       </div>
     </div>
   );
