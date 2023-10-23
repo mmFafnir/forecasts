@@ -10,6 +10,7 @@ interface IProps {
   onBlur: () => void;
   onChange: () => void;
   size?: "big" | "middle" | "small";
+  error?: string;
 }
 
 const InputText: FC<IProps> = ({
@@ -18,9 +19,12 @@ const InputText: FC<IProps> = ({
   defaultValue = "",
   placeholder = "",
   size = "middle",
+  error,
 }) => {
   return (
-    <div className={`${styles.body} ${styles[size]}`}>
+    <div
+      className={`${styles.body} ${error ? styles.error : ""} ${styles[size]}`}
+    >
       <label className={styles.label}>
         <input
           type="text"
@@ -33,6 +37,8 @@ const InputText: FC<IProps> = ({
           <PenIcon />
         </button>
       </label>
+
+      {error && <span className={`input-error ${size}`}>{error}</span>}
     </div>
   );
 };

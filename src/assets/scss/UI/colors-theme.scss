@@ -1,0 +1,26 @@
+:root {
+  --color-dark: #1c203a;
+  --color-dark-light: #232b57;
+
+  --color-gold: #ffd644;
+
+  //text colors
+  --text-hover-color: #65a3ff;
+  --text-green: #6da86c;
+  --text-brow: #a36f40;
+  --text-red: #e37171;
+
+  //blocks color
+  --block-header: radial-gradient(
+    25504.62% 106.43% at -3.15% 50%,
+    rgba(16, 16, 16, 0.6) 5.06%,
+    rgba(16, 16, 16, 0.19) 51.1%,
+    rgba(16, 16, 16, 0.56) 95.12%
+  );
+  --block-hover: #68428d;
+  --block-dark: #1c203a;
+  --block-dark-middle: #222a56;
+  --block-dark-light: #303d7e;
+
+  --block-gray: #2b2e3e;
+}

@@ -1,0 +1,26 @@
+.input-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  color: red;
+  font-size: 10px;
+
+  &::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+    background-size: contain;
+    background-image: url("/img/icons/notify.svg");
+  }
+
+  &.big {
+    font-size: 14px;
+
+    &::before {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

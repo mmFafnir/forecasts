@@ -7,14 +7,15 @@
   a {
     margin-bottom: 12px;
     transition-duration: 0.3s;
+    transform-origin: left;
     &.active {
       color: #65a3ff;
-      font-size: 16px;
+      transform: scale(1.1);
     }
 
     @media (min-width: 901px) {
       &:hover {
-        color: #65a3ff;
+        transform: scale(1.1);
       }
     }
   }

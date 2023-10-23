@@ -3,17 +3,22 @@ import styles from "./inputPassword.module.scss";
 import CloseEyes from "../../Icons/Form/CloseEyes";
 
 interface IProps {
-  name: string;
+  value: string;
   defaultValue?: string;
   placeholder?: string;
   size?: "big" | "middle" | "small";
+  onBlur: () => void;
+  onChange: () => void;
+  error?: string;
 }
 
 const InputPassword: FC<IProps> = ({
-  name,
   defaultValue = "",
   placeholder = "",
   size = "middle",
+  onBlur,
+  onChange,
+  error,
 }) => {
   const [type, setType] = useState<"password" | "text">("password");
 
@@ -21,13 +26,16 @@ const InputPassword: FC<IProps> = ({
   const closeViewPassword = () => setType("password");
 
   return (
-    <div className={`${styles.body} ${styles[size]}`}>
+    <div
+      className={`${styles.body} ${error ? styles.error : ""} ${styles[size]}`}
+    >
       <label className={styles.label}>
         <input
           type={type}
           placeholder={placeholder}
-          name={name}
           defaultValue={defaultValue}
+          onBlur={onBlur}
+          onChange={onChange}
         />
         <button
           type="button"
@@ -40,6 +48,7 @@ const InputPassword: FC<IProps> = ({
           <CloseEyes />
         </button>
       </label>
+      {error && <span className={`input-error ${size}`}>{error}</span>}
     </div>
   );
 };

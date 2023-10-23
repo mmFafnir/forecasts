@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import styles from "./loginModal.module.scss";
+import styles from "./authModal.module.scss";
 import Image from "next/image";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
 import {
@@ -11,7 +11,7 @@ import {
 } from "@/GlobalRedux/Slices/modalSlice";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
 
-const LoginModal: FC = () => {
+const AuthModal: FC = () => {
   const { light } = useTypeSelector((state) => state.themeLight);
   const dispatch = useTypeDispatch();
 
@@ -93,4 +93,4 @@ const LoginModal: FC = () => {
   );
 };
 
-export default LoginModal;
+export default AuthModal;

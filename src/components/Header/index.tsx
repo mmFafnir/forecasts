@@ -2,15 +2,16 @@
 
 import { FC } from "react";
 import { ModalEnum } from "@/GlobalRedux/Slices/modalSlice";
-import LoginModal from "../Modals/LoginModal";
+import AuthModal from "../Modals/AuthModal";
 import HeaderBottom from "./components/HeaderBottom";
 import HeaderTop from "./components/HeaderTop";
 import Modal from "../Modals";
 
 import styles from "./header.module.scss";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
-import RegisterModal from "../Modals/LoginModal/RegisterModal";
-import RestoreModal from "../Modals/LoginModal/RestoreModal";
+import RegisterModal from "../Modals/AuthModal/RegisterModal";
+import RestoreModal from "../Modals/AuthModal/RestoreModal";
+import LoginModal from "../Modals/AuthModal/LoginModal";
 
 const Header: FC = () => {
   const { light } = useTypeSelector((state) => state.themeLight);
@@ -23,6 +24,9 @@ const Header: FC = () => {
           <HeaderBottom />
         </div>
       </header>
+      <Modal name={ModalEnum.AUTH}>
+        <AuthModal />
+      </Modal>
       <Modal name={ModalEnum.LOGIN}>
         <LoginModal />
       </Modal>

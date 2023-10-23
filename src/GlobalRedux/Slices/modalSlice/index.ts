@@ -1,13 +1,14 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export enum ModalEnum {
-  EVENT = "event",
   LOGIN = "login",
   REGISTER = "register",
+  AUTH = "auth",
+  RESTORE = "restore",
+  EVENT = "event",
   SUBMENU = "submenu",
   BURGER_MENU = "burger-menu",
   SETTINGS = "settings",
-  RESTORE = "restore",
 }
 
 interface IState {

@@ -4,6 +4,7 @@
   background: #222a56;
   padding-bottom: 38px;
   margin-bottom: 12px;
+  overflow: hidden;
 
   &:last-child {
     margin-bottom: 0;
@@ -62,6 +63,19 @@
       rgba(46, 66, 165, 0) 100%
     );
   }
+
+  P {
+    &:first-child {
+      margin-right: 5px;
+    }
+    &:last-child {
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: fit-content;
+
+      text-overflow: ellipsis;
+    }
+  }
 }
 
 .desc {
@@ -103,12 +117,14 @@
 }
 
 @media (max-width: 600px) {
-  .modal {
-    padding: 14px 15px;
-  }
   .header {
     h3 {
-      font-size: 16px;
+      font-size: 18px;
+    }
+  }
+  .title {
+    h4 {
+      font-size: 18px;
     }
   }
   .item {
@@ -136,6 +152,55 @@
       }
       text-align: left !important;
     }
+  }
+}
+
+@media (max-width: 500px) {
+  .card {
+    padding-bottom: 20px;
+  }
+  .header {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 22px;
+    padding: 17px 20px;
+    h3 {
+      font-size: 20px;
+    }
+  }
+  .title {
+    padding: 0px 20px;
+    margin-bottom: 27px;
+    h4 {
+      font-size: 16px;
+    }
+    > button {
+      flex: 0 0 28px;
+      width: 28px;
+      height: 28px;
+      padding: 0;
+      justify-content: center;
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  .item {
+    p {
+      font-size: 14px;
+    }
+  }
+
+  .body {
+    margin-bottom: 20px;
+    padding: 0px 20px;
+  }
+
+  .desc,
+  .btn {
+    padding: 0px 20px;
   }
 }
 

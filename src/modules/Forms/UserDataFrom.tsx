@@ -12,21 +12,17 @@ import styles from "./form.module.scss";
 
 type Inputs = {
   name: string;
-  lastName: string;
+  surname: string;
   nickname: string;
+  gender: string;
+  country: string;
+  date: string;
 };
 
 const UserDataFrom: FC = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    control,
-    formState: { errors },
-  } = useForm<Inputs>();
+  const { handleSubmit, control } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log("sad");
     console.log(data);
   };
 
@@ -37,11 +33,14 @@ const UserDataFrom: FC = () => {
           <div className={styles.file}>
             <ImageFile />
           </div>
+
+          {/* name */}
           <div className={styles.item}>
             <p>Имя</p>
             <Controller
               control={control}
               name="name"
+              defaultValue="Алексей"
               render={({ field: { onChange, onBlur, value } }) => (
                 <InputText
                   value={value}
@@ -53,11 +52,13 @@ const UserDataFrom: FC = () => {
             />
           </div>
 
+          {/* surname */}
           <div className={styles.item}>
             <p>Фамилия</p>
             <Controller
               control={control}
-              name="lastName"
+              name="surname"
+              defaultValue="Спортов"
               render={({ field: { onChange, onBlur, value } }) => (
                 <InputText
                   onChange={onChange}
@@ -68,11 +69,14 @@ const UserDataFrom: FC = () => {
               )}
             />
           </div>
+
+          {/* nickname */}
           <div className={styles.item}>
             <p>Никнейм</p>
             <Controller
               control={control}
               name="nickname"
+              defaultValue="Alex45"
               render={({ field: { onChange, onBlur, value } }) => (
                 <InputText
                   onChange={onChange}
@@ -84,20 +88,58 @@ const UserDataFrom: FC = () => {
             />
           </div>
 
+          {/* gender */}
           <div className={styles.item}>
             <p>Пол</p>
-            <InputSelect
-              items={["Мужской", "Женсикий", "Оно", "5K MMR Чудовище"]}
+            <Controller
+              name="gender"
+              control={control}
+              defaultValue="M"
+              render={({ field: { onChange } }) => (
+                <InputSelect
+                  onChange={(value) => onChange(value)}
+                  items={[
+                    { value: "M", text: "Мужской" },
+                    { value: "F", text: "Женсикий" },
+                  ]}
+                />
+              )}
             />
           </div>
+
+          {/* date */}
           <div className={styles.item}>
             <p>Дата рождения</p>
-            <InputDate />
+            <Controller
+              control={control}
+              name="date"
+              render={({
+                field: { onChange, value },
+                fieldState: { error },
+              }) => (
+                <InputDate
+                  onChange={(date) => onChange(date)}
+                  value={value}
+                  error={error?.message}
+                />
+              )}
+            />
           </div>
 
+          {/* country */}
           <div className={styles.item}>
             <p>Страна </p>
-            <InputSelect items={countries} />
+            <Controller
+              name="country"
+              control={control}
+              defaultValue={countries[0].value}
+              render={({ field: { onChange } }) => (
+                <InputSelect
+                  onChange={(value) => onChange(value)}
+                  items={countries}
+                />
+              )}
+            />
           </div>
         </div>
         <button type="submit" className="btn p-20 btn--pur">

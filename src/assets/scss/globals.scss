@@ -1,7 +1,4 @@
-:root {
-  --color-dark: #1c203a;
-  --color-dark-light: #232b57;
-}
+@import "./UI/colors-theme.scss";
 
 @import "./null";
 @import "./tamplate";
@@ -13,6 +10,7 @@
 @import "./UI/show-more";
 @import "./UI/icons";
 @import "./UI/like";
+@import "./UI/notify";
 
 body {
   background-color: #1b2141;

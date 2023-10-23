@@ -3,17 +3,26 @@ import { FC, useEffect, useRef, useState } from "react";
 import styles from "./inputSelect.module.scss";
 import { Scrollbar } from "react-scrollbars-custom";
 
+type TItem = { value: string; text: string };
+
 interface IProps {
-  items: string[];
-  defaultTitle?: string;
+  items: TItem[];
+  defaultTitle?: TItem;
+  size?: "big" | "middle" | "small";
+  onChange: (value: string) => void;
 }
 
 const SCROLL_HIGHT = 200;
 
-const InputSelect: FC<IProps> = ({ items, defaultTitle = items[0] }) => {
+const InputSelect: FC<IProps> = ({
+  items,
+  defaultTitle = items[0],
+  size = "middle",
+  onChange,
+}) => {
   const bodyRef = useRef<HTMLDivElement>(null);
 
-  const [title, setTitle] = useState<string>(defaultTitle);
+  const [title, setTitle] = useState<TItem>(defaultTitle);
   const [height, setHeight] = useState<number>(0);
 
   const onOpenSelect = () => {
@@ -30,19 +39,27 @@ const InputSelect: FC<IProps> = ({ items, defaultTitle = items[0] }) => {
     setHeight(0);
   };
 
-  const onChangeSelect = (title: string) => {
-    setTitle(title);
+  const onChangeSelect = (item: TItem) => {
+    setTitle(item);
     onCloseSelect();
   };
 
+  useEffect(() => {
+    onChange(title.value);
+  }, [title]);
+
   return (
-    <div className={`${styles.select} ${height > 0 ? styles.active : ""}`}>
+    <div
+      className={`${styles.select} ${styles[size]} ${
+        height > 0 ? styles.active : ""
+      }`}
+    >
       <button
         type="button"
         className={styles.title}
         onClick={height > 0 ? onCloseSelect : onOpenSelect}
       >
-        <span>{title}</span>
+        <span>{title.text}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
@@ -66,11 +83,11 @@ const InputSelect: FC<IProps> = ({ items, defaultTitle = items[0] }) => {
           <div className={styles.list} ref={bodyRef}>
             {items.map((item) => (
               <button
-                key={item}
+                key={item.value}
                 type="button"
                 onClick={() => onChangeSelect(item)}
               >
-                {item}
+                {item.text}
               </button>
             ))}
           </div>

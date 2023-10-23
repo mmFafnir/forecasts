@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import styles from "./loginModal.module.scss";
+import styles from "./authModal.module.scss";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
 import {
   ModalEnum,
@@ -29,6 +29,7 @@ const RestoreModal: FC = () => {
 
   const onClose = () => dispatch(closeModal());
   const onClickBack = () => dispatch(openModal(ModalEnum.REGISTER));
+  const onModalLogin = () => dispatch(openModal(ModalEnum.LOGIN));
 
   return (
     <div className={`${styles.form} ${light ? styles.themeLight : ""}`}>
@@ -130,7 +131,9 @@ const RestoreModal: FC = () => {
         <span>или</span>
         <p>
           <span>У вас есть аккаунт?</span>
-          <button className="show-more">Войти</button>
+          <button onClick={onModalLogin} className="show-more">
+            Войти
+          </button>
         </p>
       </div>
     </div>
