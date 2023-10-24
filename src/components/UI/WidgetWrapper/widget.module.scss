@@ -1,75 +1,80 @@
-
-
-.widget{
+.widget {
+  overflow: hidden;
+  @media (max-width: 800px) {
     border-radius: 20px;
-    overflow: hidden;
+  }
 }
 
-.header{
-    background: #1C203A;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 5px;
+.header {
+  background: #1c203a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 5px;
+  @media (min-width: 801px) {
+    border-radius: 10px 10px 5px 5px;
+  }
 
-    img{
-        margin-right: 10px;
-    }
+  img {
+    margin-right: 10px;
+  }
 }
 
-.body{
-    background: #222A56;
-    transition-duration: 0.3s;
-    >div{
-        padding: 20px;
-
-    }
+.body {
+  background: #222a56;
+  transition-duration: 0.3s;
+  @media (min-width: 801px) {
+    border-radius: 5px;
+    margin-top: 3px;
+  }
+  > div {
+    padding: 20px;
+  }
 }
 
 @media (max-width: 800px) {
-    .widget{
-        border-radius: 0px;
-        height: 100%;
-        margin-bottom: 0 !important; 
+  .widget {
+    border-radius: 0px;
+    height: 100%;
+    margin-bottom: 0 !important;
 
-        &:first-child{
-            border-top-right-radius: 20px;
-            border-top-left-radius: 20px;
-        } &:last-child{
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
-        }
+    &:first-child {
+      border-top-right-radius: 20px;
+      border-top-left-radius: 20px;
     }
-    .body{
-        height: 0px;
+    &:last-child {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
-    .header{
-        padding: 10px 20px;
-        justify-content: space-between;
+  }
+  .body {
+    height: 0px;
+  }
+  .header {
+    padding: 10px 20px;
+    justify-content: space-between;
 
-        button{
-            transform: rotate(180deg);
-            margin-left: auto;
-            transition-duration: 0.3s;
-        }
+    button {
+      transform: rotate(180deg);
+      margin-left: auto;
+      transition-duration: 0.3s;
     }
-    .active{
-        .header {
-            button{
-                transform: rotate(0);
-            }
-        }
+  }
+  .active {
+    .header {
+      button {
+        transform: rotate(0);
+      }
     }
+  }
 }
 
-
-
-.themeLight{
-    border: 1px solid #D0D2D7;
-    .header{
-         background-color: #D0D2D7;
-    }
-    .body{
-        background-color: transparent;
-    }
+.themeLight {
+  border: 1px solid #d0d2d7;
+  .header {
+    background-color: #d0d2d7;
+  }
+  .body {
+    background-color: transparent;
+  }
 }

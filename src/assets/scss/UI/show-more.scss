@@ -33,3 +33,28 @@
     }
   }
 }
+
+.show-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  border-radius: 10px;
+  padding: 0px 20px;
+  border: solid 1px var(--block-dark-light);
+  background-color: var(--block-dark-light);
+  transition-duration: 0.3s;
+  span {
+    line-height: 1;
+  }
+
+  svg {
+    margin-left: 5px;
+  }
+
+  @media (min-width: 901px) {
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
