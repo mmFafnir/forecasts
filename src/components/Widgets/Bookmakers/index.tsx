@@ -5,17 +5,22 @@ import styles from "./bookmakers.module.scss";
 import WidgetWrapper from "../../UI/WidgetWrapper";
 import Image from "next/image";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
+import { EnumThemes } from "@/GlobalRedux/Slices/themeSlice";
 
 const array = [1, 2, 3, 4, 5];
 const Bookmakers: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
+  const { theme } = useTypeSelector((state) => state.theme);
   const [src, setSrc] = useState<string>("/img/mostbet.png");
   const [presentSrc, setPresentSrc] = useState<string>("/img/present.svg");
 
   useEffect(() => {
-    setSrc(light ? "/img/mostbet-dark.png" : "/img/mostbet.png");
-    setPresentSrc(light ? "/img/present-dark.svg" : "/img/present.svg");
-  }, [light]);
+    setSrc(
+      theme === EnumThemes.LIGHT ? "/img/mostbet-dark.png" : "/img/mostbet.png"
+    );
+    setPresentSrc(
+      theme === EnumThemes.LIGHT ? "/img/present-dark.svg" : "/img/present.svg"
+    );
+  }, [theme]);
 
   return (
     <WidgetWrapper

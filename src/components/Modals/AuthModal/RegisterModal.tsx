@@ -30,10 +30,7 @@ type TInputs = {
 const RegisterModal: FC = () => {
   const dispatch = useTypeDispatch();
 
-  const { handleSubmit, control, watch } = useForm<TInputs>();
-
-  const password = useRef({});
-  password.current = watch("password", "");
+  const { handleSubmit, control } = useForm<TInputs>();
 
   const onSubmit: SubmitHandler<TInputs> = (data) => {
     // dispatch(
@@ -87,30 +84,6 @@ const RegisterModal: FC = () => {
       <form onSubmit={handleSubmit(onSubmit)} className={styles.body}>
         <h3>Создать новый аккаунт</h3>
 
-        {/* name */}
-        <div className={styles.input}>
-          <p>Ваш Имя</p>
-          <Controller
-            control={control}
-            rules={{
-              required: textValidationForm.empty,
-            }}
-            name="name"
-            render={({
-              field: { onChange, onBlur, value },
-              fieldState: { error },
-            }) => (
-              <InputText
-                error={error?.message}
-                onChange={onChange}
-                onBlur={onBlur}
-                value={value}
-                size="big"
-              />
-            )}
-          />
-        </div>
-
         {/* email */}
         <div className={styles.input}>
           <p>E-mail</p>
@@ -134,46 +107,6 @@ const RegisterModal: FC = () => {
                 onBlur={onBlur}
                 value={value}
                 size="big"
-                placeholder="example@gmail.com"
-              />
-            )}
-          />
-        </div>
-
-        {/* date */}
-        <div className={styles.input}>
-          <p>Дата рождения</p>
-          <Controller
-            control={control}
-            name="date"
-            rules={{
-              required: textValidationForm.empty,
-            }}
-            render={({ field: { onChange, value }, fieldState: { error } }) => (
-              <InputDate
-                onChange={(date) => onChange(date)}
-                value={value}
-                size="big"
-                error={error?.message}
-              />
-            )}
-          />
-        </div>
-
-        {/* gender select */}
-        <div className={styles.input}>
-          <p>Пол</p>
-          <Controller
-            control={control}
-            name="gender"
-            render={({ field: { onChange } }) => (
-              <InputSelect
-                onChange={(value) => onChange(value)}
-                size="big"
-                items={[
-                  { value: "M", text: "Мужской" },
-                  { value: "F", text: "Женсикий" },
-                ]}
               />
             )}
           />
@@ -192,32 +125,6 @@ const RegisterModal: FC = () => {
               },
             }}
             name="password"
-            render={({
-              field: { onChange, onBlur, value },
-              fieldState: { error },
-            }) => (
-              <InputPassword
-                error={error?.message}
-                onChange={onChange}
-                onBlur={onBlur}
-                value={value}
-                size="big"
-              />
-            )}
-          />
-        </div>
-
-        {/* password confirmation */}
-        <div className={styles.input}>
-          <p>Повторите пароль</p>
-          <Controller
-            control={control}
-            rules={{
-              required: textValidationForm.empty,
-              validate: (value) =>
-                value === password.current || "Не совпадают пароли",
-            }}
-            name="password_confirmation"
             render={({
               field: { onChange, onBlur, value },
               fieldState: { error },

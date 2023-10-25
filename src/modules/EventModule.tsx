@@ -1,6 +1,7 @@
 "use client";
 
 import { closeModal } from "@/GlobalRedux/Slices/modalSlice";
+import { EnumThemes } from "@/GlobalRedux/Slices/themeSlice";
 import { changeThemeStyle } from "@/assets/scripts/changeThemeStyle";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
@@ -8,7 +9,7 @@ import { FC, useEffect } from "react";
 
 const EventModule: FC = () => {
   const dispatch = useTypeDispatch();
-  const { light } = useTypeSelector((state) => state.themeLight);
+  const { theme } = useTypeSelector((state) => state.theme);
 
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
@@ -17,13 +18,10 @@ const EventModule: FC = () => {
   }, []);
 
   useEffect(() => {
-    if (light) {
-      document.body.classList.add("theme-light");
-    } else {
-      document.body.classList.remove("theme-light");
-    }
-    changeThemeStyle(light ? "light" : "dark");
-  }, [light]);
+    document.body.classList.add(`theme-${theme}`);
+
+    changeThemeStyle(theme);
+  }, [theme]);
 
   return <></>;
 };

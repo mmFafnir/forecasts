@@ -83,7 +83,6 @@ const LoginModal: FC = () => {
                 onBlur={onBlur}
                 value={value}
                 size="big"
-                placeholder="example@gmail.com"
               />
             )}
           />
@@ -118,7 +117,7 @@ const LoginModal: FC = () => {
         </div>
 
         <button type="submit" className="btn btn--pur">
-          Зарегистрироваться
+          Войти
         </button>
       </form>
 

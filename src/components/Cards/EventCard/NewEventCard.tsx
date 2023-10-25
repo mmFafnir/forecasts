@@ -11,10 +11,8 @@ const text = `
 `;
 
 const NewEventCard: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
-
   return (
-    <div className={`${styles.card} ${light ? styles.themeLight : ""}`}>
+    <div className={styles.card}>
       <div className={styles.header}>
         <h3>Лучшая ставка</h3>
       </div>

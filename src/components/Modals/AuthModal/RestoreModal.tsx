@@ -15,11 +15,7 @@ import { Controller, SubmitHandler, useForm } from "react-hook-form";
 const RestoreModal: FC = () => {
   const dispatch = useTypeDispatch();
 
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm();
+  const { handleSubmit, control } = useForm();
 
   const onSubmit: SubmitHandler<any> = (data) => {
     console.log(data);

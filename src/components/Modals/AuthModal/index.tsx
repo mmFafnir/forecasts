@@ -10,9 +10,10 @@ import {
   openModal,
 } from "@/GlobalRedux/Slices/modalSlice";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
+import { EnumThemes } from "@/GlobalRedux/Slices/themeSlice";
 
 const AuthModal: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
+  const { theme } = useTypeSelector((state) => state.theme);
   const dispatch = useTypeDispatch();
 
   const onClose = () => dispatch(closeModal());
@@ -68,7 +69,11 @@ const AuthModal: FC = () => {
         </div>
         <div className={styles.item}>
           <Image
-            src={light ? "/img/login/apple-dark.svg" : "/img/login/apple.svg"}
+            src={
+              theme === EnumThemes.LIGHT
+                ? "/img/login/apple-dark.svg"
+                : "/img/login/apple.svg"
+            }
             width={40}
             height={40}
             alt="apple"
@@ -77,7 +82,11 @@ const AuthModal: FC = () => {
         </div>
         <button onClick={onOpenRegister} className={styles.item}>
           <Image
-            src={light ? "/img/login/mail-dark.svg" : "/img/login/mail.svg"}
+            src={
+              theme === EnumThemes.LIGHT
+                ? "/img/login/mail-dark.svg"
+                : "/img/login/mail.svg"
+            }
             width={40}
             height={40}
             alt="mail"

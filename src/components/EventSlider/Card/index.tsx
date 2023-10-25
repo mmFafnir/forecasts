@@ -3,16 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./card.module.scss";
 import TimeIcon from "@/components/UI/Icons/TimeIcon";
-import { useTypeSelector } from "@/hooks/useTypeSelector";
 
 const Card: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
-
   return (
-    <Link
-      href={"/football/match"}
-      className={`${styles.item} ${light ? styles.themeLight : ""}`}
-    >
+    <Link href={"/football/match"} className={styles.item}>
       <h3>Европа: Лига чемпионов - групповой этап</h3>
       <div className={styles.date}>
         <p>20 сентября 2023</p>

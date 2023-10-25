@@ -1,28 +1,28 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit"
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+
+export enum EnumThemes {
+  LIGHT = "light",
+  DARK = "dark",
+  BROWN = "brown",
+}
 
 interface IState {
-    light: boolean;
+  theme: EnumThemes;
 }
 
-const initialState:IState = {
-    light: false
-}
-
+const initialState: IState = {
+  theme: EnumThemes.DARK,
+};
 
 export const themeSlice = createSlice({
-    name: "theme",
-    initialState,
-    reducers: {
-        setLight: (state, action:PayloadAction<true>) => {
-            state.light = action.payload
-        },
-        setDark: (state, action:PayloadAction<false>) => {
-            state.light = action.payload
-        }
-    }
-})
-export const { setLight, setDark } = themeSlice.actions;
+  name: "theme",
+  initialState,
+  reducers: {
+    setTheme: (state, action: PayloadAction<EnumThemes>) => {
+      state.theme = action.payload;
+    },
+  },
+});
+export const { setTheme } = themeSlice.actions;
 
 export default themeSlice.reducer;
-
-

@@ -1,7 +1,7 @@
 .item {
   display: flex;
   flex-direction: column;
-  background-color: #222a56;
+  background-color: var(--event-card-color);
   border: 1px solid transparent;
   border-radius: 20px;
   flex: 0 1 calc(33% - 20px);
