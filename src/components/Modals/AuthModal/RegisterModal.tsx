@@ -9,8 +9,6 @@ import {
   openModal,
 } from "@/GlobalRedux/Slices/modalSlice";
 
-import { useTypeSelector } from "@/hooks/useTypeSelector";
-
 import InputText from "@/components/UI/Form/InputText";
 import InputPassword from "@/components/UI/Form/InputPassword";
 import styles from "./authModal.module.scss";
@@ -30,7 +28,6 @@ type TInputs = {
 };
 
 const RegisterModal: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
   const dispatch = useTypeDispatch();
 
   const { handleSubmit, control, watch } = useForm<TInputs>();
@@ -59,7 +56,7 @@ const RegisterModal: FC = () => {
   const onLoginModal = () => dispatch(openModal(ModalEnum.LOGIN));
 
   return (
-    <div className={`${styles.form} ${light ? styles.themeLight : ""}`}>
+    <div className={styles.form}>
       <div className={styles.header}>
         <h3>Регистрация</h3>
         <button onClick={onClose}>

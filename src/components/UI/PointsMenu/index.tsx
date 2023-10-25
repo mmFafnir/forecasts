@@ -1,7 +1,6 @@
 import { FC, ReactElement, useEffect, useRef, useState } from "react";
 import styles from "./pointsMenu.module.scss";
 import PointsIcons from "../Icons/PointsIcons";
-import { useTypeSelector } from "@/hooks/useTypeSelector";
 
 export type TPointsItem = {
   svg: ReactElement;
@@ -13,8 +12,6 @@ interface IProps {
   items: TPointsItem[];
 }
 const PointMenu: FC<IProps> = ({ items }) => {
-  const { light } = useTypeSelector((state) => state.themeLight);
-
   const refMenu = useRef<HTMLDivElement | null>(null);
   const refBody = useRef<HTMLDivElement | null>(null);
 
@@ -48,9 +45,7 @@ const PointMenu: FC<IProps> = ({ items }) => {
   return (
     <div
       ref={refBody}
-      className={`${styles.body} ${light ? styles.themeLight : ""} ${
-        isOpen ? styles.active : ""
-      }`}
+      className={`${styles.body} ${isOpen ? styles.active : ""}`}
     >
       <button
         className={styles.points}

@@ -1,9 +1,11 @@
-export const changeThemeStyle = (theme: "light" | "dark") => {
-  if (theme === "light") {
-    document.documentElement.style.setProperty("--color-dark", "#D0D2D7");
-    document.documentElement.style.setProperty("--color-dark-light", "#fff");
-  } else {
-    document.documentElement.style.setProperty("--color-dark", "#1c203a");
-    document.documentElement.style.setProperty("--color-dark-light", "#232b57");
+import theme from "../data/theme";
+interface ITheme {
+  [key: string]: string;
+}
+
+export const changeThemeStyle = (themeCurrent: "light" | "dark") => {
+  const newTheme: ITheme = theme[themeCurrent];
+  for (const key in newTheme) {
+    document.documentElement.style.setProperty(key, newTheme[key]);
   }
 };

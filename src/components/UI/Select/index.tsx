@@ -1,22 +1,18 @@
 "use client";
 
-import React, { FC, useRef, useState } from "react";
+import React, { FC, ReactNode, useRef, useState } from "react";
 import styles from "./select.module.scss";
 import { Scrollbar } from "react-scrollbars-custom";
-import Image from "next/image";
-import { useTypeSelector } from "@/hooks/useTypeSelector";
 
 type selectClass = "absolute" | "purple" | "transparent";
 
 interface IProps {
   items: string[];
-  icon?: string;
+  icon?: ReactNode;
   classes?: selectClass[];
 }
 
 const Select: FC<IProps> = ({ items, icon, classes }) => {
-  const { light } = useTypeSelector((state) => state.themeLight);
-
   const [value, setValue] = useState<string>(items[0]);
   const [height, setHeight] = useState<number>(0);
 
@@ -40,7 +36,7 @@ const Select: FC<IProps> = ({ items, icon, classes }) => {
       ref={bodyRef}
       className={`${styles.select} ${
         classes ? classes.map((item) => styles[item]).join(" ") : ""
-      } ${height > 0 ? styles.show : ""} ${light ? styles.themeLight : ""}`}
+      } ${height > 0 ? styles.show : ""} `}
     >
       <button
         type="button"
@@ -49,7 +45,7 @@ const Select: FC<IProps> = ({ items, icon, classes }) => {
           height > 0 ? onCloseSelect() : onOpenSelect();
         }}
       >
-        {icon ? <Image src={icon} alt="sort" width={20} height={20} /> : null}
+        {icon ? icon : null}
         <span>{value}</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,41 +1,42 @@
 "use client";
 
-import { FC, useEffect, useRef, useState } from 'react'
-import styles from './search.module.scss';
-import SearchIcon from '../Icons/SearchIcon';
-import { useTypeSelector } from '@/hooks/useTypeSelector';
+import { FC, useEffect, useRef, useState } from "react";
+import styles from "./search.module.scss";
+import SearchIcon from "../Icons/SearchIcon";
 
-
-interface IProps {
-
-}
-const Search:FC<IProps> = () => {
-
-  const { light } = useTypeSelector(state => state.themeLight);
-
+interface IProps {}
+const Search: FC<IProps> = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const inputRef = useRef<HTMLInputElement|null>(null);
-  
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const onBlurSearch = () => {
+    if (inputRef.current && inputRef.current.value.length === 0) {
+      setIsOpen(false);
+    }
+  };
+
   useEffect(() => {
-    if(!inputRef.current) return;
-    if(isOpen) {
+    if (!inputRef.current) return;
+    if (isOpen) {
       inputRef.current.focus();
     } else {
-      inputRef.current.value = ''
+      inputRef.current.value = "";
     }
-  }, [isOpen])
+  }, [isOpen]);
 
   return (
-    <div className={`${styles.search} ${isOpen ? styles.open : ''} ${light ? styles.themeLight : ''}`}>
-        <button onClick={() => setIsOpen(prev => !prev)} className={styles.icon}>
-            <SearchIcon />
-        </button>
-        <div className={styles.input}>
-            <input ref={inputRef} type="text" />
-        </div>
-        
+    <div className={`${styles.search} ${isOpen ? styles.open : ""}`}>
+      <button
+        onClick={() => setIsOpen((prev) => !prev)}
+        className={styles.icon}
+      >
+        <SearchIcon />
+      </button>
+      <div className={styles.input}>
+        <input onBlur={onBlurSearch} ref={inputRef} type="text" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Search
+export default Search;

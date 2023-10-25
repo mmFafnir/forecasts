@@ -8,13 +8,11 @@ import {
   closeModal,
   openModal,
 } from "@/GlobalRedux/Slices/modalSlice";
-import { useTypeSelector } from "@/hooks/useTypeSelector";
 import InputText from "@/components/UI/Form/InputText";
 import CaptchaModule from "@/modules/CaptchaModule";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
 const RestoreModal: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
   const dispatch = useTypeDispatch();
 
   const {
@@ -32,7 +30,7 @@ const RestoreModal: FC = () => {
   const onModalLogin = () => dispatch(openModal(ModalEnum.LOGIN));
 
   return (
-    <div className={`${styles.form} ${light ? styles.themeLight : ""}`}>
+    <div className={styles.form}>
       <div className={styles.header}>
         <button onClick={onClickBack}>
           <svg

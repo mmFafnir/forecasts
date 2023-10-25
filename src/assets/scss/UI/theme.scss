@@ -1,59 +1,57 @@
+.theme-light {
+  // background-color: #fff;
+  // color: #303d7e;
 
+  .wrapper-bg {
+    display: none;
+  }
 
-.theme-light{
-    background-color: #FFF;
-    color: #303D7E;
+  // header{
+  //     background: transparent;
+  //     box-shadow: none;
+  //     border-bottom: 1px solid  #E2E2E2;
+  // }
 
-    .wrapper-bg{
-        display: none;
-    }
+  // .btn{
+  //     background-color: #FFF;
+  //     border: 1px solid #D0D2D7;
 
-    header{
-        background: transparent;
-        box-shadow: none;
-        border-bottom: 1px solid  #E2E2E2;
-    }
+  //     svg path{
+  //         fill: #303D7E;
+  //     }
 
-    .btn{
-        background-color: #FFF;
-        border: 1px solid #D0D2D7;
+  //     @media(min-width: 901px) {
+  //         &:hover{
+  //             background-color: #65A3FF;
+  //             color: #fff;
+  //             border-color: #65A3FF;
+  //             svg path{
+  //                 fill: #fff;
+  //             }
+  //         }
+  //     }
+  //     &.active{
+  //         background-color: #65A3FF;
+  //         color: #fff;
+  //         border-color: #65A3FF;
+  //         svg path{
+  //             fill: #fff;
+  //         }
+  //     }
+  // }
 
-        svg path{
-            fill: #303D7E;
-        }
+  // .btn--pur{
+  //     background-color: #65A3FF;
+  //     color: #fff;
+  // }
 
-        @media(min-width: 901px) {
-            &:hover{
-                background-color: #65A3FF;
-                color: #fff;
-                border-color: #65A3FF;
-                svg path{
-                    fill: #fff;
-                }
-            }
-        }
-        &.active{
-            background-color: #65A3FF;
-            color: #fff;
-            border-color: #65A3FF;
-            svg path{
-                fill: #fff;
-            }
-        }
-    }
-
-    .btn--pur{
-        background-color: #65A3FF;
-        color: #fff;
-    }
-
-    .show-more{
-        border-color: #303D7E;
-        @media(min-width: 901px) {
-            &:hover{
-                border-color: #65A3FF;
-                color: #65A3FF;
-            }
-        }
-    }
+  // .show-more{
+  //     border-color: #303D7E;
+  //     @media(min-width: 901px) {
+  //         &:hover{
+  //             border-color: #65A3FF;
+  //             color: #65A3FF;
+  //         }
+  //     }
+  // }
 }

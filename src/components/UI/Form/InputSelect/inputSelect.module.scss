@@ -30,6 +30,10 @@
     flex: 0 0 16px;
     transition-duration: 0.3s;
     transform-origin: center;
+
+    path {
+      stroke: var(--text-color);
+    }
   }
 }
 
@@ -54,11 +58,11 @@
     overflow: hidden;
     margin-bottom: 5px;
     &.active {
-      color: #65a3ff;
+      color: var(--text-hover-color);
     }
     @media (min-width: 901px) {
       &:hover {
-        color: #65a3ff;
+        color: var(--text-hover-color);
       }
     }
   }

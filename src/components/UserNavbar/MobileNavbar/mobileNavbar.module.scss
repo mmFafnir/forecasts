@@ -13,10 +13,11 @@
   display: flex;
   align-items: center;
   padding: 10px 20px;
-  background-color: #303d7e;
+  background-color: var(--block-dark-light);
   border-radius: 10px;
   width: 100%;
   transition-duration: 0.3s;
+  color: var(--text-light-color);
 
   svg {
     flex: 0 0 20px;
@@ -31,13 +32,14 @@
 }
 
 .content {
-  background-color: #303d7e;
+  background-color: var(--block-dark-light);
   border-radius: 4px 4px 20px 20px;
   transition-duration: 0.3s;
   position: absolute;
   overflow: hidden;
   width: 100%;
   top: 46px;
+  color: var(--text-light-color);
   > div {
     display: flex;
     flex-direction: column;
@@ -57,7 +59,7 @@
     }
 
     &.active {
-      color: #65a3ff;
+      color: var(--text-hover-color);
     }
   }
 }

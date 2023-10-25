@@ -5,6 +5,7 @@ import { sort } from "@/assets/data/sort";
 import styles from "./ai.module.scss";
 import ForecastCard from "@/components/Cards/ForecastCard";
 import { widgets } from "./widgets";
+import SortIcon from "@/components/UI/Icons/SortIcon";
 
 const AIFootBool: NextPage = async () => {
   return (
@@ -17,7 +18,7 @@ const AIFootBool: NextPage = async () => {
             <span className="plus-icon"></span>
           </button>
           <Select
-            icon="/img/sort.svg"
+            icon={<SortIcon />}
             classes={["absolute", "transparent"]}
             items={sort.map((item) => item.title)}
           />

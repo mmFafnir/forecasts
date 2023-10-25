@@ -9,6 +9,7 @@ import EventModal from "../Modals/EventModal";
 import { ModalEnum } from "@/GlobalRedux/Slices/modalSlice";
 import { sort } from "@/assets/data/sort";
 import NewEventCard from "../Cards/EventCard/NewEventCard";
+import SortIcon from "../UI/Icons/SortIcon";
 
 const EventList: FC = () => {
   return (
@@ -17,7 +18,7 @@ const EventList: FC = () => {
         <h2>Список событий</h2>
         <div className={styles.select}>
           <Select
-            icon="/img/sort.svg"
+            icon={<SortIcon />}
             classes={["absolute", "purple"]}
             items={sort.map((item) => item.title)}
           />

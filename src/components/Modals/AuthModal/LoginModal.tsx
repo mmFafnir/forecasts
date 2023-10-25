@@ -4,7 +4,6 @@ import {
   openModal,
 } from "@/GlobalRedux/Slices/modalSlice";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
-import { useTypeSelector } from "@/hooks/useTypeSelector";
 import { FC } from "react";
 import styles from "./authModal.module.scss";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";

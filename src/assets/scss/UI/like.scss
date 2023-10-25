@@ -6,6 +6,10 @@
   span {
     margin-left: 12px;
   }
+
+  svg path {
+    fill: var(--text-color);
+  }
 }
 .like {
   span {

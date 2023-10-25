@@ -2,7 +2,7 @@
 
 .form {
   border-radius: 10px;
-  background-color: #1c203a;
+  background-color: var(--modal-color);
   padding: 30px;
   width: 523px;
 
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 12px;
-  border-bottom: 1px solid #303d7e;
+  border-bottom: 1px solid var(--block-dark-light);
   margin-bottom: 35px;
   h3 {
     font-size: 24px;
@@ -64,7 +64,8 @@
 
   @media (min-width: 901px) {
     &:hover {
-      background-color: $iconHoverColor;
+      background-color: var(--block-hover);
+      color: var(--text-light-color);
     }
   }
 }
@@ -157,25 +158,6 @@
   }
 }
 
-.themeLight {
-  background-color: #fff;
-
-  .header {
-    svg path {
-      stroke: #303d7e;
-    }
-  }
-
-  .item {
-    border-color: #d0d2d7;
-    @media (min-width: 901px) {
-      &:hover {
-        background-color: #65a3ff;
-      }
-    }
-  }
-}
-
 @media (max-width: 500px) {
   .body {
     h3 {
@@ -189,3 +171,22 @@
     }
   }
 }
+
+// .themeLight {
+//   background-color: #fff;
+
+//   .header {
+//     svg path {
+//       stroke: #303d7e;
+//     }
+//   }
+
+//   .item {
+//     border-color: #d0d2d7;
+//     @media (min-width: 901px) {
+//       &:hover {
+//         background-color: #65a3ff;
+//       }
+//     }
+//   }
+// }

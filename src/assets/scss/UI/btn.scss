@@ -3,10 +3,14 @@
   display: flex;
   align-items: center;
   border-radius: 10px;
-  background: #303d7e;
+  background: var(--btn-color);
+
+  box-shadow: var(--btn-shadow);
   height: 40px;
   transition-duration: 0.1s;
   position: relative;
+
+  color: var(--btn-text-color);
   span {
     line-height: 0;
   }
@@ -29,15 +33,24 @@
   }
   svg {
     margin-right: 10px;
+
+    path {
+      fill: var(--btn-text-color);
+    }
   }
 
   .plus-icon {
     margin-left: 10px;
   }
   &.active {
-    background: #68428d;
+    background: var(--btn-hover-color);
     box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3);
     pointer-events: none;
+    color: var(--btn-text-hover-color);
+
+    svg path {
+      fill: var(--btn-text-hover-color);
+    }
   }
 
   &__action {
@@ -58,14 +71,27 @@
   }
   @media (min-width: 901px) {
     &:hover {
-      background: #68428d;
+      background: var(--btn-hover-color);
       box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3);
+
+      color: var(--btn-text-hover-color);
+
+      svg path {
+        fill: var(--btn-text-hover-color);
+      }
     }
   }
 }
 
 .btn--pur {
-  background-color: #68428d;
+  background-color: var(--btn-second-color);
+  color: var(--btn-text-second-color);
+  @media (min-width: 901px) {
+    &:hover {
+      background-color: var(--btn-second-hover-color);
+      color: var(--btn-text-second-hover-color);
+    }
+  }
 }
 
 .btn--shadow {

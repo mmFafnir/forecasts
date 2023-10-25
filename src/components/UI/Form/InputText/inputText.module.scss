@@ -6,7 +6,7 @@
   height: 32px;
   padding: 5px 15px;
   input {
-    color: #fff;
+    color: var(--text-color);
     flex: 1 1 auto;
     height: 100%;
   }
@@ -21,6 +21,10 @@
       height: 100%;
       margin-left: 0;
       visibility: visible;
+
+      path {
+        fill: var(--text-color);
+      }
     }
   }
 }

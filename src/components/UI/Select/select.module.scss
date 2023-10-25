@@ -3,16 +3,17 @@
 .select {
   align-items: center;
   position: relative;
-  background-color: #303d7e;
+  background-color: var(--block-dark-light);
   border-radius: 10px;
   overflow: hidden;
+  color: var(--text-light-color);
   // transition-delay: 0.3s;
 }
 
 .show {
   .title {
-    border-color: #1c203a;
-    svg {
+    border-color: var(--block-dark);
+    svg:last-child {
       transform: rotate(180deg);
     }
   }
@@ -26,13 +27,17 @@
   justify-content: space-between;
   width: 100%;
   transition-duration: 0.3s;
-  border-bottom: 1px solid transparent;
+  // border-bottom: 1px solid transparent;
+  transition: background-color 0.3s 0s;
 
-  img {
+  svg:first-child {
+    path {
+      fill: var(--text-color);
+    }
     margin-right: 10px;
   }
-  svg {
-    transition-duration: 0.3s;
+  svg:last-child {
+    transition: transform 0.3s 0s;
     margin-left: 10px;
   }
   span {
@@ -41,7 +46,7 @@
 }
 .body {
   width: 100%;
-  background-color: #303d7e;
+  background-color: var(--block-dark-light);
   z-index: 1;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -54,17 +59,18 @@
     font-size: 14px;
     width: 100%;
     text-align: left;
-    transition-duration: 0.3s;
+    transition: background-color 0.3s 0s;
     padding: 9px 20px;
     @media (min-width: 901px) {
       &:hover {
-        background-color: $iconHoverColor;
+        background-color: var(--block-hover);
       }
     }
   }
 }
+
 .buttonActive {
-  background-color: $iconHoverColor;
+  background-color: var(--block-hover);
   pointer-events: none;
 }
 
@@ -83,60 +89,65 @@
 }
 
 .purple {
-  background-color: $iconHoverColor;
+  background-color: var(--block-hover);
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.3);
+  color: var(--text-light-color);
+
+  .title {
+    svg:first-child {
+      path {
+        fill: var(--text-light-color);
+      }
+    }
+  }
   .body {
-    background-color: $iconHoverColor;
+    background-color: var(--block-hover);
     button {
       @media (min-width: 901px) {
         &:hover {
-          background-color: #303d7e;
+          background-color: var(--block-dark-light);
         }
       }
     }
   }
   .buttonActive {
-    background-color: #303d7e;
+    background-color: var(--block-dark-light);
   }
 }
 
 .transparent {
-  border: 1px solid #fff;
+  border: 1px solid var(--block-dark-light);
   background-color: transparent;
-  transition-duration: 0.3s;
+  color: var(--text-color);
+  transition-duration: 0s;
+  svg:last-child path {
+    stroke: var(--text-color);
+  }
 
+  .title {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transition: background-color 0.3s;
+  }
   .body {
     border-top: none;
     border-bottom: none;
     width: calc(100% + 2px);
     left: -1px;
+    color: var(--text-light-color);
   }
   &.show {
-    background-color: #303d7e;
     border-color: transparent;
-  }
-}
-
-.themeLight {
-  background-color: #65a3ff !important;
-  color: #fff;
-
-  svg path {
-    fill: #65a3ff;
-  }
-
-  .body {
-    background-color: #65a3ff;
-
-    button {
-      @media (min-width: 901px) {
-        &:hover {
-          background-color: #303d7e;
-        }
-      }
+    .title {
+      color: var(--text-light-color);
+      background-color: var(--block-dark-light);
     }
-  }
-  .buttonActive {
-    background-color: #303d7e;
+
+    svg:first-child path {
+      fill: var(--text-light-color);
+    }
+    svg:last-child path {
+      stroke: var(--text-light-color);
+    }
   }
 }

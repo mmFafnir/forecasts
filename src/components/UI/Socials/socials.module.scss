@@ -1,39 +1,39 @@
-@import '@/assets/scss/variables';
+@import "@/assets/scss/variables";
 
-.socials{
-    display: flex;
-    align-items: center;
-    a{
-        margin-right: 20px;
-        &:last-child{
-            margin-right: 0;
-        }
-        svg path{
-            transition-duration: 0.3s;
-        }
-        @media(min-width: 901px) {
-            &:hover{
-                path{
-                    stroke: $iconHoverColor;
-                }
-            }
-        }
+.socials {
+  display: flex;
+  align-items: center;
+  a {
+    margin-right: 20px;
+    &:last-child {
+      margin-right: 0;
     }
+    svg path {
+      stroke: var(--svg-light-color);
+      transition-duration: 0.3s;
+    }
+    @media (min-width: 901px) {
+      &:hover {
+        path {
+          stroke: var(--text-hover-color);
+        }
+      }
+    }
+  }
 }
 
+// .themeLight {
+//   a {
+//     svg path {
+//       stroke: #303d7e;
+//     }
 
-.themeLight{
-    a{
-        svg path{
-            stroke: #303D7E;
-        }
-
-        @media(min-width: 901px) {
-            &:hover{
-                svg path{
-                    stroke: #65A3FF;
-                }
-            }
-        }
-    }
-}
+//     @media (min-width: 901px) {
+//       &:hover {
+//         svg path {
+//           stroke: #65a3ff;
+//         }
+//       }
+//     }
+//   }
+// }

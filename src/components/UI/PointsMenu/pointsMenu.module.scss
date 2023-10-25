@@ -8,7 +8,7 @@
     }
     .points {
       svg path {
-        stroke: #3be9f4;
+        stroke: var(--text-hover-color);
       }
     }
   }
@@ -18,11 +18,12 @@
   display: inline-block;
   svg path {
     transition-duration: 0.3s;
+    stroke: var(--text-color);
   }
   @media (min-width: 901px) {
     &:hover {
       svg path {
-        stroke: #3be9f4;
+        stroke: var(--text-hover-color);
       }
     }
   }
@@ -39,10 +40,10 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 6px 12px;
-    border: 1px solid #303d7e;
+    border: 1px solid var(--block-dark-light);
     border-radius: 16px 0px 16px 16px;
 
-    background: #222a56;
+    background: var(--block-dark-middle);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
 
@@ -59,25 +60,18 @@
     svg {
       margin-right: 6px;
       path {
+        stroke: var(--text-color);
         transition-duration: 0.3s;
       }
     }
 
     @media (min-width: 901px) {
       &:hover {
-        color: #3be9f4;
+        color: var(--text-hover-color);
         svg path {
-          stroke: #3be9f4;
+          stroke: var(--text-hover-color);
         }
       }
-    }
-  }
-}
-
-.themeLight {
-  .menu {
-    > div {
-      background-color: #fff;
     }
   }
 }

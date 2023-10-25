@@ -51,13 +51,12 @@ const statistics: TStatistic[] = [
 ];
 
 const Statistics: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
   return (
     <WidgetWrapper
       title="Статистика"
       imgs={["img/widget/statistics.svg", "img/widget/statistics-dark.svg"]}
     >
-      <div className={`${styles.body} ${light ? styles.themeLight : ""}`}>
+      <div className={styles.body}>
         {statistics.map((stat, index) => (
           <div key={index} className={styles.item}>
             <p>{index + 1}.</p>

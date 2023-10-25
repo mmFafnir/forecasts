@@ -15,14 +15,13 @@
 }
 
 .list {
-  margin-right: 33px;
-
   > div {
     padding-bottom: 21px;
     margin-bottom: 21px;
-    border-bottom: 1px solid #303d7e;
+    border-bottom: 1px solid var(--block-dark-light);
     border-radius: 0px;
-    padding-right: 27px;
+    margin-right: 27px;
+    padding-right: 0;
   }
 }
 
@@ -54,6 +53,6 @@
     padding: 20px 0px 20px 16px;
   }
   .list > div {
-    padding-right: 16px;
+    margin-right: 16px;
   }
 }

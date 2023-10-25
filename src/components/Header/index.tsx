@@ -14,11 +14,9 @@ import RestoreModal from "../Modals/AuthModal/RestoreModal";
 import LoginModal from "../Modals/AuthModal/LoginModal";
 
 const Header: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
-
   return (
     <>
-      <header className={`${styles.header} ${light ? styles.lightTheme : ""}`}>
+      <header className={styles.header}>
         <div className={`${styles.wrapper} container`}>
           <HeaderTop />
           <HeaderBottom />

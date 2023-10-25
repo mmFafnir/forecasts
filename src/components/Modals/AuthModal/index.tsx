@@ -19,7 +19,7 @@ const AuthModal: FC = () => {
   const onOpenRegister = () => dispatch(openModal(ModalEnum.REGISTER));
 
   return (
-    <div className={`${styles.form} ${light ? styles.themeLight : ""}`}>
+    <div className={styles.form}>
       <div className={styles.header}>
         <h3>Регистрация</h3>
         <button onClick={onClose}>

@@ -1,6 +1,7 @@
 .body {
   border-radius: 24px;
-  background: #36417d;
+  background: var(--forecast-match-color);
+  border: solid 1px var(--forecast-match-border);
   padding: 16px;
   margin-bottom: 22px;
 }
@@ -179,9 +180,4 @@
       }
     }
   }
-}
-
-.themeLight {
-  background-color: #fff;
-  border: solid 1px #3be9f4;
 }

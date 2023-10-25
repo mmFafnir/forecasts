@@ -12,12 +12,10 @@ const Match = () => {
   const id = "match";
   const pathname = usePathname();
 
-  const { light } = useTypeSelector((state) => state.themeLight);
-
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
 
   return (
-    <div className={`${styles.match} ${light ? styles.themeLight : ""}`}>
+    <div className={styles.match}>
       <Link
         href={pathname == "/" ? `/football/${id}` : `${pathname}/${id}`}
       ></Link>

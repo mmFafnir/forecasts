@@ -1,7 +1,7 @@
 .body {
   margin-top: 10px;
   border-radius: 16px;
-  background: #232b57;
+  background: var(--color-dark-light);
   padding: 41px;
   padding-bottom: 25px;
 }
@@ -95,14 +95,5 @@
         margin-right: 10px;
       }
     }
-  }
-}
-
-.themeLight {
-  background-color: #fff;
-  border: solid 1px #d0d2d7;
-
-  svg path {
-    stroke: #232b57;
   }
 }

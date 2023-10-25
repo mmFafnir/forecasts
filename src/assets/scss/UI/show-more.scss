@@ -3,7 +3,7 @@
 .show-more {
   padding: 0px 5px;
   margin: 0 auto;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid var(--text-color);
   padding-bottom: 7px;
   transition-duration: 0.3s;
   display: flex;
@@ -13,6 +13,7 @@
     margin-left: 6px;
     transition-duration: 0.3s;
     path {
+      stroke: var(--text-color);
       transition-duration: 0.3s;
     }
   }
@@ -43,7 +44,9 @@
   padding: 0px 20px;
   border: solid 1px var(--block-dark-light);
   background-color: var(--block-dark-light);
+  color: var(--text-light-color);
   transition-duration: 0.3s;
+
   span {
     line-height: 1;
   }
@@ -55,6 +58,7 @@
   @media (min-width: 901px) {
     &:hover {
       background-color: transparent;
+      color: var(--text-color);
     }
   }
 }

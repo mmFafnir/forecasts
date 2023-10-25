@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, ReactElement } from "react";
+import { FC } from "react";
 import styles from "./forecast.module.scss";
 import ForecastPerson from "./ForecastPerson";
 import ForecastMatch from "./ForecastMatch";
@@ -8,21 +8,14 @@ import LikeIcon from "@/components/UI/Icons/LikeIcon";
 import DislikeIcon from "@/components/UI/Icons/DislikeIcon";
 import PointMenu from "@/components/UI/PointsMenu";
 import { forecastMenuItems } from "@/assets/data/forecastMenu";
-import { useTypeSelector } from "@/hooks/useTypeSelector";
 
 interface IProps {
   version?: "forecast" | "user-forecast";
 }
 
 const ForecastCard: FC<IProps> = ({ version = "forecast" }) => {
-  const { light } = useTypeSelector((state) => state.themeLight);
-
   return (
-    <div
-      className={`${styles.body} ${styles[version]} ${
-        light ? styles.themeLight : ""
-      }`}
-    >
+    <div className={`${styles.body} ${styles[version]}`}>
       <div className={styles.wrapper}>
         <div className={styles.header}>
           <ForecastPerson />

@@ -6,16 +6,29 @@
 }
 
 .date {
+  position: relative;
   input {
-    color: #fff;
+    position: relative;
+    z-index: 1;
+    color: var(--text-color);
     width: 100%;
-
     &::-webkit-calendar-picker-indicator {
-      color: transparent;
-      opacity: 1;
-      background: url("/img/icons/calendar.svg") no-repeat center;
-      background-size: contain;
+      // color: transparent;
+      opacity: 0;
+      // background: url("/img/icons/calendar.svg") no-repeat center;
+      // background-size: contain;
       cursor: pointer;
+    }
+  }
+  svg {
+    cursor: pointer;
+    z-index: 0;
+    position: absolute;
+    right: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+    path {
+      fill: var(--text-color);
     }
   }
 }
@@ -24,6 +37,10 @@
   height: 60px;
   .date {
     height: 100%;
+    svg {
+      width: 25px;
+      height: 25px;
+    }
   }
   border-radius: 10px;
   input {
@@ -45,7 +62,12 @@
 @media (max-width: 500px) {
   .big {
     height: 48px;
-
+    .date {
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
     input {
       font-size: 14px;
     }

@@ -3,7 +3,6 @@
 import { FC } from "react";
 import WidgetWrapper from "../../UI/WidgetWrapper";
 import styles from "./statisticsOld.module.scss";
-import { useTypeSelector } from "@/hooks/useTypeSelector";
 
 type TStatistic = {
   all: string;
@@ -50,13 +49,12 @@ const statistics: TStatistic[] = [
 ];
 
 const StatisticsOld: FC = () => {
-  const { light } = useTypeSelector((state) => state.themeLight);
   return (
     <WidgetWrapper
       title="Статистика"
       imgs={["img/widget/statistics.svg", "img/widget/statistics-dark.svg"]}
     >
-      <div className={`${styles.body} ${light ? styles.themeLight : ""}`}>
+      <div className={styles.body}>
         {statistics.map((stat, index) => (
           <div key={index} className={styles.item}>
             <p style={{ color: stat.color }}>
