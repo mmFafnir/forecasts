@@ -38,6 +38,10 @@ h2 {
   align-items: center;
 }
 
+.react-datepicker-popper {
+  z-index: 20 !important;
+}
+
 @media (max-width: 1300px) {
   .page-content {
     padding-left: 0;

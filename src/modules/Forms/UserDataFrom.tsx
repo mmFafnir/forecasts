@@ -16,7 +16,7 @@ type Inputs = {
   nickname: string;
   gender: string;
   country: string;
-  date: string;
+  date: Date;
 };
 
 const UserDataFrom: FC = () => {
