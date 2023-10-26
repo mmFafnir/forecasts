@@ -1,6 +1,6 @@
 import { NextPage } from "next";
 import React from "react";
-import FilterTabs from "@/components/FilterTabs";
+import FilterTabs from "@/components/Filters/FilterTabs";
 import List from "@/components/List";
 import SidebarLayout from "@/layout/SidebarLayout";
 import { favoritesTabs } from "@/assets/data/tabs";

@@ -38,7 +38,7 @@
   z-index: 1;
   max-width: 400px;
   padding: 20px;
-  background-color: #1c203a;
+  background: var(--modal-color);
   padding: 25px 28px;
   border-radius: 10px;
   margin-left: auto;
@@ -55,10 +55,25 @@
   align-items: center;
   justify-content: space-between;
   padding-bottom: 15px;
-  border-bottom: 1px solid #303d7e;
+  border-bottom: 1px solid var(--block-dark-light);
   margin-bottom: 30px;
   p {
     font-size: 24px;
+  }
+
+  button {
+    svg path {
+      stroke: var(--text-color);
+      transition-duration: 0.3s;
+    }
+
+    @media (min-width: 901px) {
+      &:hover {
+        svg path {
+          stroke: var(--text-hover-color);
+        }
+      }
+    }
   }
 }
 

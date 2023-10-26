@@ -2,10 +2,9 @@
 import { FC, useEffect, useState } from "react";
 import styles from "./themeBtn.module.scss";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
-import themeObject from "@/assets/data/theme";
+import themeObject from "@/assets/data/themes";
 import { EnumThemes, setTheme } from "@/GlobalRedux/Slices/themeSlice";
 import { useTypeSelector } from "@/hooks/useTypeSelector";
-import test from "node:test";
 
 const ThemeBtn: FC = () => {
   const { theme } = useTypeSelector((state) => state.theme);
@@ -14,13 +13,11 @@ const ThemeBtn: FC = () => {
 
   const onChangeColor = (newTheme: EnumThemes) => {
     dispatch(setTheme(newTheme));
-    console.log("sad");
   };
 
   return (
     <div className={styles.themes}>
       {Object.keys(themeObject).map((currentTheme) => {
-        const active = currentTheme == theme;
         const color =
           currentTheme === EnumThemes.LIGHT
             ? "#fff"
@@ -31,7 +28,9 @@ const ThemeBtn: FC = () => {
           <button
             key={color}
             style={{ borderColor: color }}
-            className={`${styles.item} ${active ? styles.active : ""} ${
+            className={`${styles.item} ${
+              currentTheme == theme ? styles.active : ""
+            } ${
               currentTheme === theme && currentTheme == EnumThemes.LIGHT
                 ? styles.light
                 : ""

@@ -74,6 +74,9 @@ export const dark = {
   "--forecast-match-color": "#36417d",
   "--forecast-match-border": "#36417d",
 
+  // user layout
+  "--user-content": "#232b57",
+
   // event cards color
   "--event-card-color": "#222a56",
   "--event-card-border": "#fff",

@@ -1,5 +1,5 @@
 import { EnumThemes } from "@/GlobalRedux/Slices/themeSlice";
-import theme from "../data/theme";
+import theme from "../data/themes";
 interface ITheme {
   [key: string]: string;
 }

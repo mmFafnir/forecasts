@@ -30,13 +30,13 @@
         display: block;
         flex: 0 0 6px;
         height: 6px;
-        background-color: #fff;
+        background: var(--text-color);
         border-radius: 50%;
         margin: 0 21px;
       }
       &:last-child {
         pointer-events: none;
-        border-color: #fff;
+        border-color: var(--text-color);
         &::after {
           display: none;
         }
@@ -44,7 +44,7 @@
       @media (min-width: 901px) {
         &:hover {
           span {
-            border-color: #fff;
+            border-color: var(--text-color);
           }
         }
       }

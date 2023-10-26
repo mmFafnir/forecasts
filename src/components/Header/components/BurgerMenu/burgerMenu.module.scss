@@ -45,7 +45,7 @@
     left: 0;
     background: radial-gradient(
       50.06% 30938.27% at 49.94% 100%,
-      #2e42a5 0%,
+      var(--border-dark) 0%,
       rgba(46, 66, 165, 0) 100%
     );
   }

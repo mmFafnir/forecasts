@@ -1,7 +1,7 @@
 .item {
   display: flex;
   flex-direction: column;
-  background-color: var(--event-card-color);
+  background: var(--event-card-color);
   border: 1px solid transparent;
   border-radius: 20px;
   flex: 0 1 calc(33% - 20px);
@@ -22,7 +22,7 @@
 
   @media (min-width: 901px) {
     &:hover {
-      border-color: #9fb0bc;
+      border-color: var(--event-card-border);
     }
   }
 }
@@ -47,9 +47,14 @@
 .time {
   display: flex;
   align-items: center;
+  color: var(--color-gold);
 
   svg {
     margin-right: 10px;
+
+    path {
+      stroke: var(--color-gold);
+    }
   }
 }
 
@@ -83,16 +88,5 @@
 @media (max-width: 1300px) {
   .item {
     flex: 0 1 calc(50% - 20px);
-  }
-}
-
-.themeLight {
-  background-color: #fff;
-  border: 1px solid #d0d2d7;
-  .time {
-    color: #9747ff;
-    svg path {
-      stroke: #9747ff;
-    }
   }
 }

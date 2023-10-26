@@ -1,12 +1,13 @@
 import { NextPage } from "next";
 import React from "react";
 import { links } from "../../assets/data/links";
-import FilterTabs from "@/components/FilterTabs";
+import FilterTabs from "@/components/Filters/FilterTabs";
 import List from "@/components/List";
 import styles from "@/assets/scss/page.module.scss";
 import SidebarLayout from "@/layout/SidebarLayout";
 import { tabs } from "@/assets/data/tabs";
 import Search from "@/components/UI/Search";
+import DataBtn from "@/components/Filters/DataBtn";
 
 interface IProps {
   params: {
@@ -31,6 +32,7 @@ const SportPage: NextPage<IProps> = ({ params }) => {
         <div className="flex-header">
           <FilterTabs tabs={tabs} />
           <Search />
+          <DataBtn />
         </div>
         <List />
 

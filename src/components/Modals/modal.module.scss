@@ -44,3 +44,9 @@
   opacity: 0;
   transition-duration: 0.3s;
 }
+
+@media (max-width: 500px) {
+  .wrapper {
+    margin-top: 0;
+  }
+}

@@ -1,0 +1,48 @@
+.btn {
+  justify-content: center;
+  padding: 10px 15px;
+  cursor: pointer;
+  position: relative;
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    position: absolute;
+    z-index: 0;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  input {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row-reverse;
+    &::-webkit-calendar-picker-indicator {
+      //   display: none;
+      margin-right: 10px;
+      width: 16px;
+      height: 16px;
+      opacity: 0;
+      cursor: pointer;
+    }
+  }
+
+  @media (min-width: 901px) {
+    &:hover {
+      input {
+        color: var(--text-light-color);
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .btn {
+    order: -1;
+    margin-bottom: 10px;
+    margin-right: 10px;
+  }
+}

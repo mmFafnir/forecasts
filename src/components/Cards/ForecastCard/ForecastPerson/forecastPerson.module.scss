@@ -17,7 +17,7 @@
     align-items: center;
     width: 15px;
     height: 15px;
-    border: solid 1px #3be9f4;
+    border: solid 1px var(--text-hover-color);
     border-radius: 50%;
     right: 0;
     bottom: 3px;
@@ -65,9 +65,13 @@
   // margin-left: 20px;
   svg {
     margin-right: 10px;
+
+    path {
+      stroke: var(--text-hover-color);
+    }
   }
   span {
-    color: #3be9f4;
+    color: var(--text-hover-color);
     b {
       font-weight: 500;
     }

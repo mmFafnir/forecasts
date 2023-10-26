@@ -64,9 +64,12 @@
   display: flex;
   align-items: center;
 
-  color: #ffd644;
+  color: var(--color-gold);
   svg {
     margin-right: 10px;
+    path {
+      stroke: var(--color-gold);
+    }
   }
   span {
     margin-top: 1px;

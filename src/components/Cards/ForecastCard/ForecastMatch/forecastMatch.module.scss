@@ -108,8 +108,8 @@
     .border {
       display: inline-block;
       padding: 3px 6px;
-      border: solid 1px #3be9f4;
-      color: #3be9f4;
+      border: solid 1px var(--text-hover-color);
+      color: var(--text-hover-color);
       border-radius: 6px;
       text-align: center;
       transition-duration: 0.3s;
@@ -117,8 +117,8 @@
     a.border {
       @media (min-width: 901px) {
         &:hover {
-          background-color: #3be9f4;
-          color: #36417d;
+          background-color: var(--text-hover-color);
+          color: #000;
         }
       }
     }

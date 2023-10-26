@@ -23,7 +23,7 @@
   }
   @media (min-width: 901px) {
     &:hover {
-      background-color: var(--match-hover-color);
+      background: var(--match-hover-color);
       box-shadow: 0px 5px 5px #00000042;
     }
     &:active {

@@ -1,3 +1,5 @@
+"use client";
+
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 export enum EnumThemes {
@@ -20,6 +22,7 @@ export const themeSlice = createSlice({
   reducers: {
     setTheme: (state, action: PayloadAction<EnumThemes>) => {
       state.theme = action.payload;
+      window.localStorage.setItem("theme", action.payload);
     },
   },
 });

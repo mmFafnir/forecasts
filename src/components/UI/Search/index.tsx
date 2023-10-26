@@ -33,7 +33,7 @@ const Search: FC<IProps> = () => {
         <SearchIcon />
       </button>
       <div className={styles.input}>
-        <input onBlur={onBlurSearch} ref={inputRef} type="text" />
+        <input ref={inputRef} type="text" />
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ export const light = {
   "--color-dark": "#434343",
   "--color-dark-light": "#fff",
 
-  "--color-gold": "#ffd644",
+  "--color-gold": "#65a3ff",
 
   // logo color
   "--logo-color": "#595959",
@@ -71,6 +71,7 @@ export const light = {
   "--forecast-match-border": "#656565",
 
   // user layout
+  "--user-content": "#fff",
 
   // event cards color
   "--event-card-color": "#fff",
