@@ -1,4 +1,5 @@
 .notify-action {
+  cursor: pointer;
   display: block;
   height: 18px;
   max-width: 50px;
@@ -14,4 +15,5 @@
   position: absolute;
   top: 5%;
   right: -47%;
+  line-height: 1;
 }

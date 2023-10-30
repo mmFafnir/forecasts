@@ -10,6 +10,7 @@ export enum ModalEnum {
   BURGER_MENU = "burger-menu",
   SETTINGS = "settings",
   PRESENT = "present",
+  NOTIFICATION = "Notifications",
 }
 
 interface IState {

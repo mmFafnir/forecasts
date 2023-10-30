@@ -82,15 +82,9 @@
   }
 }
 
-// .themeLight {
-//   .wrapper {
-//     background-color: #fff;
-//   }
-//   .header {
-//     button {
-//       svg path {
-//         stroke: #2e42a5;
-//       }
-//     }
-//   }
-// }
+.notify {
+  svg path {
+    fill: transparent;
+    stroke: var(--text-color);
+  }
+}

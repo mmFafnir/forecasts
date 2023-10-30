@@ -15,6 +15,8 @@ import { usePathname } from "next/navigation";
 import PresentIcon from "@/components/UI/Icons/PresentIcon";
 import NotifyModal from "@/components/NotifyModal";
 import Present from "@/components/NotifyModal/Present";
+import Notifications from "@/components/NotifyModal/Notifications";
+import Image from "next/image";
 
 const HeaderTop: FC = () => {
   const pathname = usePathname();
@@ -24,6 +26,7 @@ const HeaderTop: FC = () => {
   const onOpenBurgerMenu = () => dispatch(openModal(ModalEnum.BURGER_MENU));
   const onOpenSettings = () => dispatch(openModal(ModalEnum.SETTINGS));
   const onOpenPresent = () => dispatch(openModal(ModalEnum.PRESENT));
+  const onOpenNotification = () => dispatch(openModal(ModalEnum.NOTIFICATION));
 
   return (
     <>
@@ -47,11 +50,20 @@ const HeaderTop: FC = () => {
         </div>
         <div className={styles.search}>{/* <Search/> */}</div>
         <div className={styles.icons}>
-          <button onClick={onOpenModalAuth}>
+          {/* <button onClick={onOpenModalAuth}>
             <PersonIcon />
-          </button>
+          </button> */}
+          <div className={styles.person}>
+            <span onClick={onOpenNotification} className="notify-action">
+              3
+            </span>
+            <Link href={"/user"}>
+              <Image height={28} width={28} src={"/img/person.png"} alt="ФИО" />
+            </Link>
+          </div>
+
           <button onClick={onOpenPresent}>
-            <span className="notify-action">1</span>
+            <span className="notify-action">5</span>
             <PresentIcon />
           </button>
           <button onClick={onOpenSettings}>
@@ -65,6 +77,9 @@ const HeaderTop: FC = () => {
       <Settings />
       <NotifyModal name={ModalEnum.PRESENT} title="Бонус">
         <Present />
+      </NotifyModal>
+      <NotifyModal name={ModalEnum.NOTIFICATION} title="Уведомления">
+        <Notifications />
       </NotifyModal>
       <BurgerMenu />
     </>
