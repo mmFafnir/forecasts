@@ -68,7 +68,7 @@ export const dark = {
 
   // modals color
   "--modal-color": " #1c203a",
-  "--border-border-color": "#1c203a",
+  "--border-bottom-color": "#1c203a",
 
   // forecast cards color
   "--forecast-match-color": "#36417d",

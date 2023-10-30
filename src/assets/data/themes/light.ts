@@ -64,7 +64,7 @@ export const light = {
 
   // modals color
   "--modal-color": " #fff",
-  "--border-border-color": "#656565",
+  "--border-bottom-color": "#656565",
 
   // forecast cards color
   "--forecast-match-color": "#fff",

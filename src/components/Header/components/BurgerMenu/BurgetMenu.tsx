@@ -12,6 +12,7 @@ import {
   openModal,
 } from "@/GlobalRedux/Slices/modalSlice";
 import { useTypeDispatch } from "@/hooks/useTypeDispatch";
+import PresentIcon from "@/components/UI/Icons/PresentIcon";
 
 const BurgerMenu: FC = () => {
   const { activeModal } = useTypeSelector((state) => state.modal);
@@ -20,6 +21,7 @@ const BurgerMenu: FC = () => {
   const onClose = () => dispatch(closeModal());
   const openSettings = () => dispatch(openModal(ModalEnum.SETTINGS));
   const openLogin = () => dispatch(openModal(ModalEnum.LOGIN));
+  const onOpenPresent = () => dispatch(openModal(ModalEnum.PRESENT));
 
   return (
     <div
@@ -67,6 +69,10 @@ const BurgerMenu: FC = () => {
           <button className={styles.item} onClick={openSettings}>
             <SettingIcon />
             <span>Настройки</span>
+          </button>
+          <button className={styles.item} onClick={onOpenPresent}>
+            <PresentIcon />
+            <span>Бонусы</span>
           </button>
           <button className={styles.item} onClick={openLogin}>
             <PersonIcon />

@@ -1,0 +1,104 @@
+@import "@/assets/scss/variables";
+
+.modal {
+  position: absolute;
+  top: 60px;
+  right: 0px;
+  z-index: 22;
+  visibility: hidden;
+}
+.open {
+  visibility: visible;
+  .bg,
+  .wrapper {
+    opacity: 1;
+  }
+}
+.bg {
+  transition-duration: 0.3s;
+  position: fixed;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(34, 42, 86, 0.2);
+  backdrop-filter: blur(2px);
+  left: 0;
+  top: 0;
+}
+
+.wrapper {
+  width: 283px;
+  opacity: 0;
+  transition-duration: 0.3s;
+  background: var(--modal-color);
+  padding: 25px 28px;
+  position: relative;
+  z-index: 4;
+  border-radius: 10px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24px;
+  padding-bottom: 14px;
+  margin-bottom: 14px;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: radial-gradient(
+      50.06% 30938.27% at 49.94% 100%,
+      var(--border-dark) 0%,
+      rgba(46, 66, 165, 0) 100%
+    );
+  }
+  button {
+    width: 24px;
+    height: 24px;
+    svg path {
+      transition-duration: 0.3s;
+      stroke: var(--text-color);
+    }
+    @media (min-width: 901px) {
+      &:hover {
+        svg path {
+          stroke: var(--text-hover-color);
+        }
+      }
+    }
+  }
+}
+
+.back {
+  display: none;
+}
+@media (max-width: 540px) {
+  .modal {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .wrapper {
+    padding-top: 40px;
+    width: 100%;
+  }
+  .header {
+    padding-bottom: 23px;
+    margin-bottom: 23px;
+    font-size: 20px;
+
+    button {
+      display: none;
+      &.back {
+        display: block;
+      }
+    }
+  }
+}

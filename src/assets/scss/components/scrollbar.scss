@@ -1,0 +1,12 @@
+.ScrollbarsCustom-Track {
+  width: 2px !important;
+}
+.ScrollbarsCustom-Wrapper {
+  inset: 0px 0px 0px 0px !important;
+}
+
+.track-right {
+  .ScrollbarsCustom-TrackY {
+    right: -10px !important;
+  }
+}

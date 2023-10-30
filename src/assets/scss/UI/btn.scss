@@ -53,22 +53,6 @@
     }
   }
 
-  &__action {
-    position: absolute;
-    display: block;
-    border-radius: 4px;
-    padding: 4px;
-    height: 18px;
-    max-width: 50px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #000;
-    background: #ffd644;
-    transform: translateY(-50%);
-    top: calc(0%);
-    right: -7px;
-    font-size: 16px;
-  }
   @media (min-width: 901px) {
     &:hover {
       background: var(--btn-hover-color);

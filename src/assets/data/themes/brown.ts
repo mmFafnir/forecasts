@@ -63,7 +63,7 @@ export const brown = {
 
   // modals color
   "--modal-color": "linear-gradient(180deg, #434343 0%, #373737 100%)",
-  "--border-border-color": "#1c203a",
+  "--border-bottom-color": "#1c203a",
 
   // forecast cards color
   "--forecast-match-color": "linear-gradient(180deg, #434343 0%, #373737 100%)",

@@ -12,6 +12,9 @@ import BurgerIcon from "@/components/UI/Icons/BurgerIcon";
 import BurgerMenu from "./BurgerMenu/BurgetMenu";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import PresentIcon from "@/components/UI/Icons/PresentIcon";
+import NotifyModal from "@/components/NotifyModal";
+import Present from "@/components/NotifyModal/Present";
 
 const HeaderTop: FC = () => {
   const pathname = usePathname();
@@ -20,6 +23,7 @@ const HeaderTop: FC = () => {
   const onOpenModalAuth = () => dispatch(openModal(ModalEnum.AUTH));
   const onOpenBurgerMenu = () => dispatch(openModal(ModalEnum.BURGER_MENU));
   const onOpenSettings = () => dispatch(openModal(ModalEnum.SETTINGS));
+  const onOpenPresent = () => dispatch(openModal(ModalEnum.PRESENT));
 
   return (
     <>
@@ -46,6 +50,10 @@ const HeaderTop: FC = () => {
           <button onClick={onOpenModalAuth}>
             <PersonIcon />
           </button>
+          <button onClick={onOpenPresent}>
+            <span className="notify-action">1</span>
+            <PresentIcon />
+          </button>
           <button onClick={onOpenSettings}>
             <SettingIcon />
           </button>
@@ -55,6 +63,9 @@ const HeaderTop: FC = () => {
         </button>
       </div>
       <Settings />
+      <NotifyModal name={ModalEnum.PRESENT} title="Бонус">
+        <Present />
+      </NotifyModal>
       <BurgerMenu />
     </>
   );

@@ -32,14 +32,18 @@
       }
     }
   }
-}
 
-.item.active {
-  span {
-    transform: translate(-50%, -50%) scale(0.7);
+  &.active {
+    border-color: #fff !important;
+    span {
+      transform: translate(-50%, -50%) scale(0.7);
+    }
   }
 }
 
 .light {
   border-color: #000 !important;
+  &.item.active {
+    border-color: #000 !important;
+  }
 }
