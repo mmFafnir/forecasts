@@ -28,14 +28,14 @@
     path {
       transition-duration: 0.3s;
       fill: transparent;
-      stroke: #ffd644;
+      stroke: var(--color-gold);
     }
   }
 }
 
 .active {
   svg path {
-    fill: #ffd644;
+    fill: var(--color-gold);
   }
 }
 
