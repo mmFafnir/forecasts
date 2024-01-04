@@ -35,7 +35,7 @@ const Countries = () => {
   };
 
   useEffect(() => getCountries(""), []);
-
+  console.log(countries);
   return (
     <WidgetWrapper
       loading={loading}
@@ -54,21 +54,30 @@ const Countries = () => {
         <div className={styles.body}>
           {countries.length === 0 && <p>Пусто</p>}
           {countries.map((item) => (
-            <Link
-              title={item.translation}
-              key={item.code}
-              href={"/"}
-              className={styles.item}
-            >
-              <Image
-                src={getImageSrc(item.code + ".svg")}
-                alt={item.name}
-                width={20}
-                height={15}
+            <>
+              <Link
                 title={item.translation}
-              />
-              <span>{item.translation}</span>
-            </Link>
+                key={item.code}
+                href={"/"}
+                className={styles.item}
+              >
+                <Image
+                  src={getImageSrc(item.code + ".svg")}
+                  alt={item.name}
+                  width={20}
+                  height={15}
+                  title={item.translation}
+                />
+                <span>{item.translation}</span>
+              </Link>
+              {/* <div>
+                {item.league.map((lig) => (
+                  <Link key={lig.id} href={"/"}>
+                    {lig.league_name}
+                  </Link>
+                ))}
+              </div> */}
+            </>
           ))}
         </div>
       </div>

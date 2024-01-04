@@ -28,7 +28,7 @@ const Group: FC<IProps> = ({ item }) => {
           </button>
           <div className={styles.country}>
             <Image
-              src={getImageSrc(item.league_id + ".png")}
+              src={getImageSrc(item.league_cc + ".svg")}
               alt={item.league_name}
               width={20}
               height={15}
