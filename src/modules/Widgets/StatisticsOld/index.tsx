@@ -1,10 +1,8 @@
 "use client";
 
 import { FC } from "react";
-import WidgetWrapper from "../../UI/WidgetWrapper";
-import styles from "./statistics.module.scss";
-import { useTypeSelector } from "@/hooks/useTypeSelector";
-import Image from "next/image";
+import WidgetWrapper from "../WidgetWrapper";
+import styles from "./statisticsOld.module.scss";
 
 type TStatistic = {
   all: string;
@@ -50,29 +48,31 @@ const statistics: TStatistic[] = [
   },
 ];
 
-const Statistics: FC = () => {
+const StatisticsOld: FC = () => {
   return (
     <WidgetWrapper
       title="Статистика"
+      loading={false}
       imgs={["img/widget/statistics.svg", "img/widget/statistics-dark.svg"]}
     >
       <div className={styles.body}>
         {statistics.map((stat, index) => (
           <div key={index} className={styles.item}>
-            <p>{index + 1}.</p>
-            <p className={styles.flag}>
-              <Image src={"/img/flag.svg"} alt="flag" width={12} height={12} />
+            <p style={{ color: stat.color }}>
+              <span>{stat.title}</span>
             </p>
-            <p className={styles.person}>
-              <Image
-                src={"/img/person.png"}
-                height={20}
-                width={20}
-                alt="Alex45"
-              />
-              <span>Alex45</span>
+            <p>
+              <span>Всего</span>
+              <span>{stat.all}</span>
             </p>
-            <p style={{ color: "#66DA64" }}>{stat.coefficient}%</p>
+            <p>
+              <span>Лучшие</span>
+              <span>{stat.value}</span>
+            </p>
+            <p>
+              <span>Средний коэф:</span>
+              <span>{stat.coefficient}</span>
+            </p>
           </div>
         ))}
       </div>
@@ -80,4 +80,4 @@ const Statistics: FC = () => {
   );
 };
 
-export default Statistics;
+export default StatisticsOld;

@@ -25,16 +25,21 @@
   align-items: center;
   margin-bottom: 10px;
   transition-duration: 0.3s;
-
+  width: 100%;
   &:last-child {
     margin-bottom: 0;
   }
   img {
     align-self: flex-start;
     margin-right: 10px;
+    flex: 0 0 auto;
   }
   span {
-    margin-top: 1px;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   @media (min-width: 901px) {

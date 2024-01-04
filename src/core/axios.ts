@@ -1,7 +1,7 @@
 import axios from "axios";
 import { parseCookies } from "nookies";
 
-axios.defaults.baseURL = "https://admin.aibetguru.com/api/";
+axios.defaults.baseURL = "https://admin.aibetguru.com/api/app/";
 
 axios.interceptors.request.use((config) => {
   if (typeof window !== "undefined") {

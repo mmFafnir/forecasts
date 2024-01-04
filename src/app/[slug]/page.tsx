@@ -8,6 +8,7 @@ import SidebarLayout from "@/layout/SidebarLayout";
 import { tabs } from "@/assets/data/tabs";
 import Search from "@/components/UI/Search";
 import DataBtn from "@/components/Filters/DataBtn";
+import { getFootballMatches } from "@/api/matches/get/getFootballMatches";
 
 interface IProps {
   params: {
@@ -21,8 +22,11 @@ export const generateStaticParams = async () => {
   });
 };
 
-const SportPage: NextPage<IProps> = ({ params }) => {
+const SportPage: NextPage<IProps> = async ({ params }) => {
   const currentLink = links.find((link) => link.href == `/${params.slug}`);
+
+  const data = await getFootballMatches();
+
   return (
     <div className={styles.main}>
       <h1>
@@ -34,7 +38,7 @@ const SportPage: NextPage<IProps> = ({ params }) => {
           <Search />
           <DataBtn />
         </div>
-        <List />
+        <List data={data.data} />
 
         <p className="desc-text">
           Определите будущее и выигрывайте с нашими прогнозами матчей! Наши

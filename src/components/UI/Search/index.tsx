@@ -6,7 +6,7 @@ import SearchIcon from "../Icons/SearchIcon";
 
 interface IProps {}
 const Search: FC<IProps> = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState<boolean>(true);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const onBlurSearch = () => {

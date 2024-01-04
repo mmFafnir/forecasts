@@ -10,15 +10,22 @@
   align-items: center;
   margin-bottom: 10px;
   transition-duration: 0.3s;
+  overflow: hidden;
+  max-width: 100%;
   &:last-child {
     margin-bottom: 0;
   }
   img {
-    margin-right: 16px;
+    margin-right: 10px;
     align-self: flex-start;
+    flex: 0 0 auto;
   }
   span {
-    margin-top: 1px;
+    width: 100%;
+    white-space: nowrap;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   @media (min-width: 901px) {
     &:hover {

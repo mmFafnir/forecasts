@@ -1,7 +1,7 @@
-import Bookmakers from "@/components/Widgets/Bookmakers";
-import Leagues from "@/components/Widgets/Leagues";
-import Countries from "@/components/Widgets/Countries";
-import Statistics from "@/components/Widgets/Statistics";
+import Bookmakers from "@/modules/Widgets/Bookmakers";
+import Leagues from "@/modules/Widgets/Leagues";
+import Countries from "@/modules/Widgets/Countries";
+import Statistics from "@/modules/Widgets/Statistics";
 
 export const widgets = {
   left: [<Leagues key={1} />, <Countries key={2} />],

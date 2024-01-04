@@ -50,7 +50,7 @@ export const dark = {
 
   //match card color
   "--match-color": "#222a56",
-  "--match-hover-color": `linear-gradient(0deg, #4a527d 0%, #4a527d 100%), #d9d9d9`,
+  "--match-hover-color": `#4a527d `,
 
   // group color
   "--group-color": "#1d2653",

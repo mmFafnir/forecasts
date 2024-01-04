@@ -1,14 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { FC, useState } from "react";
 import styles from "./group.module.scss";
 import StarIcon from "../UI/Icons/StarIcon";
 import Image from "next/image";
 import Match from "../Match";
+import { TLeaguesFootball } from "@/types/sports/football";
+import { getImageSrc } from "@/utils/getImageSrc";
 
-const Group = () => {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
+interface IProps {
+  item: TLeaguesFootball;
+}
 
+const Group: FC<IProps> = ({ item }) => {
+  const [isChecked, setIsChecked] = useState<boolean>(
+    item.favorit === "0" ? false : true
+  );
   return (
     <div className={styles.group}>
       <div className={styles.header}>
@@ -20,17 +27,20 @@ const Group = () => {
             <StarIcon />
           </button>
           <div className={styles.country}>
-            <Image src={"/img/flag.svg"} alt="Англия" width={20} height={15} />
-            <p>АНГЛИЯ</p>
-            <p>Вторая Лига</p>
-            <p>Тур 5</p>
+            <Image
+              src={getImageSrc(item.league_id + ".png")}
+              alt={item.league_name}
+              width={20}
+              height={15}
+            />
+            <p>{item.league_name}</p>
           </div>
         </div>
       </div>
       <div className={styles.body}>
-        <Match />
-        <Match />
-        <Match />
+        {item.games.map((game) => (
+          <Match key={game.id} match={game} />
+        ))}
       </div>
     </div>
   );

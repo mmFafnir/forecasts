@@ -9,9 +9,17 @@ interface IProps {
   title: string;
   imgs: string[];
   open?: boolean;
+  loading?: boolean;
+  empty?: boolean;
 }
 
-const WidgetWrapper: FC<IProps> = ({ children, title, imgs, open = false }) => {
+const WidgetWrapper: FC<IProps> = ({
+  children,
+  title,
+  imgs,
+  open = false,
+  loading = true,
+}) => {
   const bodyRef = useRef<HTMLDivElement | null>(null);
   const [size, setSize] = useState<number>(1000);
   const [accMob, setAccMob] = useState<boolean>(false);
@@ -50,9 +58,6 @@ const WidgetWrapper: FC<IProps> = ({ children, title, imgs, open = false }) => {
     }
   }, [size]);
 
-  // useEffect(() => {
-  //   setSrc(light ? imgs[1] : imgs[0])
-  // }, [light])
   return (
     <div className={`${styles.widget} ${height > 0 ? styles.active : ""}`}>
       <div
@@ -84,7 +89,14 @@ const WidgetWrapper: FC<IProps> = ({ children, title, imgs, open = false }) => {
         className={styles.body}
         style={{ height: accMob ? height + "px" : "auto" }}
       >
-        <div ref={bodyRef}>{children}</div>
+        <div
+          className={`${styles.loader} ${loading ? styles.loaderActive : ""}`}
+        >
+          <span className="loader-spin"></span>
+        </div>
+        <div className={`${loading ? styles.loading : ""}`} ref={bodyRef}>
+          {children}
+        </div>
       </div>
     </div>
   );

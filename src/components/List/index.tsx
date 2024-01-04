@@ -1,18 +1,21 @@
-import React from "react";
+"use client";
+import { FC } from "react";
 
 import styles from "./list.module.scss";
 import Group from "../Group";
 import Pagination from "../UI/Pagination";
+import { TLeaguesFootball } from "@/types/sports/football";
 
-const List = () => {
+interface IProps {
+  data: TLeaguesFootball[];
+}
+
+const List: FC<IProps> = ({ data }) => {
   return (
     <div className={styles.body}>
-      <Group />
-      <Group />
-      <Group />
-      <Group />
-      <Group />
-
+      {data.map((item) => (
+        <Group item={item} key={item.id} />
+      ))}
       <Pagination />
     </div>
   );

@@ -7,8 +7,11 @@ import SidebarLayout from "@/layout/SidebarLayout";
 import { tabs } from "@/assets/data/tabs";
 import Search from "@/components/UI/Search";
 import DataBtn from "@/components/Filters/DataBtn";
+import { getFootballMatches } from "@/api/matches/get/getFootballMatches";
 
 const FootBool: NextPage = async () => {
+  const data = await getFootballMatches();
+
   return (
     <div className={styles.main}>
       <h1>АВСТРАЛИЯ И ОКЕАНИЯ OFC Championship U16 Women</h1>
@@ -18,7 +21,7 @@ const FootBool: NextPage = async () => {
           <Search />
           <DataBtn />
         </div>
-        <List />
+        <List data={data.data} />
         <p className="desc-text">
           Определите будущее и выигрывайте с нашими прогнозами матчей! Наши
           аналитики исследуют статистику и тренды, чтобы предсказать результаты
